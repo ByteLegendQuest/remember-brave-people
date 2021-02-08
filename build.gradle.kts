@@ -43,8 +43,6 @@ tasks.test {
         dependsOn("dockerBuild")
         systemProperty("includeDockerTest", "true")
     }
-    // /tmp on GitHub action runners seems not writeable
-    systemProperty("java.io.tmpdir", rootProject.buildDir.resolve("tmp").absolutePath)
     useJUnitPlatform()
 }
 

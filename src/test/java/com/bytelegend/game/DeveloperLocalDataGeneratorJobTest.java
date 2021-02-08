@@ -70,8 +70,6 @@ public class DeveloperLocalDataGeneratorJobTest extends AbstractDataGeneratorJob
                 "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#FFFFFF\"},\n" +
                 "{\"username\":\"blindpirate\",\"x\":3,\"y\":3,\"color\":\"#0000ff\"}\n" +
                 "]\n";
-        // Force git to fail
-        new File(".git").createNewFile();
         writeString(dir, BRAVE_PEOPLE_JSON, newJson);
         Environment environment = Environment.EnvironmentBuilder.builder()
                 .setRepoPullUrl(DEFAULT_REPO_URL)

@@ -1,9 +1,11 @@
 package com.bytelegend.game;
 
+import org.apache.commons.io.FileUtils;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.io.TempDir;
 
 import java.io.File;
+import java.nio.file.Files;
 
 import static com.bytelegend.game.Constants.BRAVE_PEOPLE_JSON;
 import static com.bytelegend.game.Utils.writeString;
@@ -12,7 +14,6 @@ import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public abstract class AbstractDataGeneratorJobTest {
-    @TempDir
     File tmpDir;
 
     // mock the remote repository
@@ -28,6 +29,10 @@ public abstract class AbstractDataGeneratorJobTest {
 
     @BeforeEach
     void setUp() throws Exception {
+        // Don't use @TempDir, some files created in docker containers
+        // can't be deleted in GitHub workflows
+        tmpDir = Files.createTempDirectory("tmp").toFile();
+
         upstream = new File(tmpDir, "upstream");
         upstream.mkdirs();
 
@@ -45,6 +50,11 @@ public abstract class AbstractDataGeneratorJobTest {
 
         fork = new File(tmpDir, "fork");
         upstreamShell.execSuccessfully("git", "clone", upstream.getAbsolutePath(), fork.getAbsolutePath());
+    }
+
+    @AfterEach
+    void cleanUp() {
+        FileUtils.deleteQuietly(tmpDir);
     }
 
     void assertFinalJsonNotContains(String... keywords) throws Exception {

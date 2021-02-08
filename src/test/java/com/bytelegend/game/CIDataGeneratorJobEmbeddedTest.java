@@ -71,7 +71,7 @@ public class CIDataGeneratorJobEmbeddedTest extends AbstractCIDataGeneratorJobTe
         Environment environmentForFork = creatEnvironment(workspace, "blindpirate", "blindpirate_my-branch");
         Environment environmentForFork2 = creatEnvironment(workspace2, "octocat", "octocat_my-branch");
         doAnswer(invocation -> {
-                    Thread.sleep(1000);
+                    Thread.sleep(2000);
                     return upstream.getAbsolutePath();
                 }
         ).when(environmentForFork2).getRepoPushUrl();
