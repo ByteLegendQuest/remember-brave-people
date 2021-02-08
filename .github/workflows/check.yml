@@ -39,7 +39,7 @@ jobs:
       - name: Show Gradle version
         run: ./gradlew --version
       - name: Build with Gradle
-        run: ./gradlew check -DincludeDockerTest=${{ matrix.includeDockerTest }}
+        run: ./gradlew check -DincludeDockerTest=${{ matrix.includeDockerTest }} --scan
   docker-build-push:
     needs: check
     runs-on: ubuntu-latest
@@ -64,7 +64,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-
       - name: Build with Gradle
-        run: ./gradlew install
+        run: ./gradlew install --scan
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2
