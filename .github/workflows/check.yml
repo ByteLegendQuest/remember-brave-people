@@ -41,7 +41,7 @@ jobs:
       - name: Configure git
         run: git config core.autocrlf true && git config user.name "ByteLegendBot" && git config user.email "bot@bytelegend.com"
       - name: Build with Gradle
-        run: ./gradlew check -DincludeDockerTest=${{ matrix.includeDockerTest }} --scan
+        run: ./gradlew check -DincludeDockerTest=${{ matrix.includeDockerTest }} --scan -i
   docker-build-push:
     needs: check
     runs-on: ubuntu-latest
