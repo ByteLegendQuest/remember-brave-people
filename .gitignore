@@ -2,5 +2,7 @@
 .gradle
 
 # Ignore Gradle build output directory
-build
+build/
+out/
+.idea/
 brave-people.old.json
