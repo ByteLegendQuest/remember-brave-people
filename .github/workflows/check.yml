@@ -14,6 +14,13 @@ jobs:
       matrix:
         java: [8, 11]
         os: [ubuntu-latest, windows-latest, macOS-latest]
+        include:
+          - os: ubuntu-latest
+            includeDockerTest: true
+          - os: windows-latest
+            includeDockerTest: false
+          - os: macOS-latest
+            includeDockerTest: false
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK ${{ matrix.java }}
@@ -32,7 +39,7 @@ jobs:
       - name: Show Gradle version
         run: ./gradlew --version
       - name: Build with Gradle
-        run: ./gradlew check -DincludeDockerTest=true
+        run: ./gradlew check -DincludeDockerTest=${{ matrix.includeDockerTest }}
   docker-build-push:
     needs: check
     runs-on: ubuntu-latest
