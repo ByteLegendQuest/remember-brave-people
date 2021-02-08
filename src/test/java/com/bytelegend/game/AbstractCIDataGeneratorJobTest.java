@@ -5,6 +5,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import java.io.File;
+import java.nio.file.Files;
 
 import static com.bytelegend.game.Constants.BRAVE_PEOPLE_JSON;
 import static com.bytelegend.game.Constants.OUTPUT_BRAVE_PEOPLE_PNG;
@@ -12,6 +13,7 @@ import static com.bytelegend.game.TestUtils.assertExceptionWithMessage;
 import static com.bytelegend.game.TestUtils.assertTileWritten;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGeneratorJobTest {
     protected abstract void runJob(String player, String headRef) throws Exception;
@@ -137,6 +139,8 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
 
         assertTileWritten(getOutputBravePeopleImage(), 3, 3, "rgba(0,255,0,255)");
         verifyOssUpload();
+        // pretty printed
+        assertTrue(Files.readAllLines(new File(workspace, BRAVE_PEOPLE_JSON).toPath()).size() > 3);
         assertFinalJsonContains("blindpirate", "octocat", "#FFFFFF", "#00FF00");
         assertLastCommitMessageContains("blindpirate");
     }
