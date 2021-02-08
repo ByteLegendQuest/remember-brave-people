@@ -1,0 +1,31 @@
+name: remember-brave-people
+on:
+  pull_request_target:
+    paths:
+      - "brave-people.json"
+jobs:
+  remember-brave-people:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Checkout PR branch
+        run: |
+          git remote add ${{ github.event.pull_request.user.login }} ${{ github.event.pull_request.head.repo.html_url }}
+          git fetch ${{ github.event.pull_request.user.login }}
+          git checkout -b ${{ github.event.pull_request.user.login }}_${{ github.event.pull_request.head.ref }} ${{ github.event.pull_request.user.login }}/${{ github.event.pull_request.head.ref }}
+      - name: Verify whitelist
+        run: bash -e -x .github/verifyWhitelist.sh
+      - name: Verify and generate brave people data
+        run: docker run blindpirate/remember-brave-people \
+          -v /workspace:${{ env.GITHUB_WORKSPACE }} \
+          /app/bin/remember-brave-people \
+          -DworkspaceDir=/workspace \
+          -DplayerGitHubUsername=${{ github.event.pull_request.user.login }} \
+          -DprTitle='${{ github.event.pull_request.title }}'
+          -DprNumber='${{ github.event.pull_request.number }}'
+          -DossAccessKeyId=${{ secrets.OSS_ACCESS_KEY_ID }}
+          -DossAccessKeySecret=${{ secrets.OSS_ACCESS_KEY_SECRET }}
+          -DheadRef=${{ github.event.pull_request.user.login }}_${{ github.event.pull_request.head.ref }}
+          -DrepoPushUrl=https://ByteLegendBot:${{ secrets.BYTELEGENDBOT_TOKEN }}@github.com/ByteLegendQuest/remember-brave-people.git

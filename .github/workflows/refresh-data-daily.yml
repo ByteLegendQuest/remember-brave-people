@@ -1,0 +1,16 @@
+name: refresh-data-daily
+on:
+  schedule:
+    - cron: '42 0 * * *'
+
+jobs:
+  remember-brave-people:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+      - name: Generate brave people data
+        run: ./gradlew dailyRun \
+          -DossAccessKeyId=${{ secrets.OSS_ACCESS_KEY_ID }} \
+          -DossAccessKeySecret=${{ secrets.OSS_ACCESS_KEY_SECRET }}
