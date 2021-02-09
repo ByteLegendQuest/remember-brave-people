@@ -55,6 +55,7 @@ tasks.register<JavaExec>("dailyRun") {
     if (System.getProperty("ossAccessKeySecret") != null) {
         jvmArgs("-DossAccessKeySecret=${System.getProperty("ossAccessKeySecret")}")
     }
+    mainClass.set("com.bytelegend.game.CIDailyDataGeneratorJob")
 }
 
 extensions.findByName("buildScan")?.withGroovyBuilder {
