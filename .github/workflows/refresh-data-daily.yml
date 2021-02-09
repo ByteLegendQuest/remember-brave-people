@@ -11,6 +11,7 @@ jobs:
         with:
           ref: master
       - name: Generate brave people data
-        run: ./gradlew dailyRun --scan \
-          -DossAccessKeyId=${{ secrets.OSS_ACCESS_KEY_ID }} \
+        run: >
+          ./gradlew dailyRun --scan
+          -DossAccessKeyId=${{ secrets.OSS_ACCESS_KEY_ID }}
           -DossAccessKeySecret=${{ secrets.OSS_ACCESS_KEY_SECRET }}
