@@ -9,6 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
+          ref: master
           fetch-depth: 0
       - name: Checkout PR branch
         run: |
