@@ -58,6 +58,12 @@ tasks.register<JavaExec>("dailyRun") {
     mainClass.set("com.bytelegend.game.CIDailyDataGeneratorJob")
 }
 
+tasks.register<JavaExec>("localRun") {
+    classpath = sourceSets["main"].runtimeClasspath
+    jvmArgs("-DworkspaceDir=${rootProject.rootDir.absolutePath}")
+    mainClass.set("com.bytelegend.game.DeveloperLocalDataGeneratorJob")
+}
+
 extensions.findByName("buildScan")?.withGroovyBuilder {
     setProperty("termsOfServiceUrl", "https://gradle.com/terms-of-service")
     setProperty("termsOfServiceAgree", "yes")
