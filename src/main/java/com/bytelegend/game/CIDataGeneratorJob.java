@@ -51,7 +51,7 @@ public class CIDataGeneratorJob {
         // - Do sanityCheck to make sure the change is legitimate.
         // - Rebase PR branch to origin/master, resolve conflict with best effort.
         //   - Upon failure, abort.
-        // - Merge (--squash) changes to origin/master.
+        // - Merge changes to origin/master.
         // - Generate new data based on latest version at OSS.
         // - Push.
         //   - Upon failure, abort.

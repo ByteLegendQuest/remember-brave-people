@@ -27,7 +27,7 @@ class Git {
      */
     void mergeToMaster(TileDataDiff diff) throws Exception {
         shell.exec("git", "checkout", "-b", "origin_master", "origin/master").assertZeroExit();
-        ExecResult mergeResult = shell.exec("git", "merge", environment.getHeadRef(), "--squash").withLog();
+        ExecResult mergeResult = shell.exec("git", "merge", environment.getHeadRef(), "--no-commit", "--no-ff").withLog();
         // If conflict or merged result has extra changes, fallback to auto resolution.
         if (mergeResult.exitValue != 0) {
             if (mergeResult.getOutput().contains("Merge conflict")) {
