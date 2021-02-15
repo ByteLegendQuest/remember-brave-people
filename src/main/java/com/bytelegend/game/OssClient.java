@@ -9,6 +9,7 @@ import com.aliyun.oss.common.auth.CredentialsProvider;
 import com.aliyun.oss.model.PutObjectRequest;
 import com.aliyun.oss.model.PutObjectResult;
 
+import static com.bytelegend.game.Constants.BRAVE_PEOPLE_ALL_JSON;
 import static com.bytelegend.game.Constants.BRAVE_PEOPLE_PNG;
 import static com.bytelegend.game.Constants.DEFAULT_OSS_BUCKET;
 import static com.bytelegend.game.Constants.DEFAULT_OSS_ENDPOINT;
@@ -32,6 +33,7 @@ class OssClient {
 
     void upload() {
         oss.putObject(new PutObjectRequest(DEFAULT_OSS_BUCKET, BRAVE_PEOPLE_PNG, environment.getOutputBravePeopleImage()));
+        oss.putObject(new PutObjectRequest(DEFAULT_OSS_BUCKET, BRAVE_PEOPLE_ALL_JSON, environment.getOutputBravePeopleAllJson()));
     }
 
     private static class MockOSS extends OSSClient {

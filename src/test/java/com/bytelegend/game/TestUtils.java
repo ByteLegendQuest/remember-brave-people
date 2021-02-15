@@ -8,6 +8,7 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.time.Instant;
 
 import static com.bytelegend.game.Constants.TILE_BORDER_PIXEL;
 import static com.bytelegend.game.Constants.TILE_WITH_BORDER_HEIGHT;
@@ -21,7 +22,11 @@ class TestUtils {
         MatcherAssert.assertThat(e.getMessage(), CoreMatchers.containsString(message));
     }
 
-    static void assertTileWritten(File outputImage, int x, int y, String rgba) throws IOException {
+    static boolean isClose(Instant instant1, Instant instant2) {
+        return Math.abs(instant1.getEpochSecond() - instant2.getEpochSecond()) < 60;
+    }
+
+    static void assertImageWritten(File outputImage, int x, int y, String rgba) throws IOException {
         int originX = x * TILE_WITH_BORDER_WIDTH;
         int originY = y * TILE_WITH_BORDER_HEIGHT;
         // corners are #000, others are opaque

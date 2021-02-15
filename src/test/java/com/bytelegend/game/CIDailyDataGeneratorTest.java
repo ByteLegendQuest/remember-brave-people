@@ -11,7 +11,7 @@ import java.io.File;
 import java.util.Properties;
 
 import static com.bytelegend.game.Constants.BRAVE_PEOPLE_JSON;
-import static com.bytelegend.game.TestUtils.assertTileWritten;
+import static com.bytelegend.game.TestUtils.assertImageWritten;
 import static com.bytelegend.game.Utils.writeString;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.doReturn;
@@ -60,8 +60,8 @@ public class CIDailyDataGeneratorTest {
 
         File outputImage = new File(dir, Constants.OUTPUT_BRAVE_PEOPLE_PNG);
         assertTrue(outputImage.isFile());
-        assertTileWritten(outputImage, 1, 1, "rgba(0,0,0,255)");
-        assertTileWritten(outputImage, 2, 2, "rgba(255,255,255,255)");
-        assertTileWritten(outputImage, 3, 3, "rgba(0,0,255,255)");
+        assertImageWritten(outputImage, 1, 1, "rgba(0,0,0,255)");
+        assertImageWritten(outputImage, 2, 2, "rgba(255,255,255,255)");
+        assertImageWritten(outputImage, 3, 3, "rgba(0,0,255,255)");
     }
 }

@@ -30,11 +30,11 @@ class Downloader {
         this.environment = environment;
     }
 
-    Map<String, File> downloadAvatars(List<InputTileData> tiles) throws ExecutionException, InterruptedException {
+    Map<String, File> downloadAvatars(List<SimpleTile> tiles) throws ExecutionException, InterruptedException {
         List<Future<?>> futures = new ArrayList<>();
 
         Map<String, File> usernameToFile = tiles.stream()
-                .collect(Collectors.toMap(InputTileData::getUsername,
+                .collect(Collectors.toMap(SimpleTile::getUsername,
                         (tile) -> new File(environment.getWorkspaceDir(), "build/avatars/" + tile.getUsername() + ".png")));
 
         usernameToFile.forEach((username, file) -> {

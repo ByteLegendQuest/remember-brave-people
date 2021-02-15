@@ -6,12 +6,18 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.io.File;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.function.Consumer;
 
+import static com.bytelegend.game.Constants.OUTPUT_BRAVE_PEOPLE_ALL_JSON;
 import static com.bytelegend.game.TestUtils.assertExceptionWithMessage;
-import static com.bytelegend.game.TestUtils.assertTileWritten;
+import static com.bytelegend.game.TestUtils.assertImageWritten;
+import static com.bytelegend.game.Utils.parseAllInfoTiles;
+import static com.bytelegend.game.Utils.readString;
+import static com.bytelegend.game.Utils.writeString;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.spy;
@@ -19,21 +25,33 @@ import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
 public class CIDataGeneratorJobEmbeddedTest extends AbstractCIDataGeneratorJobTest {
+    private static final String MOCK_BRAVE_PEOPLE_ALL_JSON_PATH = "build/brave-people-all.mock.json";
     @Mock
     OssClient ossClient;
 
     @Override
     protected void runJob(String player, String headRef) throws Exception {
-        Environment environment = creatEnvironment(workspace, player, headRef);
+        Environment environment = createEnvironment(workspace, player, headRef);
         new CIDataGeneratorJob(environment).run();
     }
 
     @Override
-    protected void verifyOssUpload() {
+    protected void mockOssBravePeopleAllJson(File workspace, String json) throws Exception {
+        new File(workspace, "build").mkdirs();
+        writeString(workspace, MOCK_BRAVE_PEOPLE_ALL_JSON_PATH, json);
+    }
+
+    @Override
+    protected void assertOssBravePeopleAllJson(Consumer<List<AllInfoTile>> consumer) throws Exception {
+        consumer.accept(parseAllInfoTiles(readString(workspace, OUTPUT_BRAVE_PEOPLE_ALL_JSON)));
+    }
+
+    @Override
+    protected void assertOssUpload() {
         verify(ossClient).upload();
     }
 
-    private Environment creatEnvironment(File workspace, String player, String headRef) {
+    private Environment createEnvironment(File workspace, String player, String headRef) {
         Environment environment = Environment.EnvironmentBuilder.builder()
                 .setPrTitle("MyPullRequest")
                 .setPrNumber("12345")
@@ -41,9 +59,11 @@ public class CIDataGeneratorJobEmbeddedTest extends AbstractCIDataGeneratorJobTe
                 .setHeadRef(headRef)
                 .setPlayerGitHubUsername(player)
                 .setRepoPushUrl(upstream.getAbsolutePath())
+                .setPublicBravePeopleAllJsonUrl(new File(workspace, MOCK_BRAVE_PEOPLE_ALL_JSON_PATH).toURI().toString())
                 .build();
         Environment spiedEnvironment = spy(environment);
         doReturn(ossClient).when(spiedEnvironment).createOssClient();
+
         return spiedEnvironment;
     }
 
@@ -54,6 +74,7 @@ public class CIDataGeneratorJobEmbeddedTest extends AbstractCIDataGeneratorJobTe
         File workspace2 = new File(tmpDir, "clone2");
         upstreamShell.execSuccessfully("git", "clone", upstream.getAbsolutePath(), workspace2.getAbsolutePath());
 
+        mockOssBravePeopleAllJson(workspace2, readString(workspace, MOCK_BRAVE_PEOPLE_ALL_JSON_PATH));
         createPullRequest(workspace2, fork2, "octocat", "[\n" +
                 "{\"username\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
                 "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"},\n" +
@@ -68,8 +89,8 @@ public class CIDataGeneratorJobEmbeddedTest extends AbstractCIDataGeneratorJobTe
                         "]\n");
 
         // fork pushes first and succeeds, fork2 pushes later and fails
-        Environment environmentForFork = creatEnvironment(workspace, "blindpirate", "blindpirate_my-branch");
-        Environment environmentForFork2 = creatEnvironment(workspace2, "octocat", "octocat_my-branch");
+        Environment environmentForFork = createEnvironment(workspace, "blindpirate", "blindpirate_my-branch");
+        Environment environmentForFork2 = createEnvironment(workspace2, "octocat", "octocat_my-branch");
         doAnswer(invocation -> {
                     Thread.sleep(2000);
                     return upstream.getAbsolutePath();
@@ -89,8 +110,8 @@ public class CIDataGeneratorJobEmbeddedTest extends AbstractCIDataGeneratorJobTe
         futureForFork.get();
         assertExceptionWithMessage("Push failed", futureForFork2::get);
 
-        assertTileWritten(environmentForFork.getOutputBravePeopleImage(), 3, 3, "rgba(0,255,0,255)");
-        verifyOssUpload();
+        assertImageWritten(environmentForFork.getOutputBravePeopleImage(), 3, 3, "rgba(0,255,0,255)");
+        assertOssUpload();
         assertFinalJsonContains("blindpirate", "#00FF00");
         assertFinalJsonNotContains("octocat");
         assertLastCommitMessageContains("blindpirate");

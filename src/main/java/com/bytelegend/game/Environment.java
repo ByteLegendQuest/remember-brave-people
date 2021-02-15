@@ -3,7 +3,9 @@ package com.bytelegend.game;
 import java.io.File;
 
 import static com.bytelegend.game.Constants.BRAVE_PEOPLE_JSON;
+import static com.bytelegend.game.Constants.INPUT_BRAVE_PEOPLE_ALL_JSON;
 import static com.bytelegend.game.Constants.INPUT_BRAVE_PEOPLE_PNG;
+import static com.bytelegend.game.Constants.OUTPUT_BRAVE_PEOPLE_ALL_JSON;
 import static com.bytelegend.game.Constants.OUTPUT_BRAVE_PEOPLE_PNG;
 
 class Environment {
@@ -20,6 +22,7 @@ class Environment {
     private final String ossAccessKeySecret;
     private final String repoPullUrl;
     private final String repoPushUrl;
+    private final String publicBravePeopleAllJsonUrl;
 
     static String systemProperty(String name) {
         String value = System.getProperty(name);
@@ -38,7 +41,8 @@ class Environment {
             String ossAccessKeyId,
             String ossAccessKeySecret,
             String repoPullUrl,
-            String repoPushUrl
+            String repoPushUrl,
+            String publicBravePeopleAllJsonUrl
     ) {
         this.workspaceDir = workspaceDir;
         this.headRef = headRef;
@@ -49,6 +53,7 @@ class Environment {
         this.ossAccessKeySecret = ossAccessKeySecret;
         this.repoPullUrl = repoPullUrl;
         this.repoPushUrl = repoPushUrl;
+        this.publicBravePeopleAllJsonUrl = publicBravePeopleAllJsonUrl;
     }
 
     File getWorkspaceDir() {
@@ -83,6 +88,14 @@ class Environment {
         return new File(workspaceDir, INPUT_BRAVE_PEOPLE_PNG);
     }
 
+    File getInputBravePeopleAllJson() {
+        return new File(workspaceDir, INPUT_BRAVE_PEOPLE_ALL_JSON);
+    }
+
+    File getOutputBravePeopleAllJson() {
+        return new File(workspaceDir, OUTPUT_BRAVE_PEOPLE_ALL_JSON);
+    }
+
     File getOutputBravePeopleImage() {
         return new File(workspaceDir, OUTPUT_BRAVE_PEOPLE_PNG);
     }
@@ -99,8 +112,8 @@ class Environment {
         return new OssClient(this);
     }
 
-    IncrementalDataGenerator createIncrementalDataGenerator() {
-        return new IncrementalDataGenerator(this);
+    IncrementalImageGenerator createIncrementalDataGenerator() {
+        return new IncrementalImageGenerator(this);
     }
 
     String getRepoPushUrl() {
@@ -109,6 +122,14 @@ class Environment {
 
     String getRepoPullUrl() {
         return repoPullUrl;
+    }
+
+    String getPublicBravePeopleAllJsonUrl() {
+        return publicBravePeopleAllJsonUrl;
+    }
+
+    JsonGenerator createJsonGenerator() {
+        return new JsonGenerator(this);
     }
 
     static final class EnvironmentBuilder {
@@ -121,6 +142,7 @@ class Environment {
         private String ossAccessKeySecret;
         private String repoPullUrl;
         private String repoPushUrl;
+        private String publicBravePeopleAllJsonUrl;
 
         private EnvironmentBuilder() {
         }
@@ -174,6 +196,11 @@ class Environment {
             return this;
         }
 
+        EnvironmentBuilder setPublicBravePeopleAllJsonUrl(String publicBravePeopleAllJsonUrl) {
+            this.publicBravePeopleAllJsonUrl = publicBravePeopleAllJsonUrl;
+            return this;
+        }
+
         Environment build() {
             return new Environment(
                     workspaceDir,
@@ -184,7 +211,10 @@ class Environment {
                     ossAccessKeyId,
                     ossAccessKeySecret,
                     repoPullUrl,
-                    repoPushUrl
+                    repoPushUrl,
+                    publicBravePeopleAllJsonUrl == null ?
+                            Constants.PUBLIC_BRAVE_PEOPLE_JSON_ALL_URL :
+                            publicBravePeopleAllJsonUrl
             );
         }
     }

@@ -4,7 +4,7 @@ import java.util.List;
 
 import static com.bytelegend.game.Constants.BRAVE_PEOPLE_JSON;
 import static com.bytelegend.game.Constants.OBJECT_MAPPER;
-import static com.bytelegend.game.Utils.parse;
+import static com.bytelegend.game.Utils.parseSimpleTiles;
 import static com.bytelegend.game.Utils.writeString;
 
 class Git {
@@ -31,7 +31,7 @@ class Git {
         // If conflict or merged result has extra changes, fallback to auto resolution.
         if (mergeResult.exitValue != 0) {
             if (mergeResult.getOutput().contains("Merge conflict")) {
-                List<InputTileData> latestData = parse(show("origin/master", BRAVE_PEOPLE_JSON));
+                List<SimpleTile> latestData = parseSimpleTiles(show("origin/master", BRAVE_PEOPLE_JSON));
                 latestData.removeIf(tile -> tile.getUsername().equals(diff.getChangedTile().getUsername()));
 
                 if (latestData.stream().anyMatch(it ->
@@ -40,7 +40,7 @@ class Git {
                 }
 
                 latestData.add(diff.getChangedTile());
-                latestData.sort(InputTileData.COMPARATOR);
+                latestData.sort(SimpleTile.COMPARATOR);
                 writeString(environment.getBravePeopleJson(), OBJECT_MAPPER.writerWithDefaultPrettyPrinter().writeValueAsString(latestData));
                 shell.exec("git", "add", ".");
             } else {

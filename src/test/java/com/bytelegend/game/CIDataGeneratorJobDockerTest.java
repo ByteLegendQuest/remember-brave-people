@@ -3,6 +3,10 @@ package com.bytelegend.game;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeEach;
 
+import java.io.File;
+import java.util.List;
+import java.util.function.Consumer;
+
 public class CIDataGeneratorJobDockerTest extends AbstractCIDataGeneratorJobTest {
     @BeforeEach
     public void checkDocker() {
@@ -30,6 +34,14 @@ public class CIDataGeneratorJobDockerTest extends AbstractCIDataGeneratorJobTest
     }
 
     @Override
-    protected void verifyOssUpload() {
+    protected void mockOssBravePeopleAllJson(File workspace, String json) {
+    }
+
+    @Override
+    protected void assertOssBravePeopleAllJson(Consumer<List<AllInfoTile>> consumer) {
+    }
+
+    @Override
+    protected void assertOssUpload() {
     }
 }

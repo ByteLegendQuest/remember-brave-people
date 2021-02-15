@@ -1,7 +1,5 @@
 package com.bytelegend.game;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -12,24 +10,25 @@ import java.util.Map;
 
 import static com.bytelegend.game.Constants.IMAGE_GRID_HEIGHT;
 import static com.bytelegend.game.Constants.IMAGE_GRID_WIDTH;
-import static com.bytelegend.game.Constants.OBJECT_MAPPER;
 import static com.bytelegend.game.Constants.PUBLIC_BRAVE_PEOPLE_IMAGE_URL;
 import static com.bytelegend.game.Constants.TILE_BORDER_PIXEL;
 import static com.bytelegend.game.Constants.TILE_HEIGHT_PIXEL;
 import static com.bytelegend.game.Constants.TILE_WIDTH_PIXEL;
 import static com.bytelegend.game.Constants.TILE_WITH_BORDER_HEIGHT;
 import static com.bytelegend.game.Constants.TILE_WITH_BORDER_WIDTH;
+import static com.bytelegend.game.Utils.parseSimpleTiles;
+import static com.bytelegend.game.Utils.readString;
 
-abstract class DataGenerator {
+abstract class ImageGenerator {
     protected final Environment environment;
     protected final Downloader downloader;
 
-    protected DataGenerator(Environment environment) {
+    protected ImageGenerator(Environment environment) {
         this.environment = environment;
         this.downloader = new Downloader(environment);
     }
 
-    protected void writeTile(Graphics graphics, InputTileData tile, Map<String, File> usernameToAvatarImage) {
+    protected void writeTile(Graphics graphics, SimpleTile tile, Map<String, File> usernameToAvatarImage) {
         try {
             graphics.clearRect(
                     tile.getX() * TILE_WITH_BORDER_WIDTH,
@@ -67,8 +66,8 @@ abstract class DataGenerator {
     }
 }
 
-class IncrementalDataGenerator extends DataGenerator {
-    IncrementalDataGenerator(Environment environment) {
+class IncrementalImageGenerator extends ImageGenerator {
+    IncrementalImageGenerator(Environment environment) {
         super(environment);
     }
 
@@ -83,15 +82,13 @@ class IncrementalDataGenerator extends DataGenerator {
     }
 }
 
-class FullDataGenerator extends DataGenerator {
-    FullDataGenerator(Environment environment) {
+class FullImageGenerator extends ImageGenerator {
+    FullImageGenerator(Environment environment) {
         super(environment);
     }
 
     void generate() throws Exception {
-        // @formatter:off
-        List<InputTileData> inputTiles = OBJECT_MAPPER.readValue(environment.getBravePeopleJson(), new TypeReference<List<InputTileData>>() {});
-        // @formatter:on
+        List<SimpleTile> inputTiles = parseSimpleTiles(readString(environment.getBravePeopleJson()));
 
         BufferedImage bufferedImage = new BufferedImage(
                 IMAGE_GRID_WIDTH * TILE_WITH_BORDER_WIDTH,

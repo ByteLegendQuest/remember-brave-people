@@ -8,40 +8,40 @@ import java.util.regex.Pattern;
 
 import static com.bytelegend.game.Constants.IMAGE_GRID_HEIGHT;
 import static com.bytelegend.game.Constants.IMAGE_GRID_WIDTH;
-import static com.bytelegend.game.Utils.parse;
+import static com.bytelegend.game.Utils.parseSimpleTiles;
 
 /**
  * Compare player's JSON and previous version to avoid malicious change.
  */
 class TileDataDiff {
     private static final Pattern COLOR_PATTERN = Pattern.compile("#[a-fA-F0-9]{6}");
-    private final List<InputTileData> oldTiles;
-    private final List<InputTileData> newTiles;
-    private final InputTileData changedTile;
+    private final List<SimpleTile> oldTiles;
+    private final List<SimpleTile> newTiles;
+    private final SimpleTile changedTile;
     private final String playerGitHubUsername;
 
     TileDataDiff(String oldDataJson, String newDataJson, String playerGitHubUsername) throws Exception {
-        this.oldTiles = parse(oldDataJson);
-        this.newTiles = parse(newDataJson);
+        this.oldTiles = parseSimpleTiles(oldDataJson);
+        this.newTiles = parseSimpleTiles(newDataJson);
         this.playerGitHubUsername = playerGitHubUsername;
         this.changedTile = diff();
     }
 
-    List<InputTileData> getOldTiles() {
+    List<SimpleTile> getOldTiles() {
         return oldTiles;
     }
 
-    List<InputTileData> getNewTiles() {
+    List<SimpleTile> getNewTiles() {
         return newTiles;
     }
 
-    InputTileData getChangedTile() {
+    SimpleTile getChangedTile() {
         return changedTile;
     }
 
-    private Set<InputTileData> removeAll(Collection<InputTileData> set1, Collection<InputTileData> set2) {
-        Set<InputTileData> tmp1 = new HashSet<>(set1);
-        Set<InputTileData> tmp2 = new HashSet<>(set2);
+    private Set<SimpleTile> removeAll(Collection<SimpleTile> set1, Collection<SimpleTile> set2) {
+        Set<SimpleTile> tmp1 = new HashSet<>(set1);
+        Set<SimpleTile> tmp2 = new HashSet<>(set2);
         tmp1.removeAll(tmp2);
         return tmp1;
     }
@@ -49,9 +49,9 @@ class TileDataDiff {
     /**
      * @return the tile changed with same username as {@link #playerGitHubUsername}
      */
-    private InputTileData diff() {
-        Set<InputTileData> addedTiles = removeAll(newTiles, oldTiles);
-        Set<InputTileData> removedTiles = removeAll(oldTiles, newTiles);
+    private SimpleTile diff() {
+        Set<SimpleTile> addedTiles = removeAll(newTiles, oldTiles);
+        Set<SimpleTile> removedTiles = removeAll(oldTiles, newTiles);
 
         if (addedTiles.isEmpty() && removedTiles.isEmpty()) {
             throw new IllegalStateException("You didn't change anything!");
@@ -66,11 +66,11 @@ class TileDataDiff {
         if (addedTiles.size() > 1 || removedTiles.size() > 1) {
             throw new IllegalStateException("You are not allowed to modify more than 1 tile!");
         }
-        InputTileData removedTile = removedTiles.stream()
+        SimpleTile removedTile = removedTiles.stream()
                 .filter(this::checkTileUsername)
                 .findFirst()
                 .orElse(null);
-        InputTileData addedTile = addedTiles.stream()
+        SimpleTile addedTile = addedTiles.stream()
                 .filter(this::checkTileUsername)
                 .findFirst()
                 .orElse(null);
@@ -101,7 +101,7 @@ class TileDataDiff {
         return addedTile;
     }
 
-    private boolean checkTileUsername(InputTileData tile) {
+    private boolean checkTileUsername(SimpleTile tile) {
         return playerGitHubUsername == null || playerGitHubUsername.equals(tile.getUsername());
     }
 }

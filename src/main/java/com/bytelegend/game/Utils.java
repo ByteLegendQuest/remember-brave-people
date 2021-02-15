@@ -23,9 +23,15 @@ class Utils {
         }
     }
 
-    static List<InputTileData> parse(String json) throws JsonProcessingException {
+    static List<SimpleTile> parseSimpleTiles(String json) throws JsonProcessingException {
         // @formatter:off
-        return OBJECT_MAPPER.readValue(json, new TypeReference<List<InputTileData>>() {});
+        return OBJECT_MAPPER.readValue(json, new TypeReference<List<SimpleTile>>() {});
+        // @formatter:on
+    }
+
+    static List<AllInfoTile> parseAllInfoTiles(String json) throws JsonProcessingException {
+        // @formatter:off
+        return OBJECT_MAPPER.readValue(json, new TypeReference<List<AllInfoTile>>() {});
         // @formatter:on
     }
 

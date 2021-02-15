@@ -10,7 +10,7 @@ import java.io.File;
 import static com.bytelegend.game.Constants.BRAVE_PEOPLE_JSON;
 import static com.bytelegend.game.Constants.DEFAULT_REPO_URL;
 import static com.bytelegend.game.TestUtils.assertExceptionWithMessage;
-import static com.bytelegend.game.TestUtils.assertTileWritten;
+import static com.bytelegend.game.TestUtils.assertImageWritten;
 import static com.bytelegend.game.Utils.writeString;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -37,7 +37,7 @@ public class DeveloperLocalDataGeneratorJobTest extends AbstractDataGeneratorJob
 
         File outputImage = environment.getOutputBravePeopleImage();
         assertTrue(outputImage.isFile());
-        assertTileWritten(outputImage, 3, 3, "rgba(0,0,255,255)");
+        assertImageWritten(outputImage, 3, 3, "rgba(0,0,255,255)");
         assertFinalJsonNotContains("blindpirate", "#0000ff");
     }
 
@@ -78,9 +78,9 @@ public class DeveloperLocalDataGeneratorJobTest extends AbstractDataGeneratorJob
         new DeveloperLocalDataGeneratorJob(environment).run();
         File outputImage = environment.getOutputBravePeopleImage();
         assertTrue(outputImage.isFile());
-        assertTileWritten(outputImage, 1, 1, "rgba(0,0,0,255)");
-        assertTileWritten(outputImage, 2, 2, "rgba(255,255,255,255)");
-        assertTileWritten(outputImage, 3, 3, "rgba(0,0,255,255)");
+        assertImageWritten(outputImage, 1, 1, "rgba(0,0,0,255)");
+        assertImageWritten(outputImage, 2, 2, "rgba(255,255,255,255)");
+        assertImageWritten(outputImage, 3, 3, "rgba(0,0,255,255)");
     }
 }
 

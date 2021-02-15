@@ -21,7 +21,8 @@ public class CIDataGeneratorJob {
     private final Environment environment;
     private final Git git;
     private final OssClient ossClient;
-    private final IncrementalDataGenerator incrementalDataGenerator;
+    private final IncrementalImageGenerator incrementalImageGenerator;
+    private final JsonGenerator jsonGenerator;
 
     public static void main(String[] args) throws Exception {
         readSystemPropertiesFromArgs(args);
@@ -44,7 +45,8 @@ public class CIDataGeneratorJob {
         this.environment = environment;
         this.git = environment.createGit();
         this.ossClient = environment.createOssClient();
-        this.incrementalDataGenerator = environment.createIncrementalDataGenerator();
+        this.incrementalImageGenerator = environment.createIncrementalDataGenerator();
+        this.jsonGenerator = environment.createJsonGenerator();
     }
 
     void run() throws Exception {
@@ -62,7 +64,8 @@ public class CIDataGeneratorJob {
         TileDataDiff diff = sanityCheck();
         git.mergeToMaster(diff);
 
-        incrementalDataGenerator.generate(diff);
+        incrementalImageGenerator.generate(diff);
+        jsonGenerator.generate(diff);
 
         git.push();
         ossClient.upload();

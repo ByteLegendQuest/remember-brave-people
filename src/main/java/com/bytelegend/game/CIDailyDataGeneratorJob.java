@@ -8,7 +8,7 @@ import static com.bytelegend.game.Environment.systemProperty;
  * Triggered by daily cron job
  */
 public class CIDailyDataGeneratorJob {
-    private final FullDataGenerator fullyDataGenerator;
+    private final FullImageGenerator fullyDataGenerator;
     private final OssClient ossClient;
 
     public static void main(String[] args) throws Exception {
@@ -22,7 +22,7 @@ public class CIDailyDataGeneratorJob {
     }
 
     CIDailyDataGeneratorJob(Environment environment) {
-        this.fullyDataGenerator = new FullDataGenerator(environment);
+        this.fullyDataGenerator = new FullImageGenerator(environment);
         this.ossClient = environment.createOssClient();
     }
 

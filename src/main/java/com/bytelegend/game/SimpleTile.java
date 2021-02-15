@@ -3,9 +3,9 @@ package com.bytelegend.game;
 import java.util.Comparator;
 import java.util.Objects;
 
-public class InputTileData {
-    static final Comparator<InputTileData> COMPARATOR = Comparator.comparingInt(InputTileData::getX)
-            .thenComparing(InputTileData::getY);
+public class SimpleTile {
+    static final Comparator<SimpleTile> COMPARATOR = Comparator.comparingInt(SimpleTile::getX)
+            .thenComparing(SimpleTile::getY);
     private int x;
     private int y;
     private String color;
@@ -51,7 +51,7 @@ public class InputTileData {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        InputTileData that = (InputTileData) o;
+        SimpleTile that = (SimpleTile) o;
         return x == that.x && y == that.y && Objects.equals(color, that.color) && Objects.equals(username, that.username);
     }
 

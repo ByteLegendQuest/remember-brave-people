@@ -7,8 +7,8 @@ import static com.bytelegend.game.Environment.systemProperty;
 
 public class DeveloperLocalDataGeneratorJob {
     private final Environment environment;
-    private final FullDataGenerator fullyDataGenerator;
-    private final IncrementalDataGenerator incrementalDataGenerator;
+    private final FullImageGenerator fullyDataGenerator;
+    private final IncrementalImageGenerator incrementalDataGenerator;
     private final Git git;
 
     public static void main(String[] args) throws Exception {
@@ -21,8 +21,8 @@ public class DeveloperLocalDataGeneratorJob {
 
     DeveloperLocalDataGeneratorJob(Environment environment) {
         this.environment = environment;
-        this.fullyDataGenerator = new FullDataGenerator(environment);
-        this.incrementalDataGenerator = new IncrementalDataGenerator(environment);
+        this.fullyDataGenerator = new FullImageGenerator(environment);
+        this.incrementalDataGenerator = new IncrementalImageGenerator(environment);
         this.git = new Git(environment);
     }
 

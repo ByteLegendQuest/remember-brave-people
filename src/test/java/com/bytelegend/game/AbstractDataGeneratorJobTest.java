@@ -73,6 +73,7 @@ public abstract class AbstractDataGeneratorJobTest {
 
     void commitChangesInUpstream(String json) throws Exception {
         writeString(workspace, BRAVE_PEOPLE_JSON, json);
+        writeString(workspace, ".gitignore", "build/");
         workspaceShell.execSuccessfully("git", "add", ".");
         workspaceShell.execSuccessfully("git", "commit", "-m", "Commit in upstream");
         workspaceShell.execSuccessfully("git", "push");
