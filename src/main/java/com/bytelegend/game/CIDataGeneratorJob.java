@@ -68,7 +68,8 @@ public class CIDataGeneratorJob {
         jsonGenerator.generate(diff);
 
         git.push();
-        ossClient.upload();
+        ossClient.uploadBravePeopleImage();
+        ossClient.uploadBravePeopleAllJson();
     }
 
     private TileDataDiff sanityCheck() throws Exception {

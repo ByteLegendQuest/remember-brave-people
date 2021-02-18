@@ -28,7 +28,7 @@ public class CIDailyDataGeneratorJob {
 
     void run() throws Exception {
         fullyDataGenerator.generate();
-        ossClient.upload();
+        ossClient.uploadBravePeopleImage();
     }
 }
 

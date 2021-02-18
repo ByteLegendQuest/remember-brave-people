@@ -31,8 +31,11 @@ class OssClient {
         }
     }
 
-    void upload() {
+    void uploadBravePeopleImage() {
         oss.putObject(new PutObjectRequest(DEFAULT_OSS_BUCKET, BRAVE_PEOPLE_PNG, environment.getOutputBravePeopleImage()));
+    }
+
+    void uploadBravePeopleAllJson() {
         oss.putObject(new PutObjectRequest(DEFAULT_OSS_BUCKET, BRAVE_PEOPLE_ALL_JSON, environment.getOutputBravePeopleAllJson()));
     }
 

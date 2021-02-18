@@ -55,7 +55,7 @@ public class CIDailyDataGeneratorTest {
             doReturn(ossClient).when(spiedEnvironment).createOssClient();
             new CIDailyDataGeneratorJob(spiedEnvironment).run();
 
-            verify(ossClient).upload();
+            verify(ossClient).uploadBravePeopleImage();
         }
 
         File outputImage = new File(dir, Constants.OUTPUT_BRAVE_PEOPLE_PNG);

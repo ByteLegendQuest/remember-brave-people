@@ -48,7 +48,8 @@ public class CIDataGeneratorJobEmbeddedTest extends AbstractCIDataGeneratorJobTe
 
     @Override
     protected void assertOssUpload() {
-        verify(ossClient).upload();
+        verify(ossClient).uploadBravePeopleImage();
+        verify(ossClient).uploadBravePeopleAllJson();
     }
 
     private Environment createEnvironment(File workspace, String player, String headRef) {
