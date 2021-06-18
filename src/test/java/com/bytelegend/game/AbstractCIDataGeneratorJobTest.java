@@ -259,6 +259,7 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
         String commit = upstreamShell.execSuccessfully("git", "log", "--format=%B", "-n", "1", "master").stdout;
         assertThat(commit, containsString("MyPullRequest (#12345)"));
         assertThat(commit, containsString("Thanks to @" + player + "'s contribution"));
+        assertThat(commit, containsString("Co-authored-by: "));
     }
 
     void createPullRequest(File workspaceDir, File forkRepo, String player, String bravePeopleJson) throws Exception {

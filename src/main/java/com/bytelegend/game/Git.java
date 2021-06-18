@@ -53,8 +53,23 @@ class Git {
         }
 
         shell.execSuccessfully("git", "commit", "-m",
-                String.format("%s (#%s)\n\nThanks to @%s's contribution",
-                        environment.getPrTitle(), environment.getPrNumber(), environment.getPlayerGitHubUsername()));
+                String.format("%s (#%s)\n\n"
+                                + "Thanks to @%s's contribution\n\n"
+                                + "%s",
+                        environment.getPrTitle(), environment.getPrNumber(),
+                        environment.getPlayerGitHubUsername(),
+                        getCoAuthoredBy()
+                )
+        );
+    }
+
+    private String getCoAuthoredBy() throws Exception {
+        ExecResult latestCommit = shell.exec("git", "log", "-1", "--format=%an <%ae>", environment.getHeadRef()).withLog();
+        if (latestCommit.exitValue == 0) {
+            return "Co-authored-by: " + latestCommit.getOutput().trim();
+        } else {
+            return "";
+        }
     }
 
     void push() throws Exception {
