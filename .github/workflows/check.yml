@@ -1,9 +1,13 @@
 name: check and docker build push
 on:
   push:
+    branches:
+      - master
     paths-ignore:
       - "brave-people.json"
   pull_request:
+    branches:
+      - master
     paths-ignore:
       - "brave-people.json"
 

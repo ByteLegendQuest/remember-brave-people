@@ -23,10 +23,10 @@ class Constants {
     static final String PUBLIC_BRAVE_PEOPLE_IMAGE_URL = "https://bytelegend-brave-people.oss-cn-hongkong.aliyuncs.com/brave-people.png";
     static final String PUBLIC_BRAVE_PEOPLE_JSON_ALL_URL = "https://bytelegend-brave-people.oss-cn-hongkong.aliyuncs.com/brave-people-all.json";
 
-    static final int IMAGE_GRID_WIDTH = 25;
-    static final int IMAGE_GRID_HEIGHT = 25;
-    static final int TILE_WIDTH_PIXEL = 20;
-    static final int TILE_HEIGHT_PIXEL = 20;
+    static final int IMAGE_GRID_WIDTH = 20;
+    static final int IMAGE_GRID_HEIGHT = 20;
+    static final int TILE_WIDTH_PIXEL = 62;
+    static final int TILE_HEIGHT_PIXEL = 62;
     static final int TILE_BORDER_PIXEL = 2;
     static final int TILE_WITH_BORDER_WIDTH = TILE_WIDTH_PIXEL + 2 * TILE_BORDER_PIXEL;
     static final int TILE_WITH_BORDER_HEIGHT = TILE_HEIGHT_PIXEL + 2 * TILE_BORDER_PIXEL;
