@@ -54,7 +54,7 @@ class Git {
 
         shell.execSuccessfully("git", "commit", "-m",
                 String.format("%s (#%s)\n\n"
-                                + "Thanks to @%s's contribution\n\n"
+                                + "Thanks to @%s's contribution!\n\n"
                                 + "%s",
                         environment.getPrTitle(), environment.getPrNumber(),
                         environment.getPlayerGitHubUsername(),
