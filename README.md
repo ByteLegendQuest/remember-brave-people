@@ -1,10 +1,15 @@
-### Java Island Newbie Village
+# Brave people challenge - leave your name!
 
-This is inspired by https://open-pixel-art.com/.
+This is inspired by https://open-pixel-art.com/. This is a part of [ByteLegend](https://bytelegend.com), a game to learn programming.
 
+This challenge is intended to teach you how to create a pull request.
 
-### Implementation details
+## TL;DR
 
+- Change `brave-people.json`, add your name, coordinate and favorite color, then create a pull request. 
+- Go back to [ByteLegend](https://bytelegend.com) and check out the noticeboard at `(V, 92)` game coordinate.
+
+## Implementation details (Don't read this unless you want to understand how this repository works)
 
 There are 3 GitHub jobs:
 
