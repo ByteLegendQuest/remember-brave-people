@@ -15,8 +15,6 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ThreadFactory;
 import java.util.stream.Collectors;
 
-import static com.bytelegend.game.Constants.TILE_WIDTH_PIXEL;
-
 class Downloader {
     private final int THREAD_NUM = 20;
     private final Environment environment;
@@ -38,7 +36,7 @@ class Downloader {
                         (tile) -> new File(environment.getWorkspaceDir(), "build/avatars/" + tile.getUsername() + ".png")));
 
         usernameToFile.forEach((username, file) -> {
-            String url = String.format("https://avatars.githubusercontent.com/%s?size=%d", username, TILE_WIDTH_PIXEL);
+            String url = String.format("https://avatars.githubusercontent.com/%s", username);
             futures.add(threadPool.submit(() -> {
                 download(url, file);
             }));

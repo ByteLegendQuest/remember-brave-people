@@ -57,7 +57,7 @@ abstract class ImageGenerator {
                     tile.getY() * TILE_WITH_BORDER_HEIGHT + TILE_BORDER_PIXEL,
                     tile.getX() * TILE_WITH_BORDER_WIDTH + TILE_BORDER_PIXEL + TILE_WIDTH_PIXEL,
                     tile.getY() * TILE_WITH_BORDER_HEIGHT + TILE_BORDER_PIXEL + TILE_HEIGHT_PIXEL,
-                    0, 0, TILE_WIDTH_PIXEL, TILE_HEIGHT_PIXEL,
+                    0, 0, avatarImage.getWidth(), avatarImage.getHeight(),
                     null
             );
         } catch (Exception e) {
