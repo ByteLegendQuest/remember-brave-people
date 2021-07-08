@@ -1,3 +1,16 @@
+<details>
+  <summary>简体中文</summary>
+  
+  # 勇士挑战：人过留名，雁过留声
+  
+  这是一个教学，旨在帮助你学习创建GitHub的pull request，这是向世界上任何开源项目贡献代码的第一步。
+  
+  ## 太长不看的描述
+  
+  - 修改`brave-people.json`，在里面加入你的**GitHub用户名**，坐标和喜欢的颜色，然后创建一个pull request。
+  - 回到[字节传说](https://bytelegend.com)，然后查看`(V, 92)`游戏坐标处的公告牌。
+</details>
+
 # Brave people challenge - leave your name!
 
 This is inspired by https://open-pixel-art.com/. This is a part of [ByteLegend](https://bytelegend.com), a game to learn programming.
@@ -6,7 +19,7 @@ This challenge is intended to teach you how to create a pull request.
 
 ## TL;DR
 
-- Change `brave-people.json`, add your name, coordinate and favorite color, then create a pull request. 
+- Change `brave-people.json`, add **your GitHub username**, coordinate and favorite color, then create a pull request. 
 - Go back to [ByteLegend](https://bytelegend.com) and check out the noticeboard at `(V, 92)` game coordinate.
 
 ## Implementation details (Don't read this unless you want to understand how this repository works)
