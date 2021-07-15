@@ -3,6 +3,11 @@ plugins {
     checkstyle
 }
 
+repeat(1000) {
+   println(it)
+   Thread.sleep(1000)
+}
+
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
