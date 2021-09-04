@@ -16,17 +16,17 @@ public class CIDataGeneratorJobDockerTest extends AbstractCIDataGeneratorJobTest
     @Override
     protected void runJob(String player, String headRef) throws Exception {
         ExecResult result = workspaceShell.exec("docker", "run",
-                "-v", workspace.getAbsolutePath() + ":/workspace",
-                "-v", upstream.getAbsolutePath() + ":/upstream",
-                "blindpirate/remember-brave-people",
-                "-DworkspaceDir=/workspace",
-                "-DplayerGitHubUsername=" + player,
-                "-DprTitle=MyPullRequest",
-                "-DprNumber=12345",
-                "-DossAccessKeyId=mock",
-                "-DossAccessKeySecret=mock",
-                "-DheadRef=" + headRef,
-                "-DrepoPushUrl=/upstream"
+            "-v", workspace.getAbsolutePath() + ":/workspace",
+            "-v", upstream.getAbsolutePath() + ":/upstream",
+            "blindpirate/remember-brave-people",
+            "-DworkspaceDir=/workspace",
+            "-DplayerGitHubUsername=" + player,
+            "-DprTitle=MyPullRequest",
+            "-DprNumber=12345",
+            "-DaccessKeyId=",
+            "-DaccessKeySecret=",
+            "-DheadRef=" + headRef,
+            "-DrepoPushUrl=/upstream"
         );
         if (result.exitValue != 0) {
             throw new IllegalStateException(result.getOutput());
@@ -34,14 +34,14 @@ public class CIDataGeneratorJobDockerTest extends AbstractCIDataGeneratorJobTest
     }
 
     @Override
-    protected void mockOssBravePeopleAllJson(File workspace, String json) {
+    protected void mockBravePeopleAllJson(File workspace, String json) {
     }
 
     @Override
-    protected void assertOssBravePeopleAllJson(Consumer<List<AllInfoTile>> consumer) {
+    protected void assertBravePeopleAllJson(Consumer<List<AllInfoTile>> consumer) {
     }
 
     @Override
-    protected void assertOssUpload() {
+    protected void assertUpload() {
     }
 }

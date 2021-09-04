@@ -21,7 +21,7 @@ import static org.mockito.Mockito.verify;
 @ExtendWith(MockitoExtension.class)
 public class CIDailyDataGeneratorTest {
     @Mock
-    OssClient ossClient;
+    Uploader uploader;
 
     @TempDir
     File dir;
@@ -40,8 +40,8 @@ public class CIDailyDataGeneratorTest {
             Properties originalProperties = System.getProperties();
             try {
                 System.setProperty("workspaceDir", dir.getAbsolutePath());
-                System.setProperty("ossAccessKeyId", "mock");
-                System.setProperty("ossAccessKeySecret", "mock");
+                System.setProperty("accessKeyId", "");
+                System.setProperty("accessKeySecret", "");
 
                 CIDailyDataGeneratorJob.main(new String[0]);
             } finally {
@@ -52,10 +52,10 @@ public class CIDailyDataGeneratorTest {
                     .setWorkspaceDir(dir)
                     .build();
             Environment spiedEnvironment = spy(environment);
-            doReturn(ossClient).when(spiedEnvironment).createOssClient();
+            doReturn(uploader).when(spiedEnvironment).createUploader();
             new CIDailyDataGeneratorJob(spiedEnvironment).run();
 
-            verify(ossClient).uploadBravePeopleImage();
+            verify(uploader).uploadBravePeopleImage();
         }
 
         File outputImage = new File(dir, Constants.OUTPUT_BRAVE_PEOPLE_PNG);

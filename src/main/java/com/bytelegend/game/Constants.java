@@ -18,10 +18,10 @@ class Constants {
     static final String INPUT_BRAVE_PEOPLE_ALL_JSON = "build/input-brave-people-all.json";
     static final String OUTPUT_BRAVE_PEOPLE_PNG = "build/brave-people.png";
     static final String OUTPUT_BRAVE_PEOPLE_ALL_JSON = "build/brave-people-all.json";
-    static final String DEFAULT_OSS_ENDPOINT = "https://oss-cn-hongkong.aliyuncs.com";
-    static final String DEFAULT_OSS_BUCKET = "bytelegend-brave-people";
-    static final String PUBLIC_BRAVE_PEOPLE_IMAGE_URL = "https://bytelegend-brave-people.oss-cn-hongkong.aliyuncs.com/brave-people.png";
-    static final String PUBLIC_BRAVE_PEOPLE_JSON_ALL_URL = "https://bytelegend-brave-people.oss-cn-hongkong.aliyuncs.com/brave-people-all.json";
+    static final String DEFAULT_S3_REGION = "ap-northeast-2";
+    static final String DEFAULT_S3_BUCKET = "brave-people";
+    static final String PUBLIC_BRAVE_PEOPLE_IMAGE_URL = "https://brave-people.s3.ap-northeast-2.amazonaws.com/brave-people.png";
+    static final String PUBLIC_BRAVE_PEOPLE_JSON_ALL_URL = "https://brave-people.s3.ap-northeast-2.amazonaws.com/brave-people-all.json";
 
     static final int IMAGE_GRID_WIDTH = 20;
     static final int IMAGE_GRID_HEIGHT = 20;

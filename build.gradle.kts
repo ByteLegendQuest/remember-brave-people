@@ -15,8 +15,8 @@ repositories {
 dependencies {
     implementation("com.fasterxml.jackson.core:jackson-databind:2.12.1")
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.12.1")
-    implementation("com.aliyun.oss:aliyun-sdk-oss:3.8.0")
     implementation("commons-io:commons-io:2.8.0")
+    implementation("software.amazon.awssdk:s3:2.17.33")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.7.0")
     testImplementation("org.hamcrest:hamcrest:2.2")
@@ -50,11 +50,11 @@ tasks.test {
 tasks.register<JavaExec>("dailyRun") {
     classpath = sourceSets["main"].runtimeClasspath
     jvmArgs("-DworkspaceDir=${rootProject.rootDir.absolutePath}")
-    if (System.getProperty("ossAccessKeyId") != null) {
-        jvmArgs("-DossAccessKeyId=${System.getProperty("ossAccessKeyId")}")
+    if (System.getProperty("accessKeyId") != null) {
+        jvmArgs("-DaccessKeyId=${System.getProperty("accessKeyId")}")
     }
-    if (System.getProperty("ossAccessKeySecret") != null) {
-        jvmArgs("-DossAccessKeySecret=${System.getProperty("ossAccessKeySecret")}")
+    if (System.getProperty("accessKeySecret") != null) {
+        jvmArgs("-DaccessKeySecret=${System.getProperty("accessKeySecret")}")
     }
     mainClass.set("com.bytelegend.game.CIDailyDataGeneratorJob")
 }

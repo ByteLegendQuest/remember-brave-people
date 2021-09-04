@@ -18,8 +18,8 @@ class Environment {
     private final String prNumber;
     private final String prTitle;
     private final String playerGitHubUsername;
-    private final String ossAccessKeyId;
-    private final String ossAccessKeySecret;
+    private final String accessKeyId;
+    private final String accessKeySecret;
     private final String repoPullUrl;
     private final String repoPushUrl;
     private final String publicBravePeopleAllJsonUrl;
@@ -33,24 +33,24 @@ class Environment {
     }
 
     private Environment(
-            File workspaceDir,
-            String headRef,
-            String prNumber,
-            String prTitle,
-            String playerGitHubUsername,
-            String ossAccessKeyId,
-            String ossAccessKeySecret,
-            String repoPullUrl,
-            String repoPushUrl,
-            String publicBravePeopleAllJsonUrl
+        File workspaceDir,
+        String headRef,
+        String prNumber,
+        String prTitle,
+        String playerGitHubUsername,
+        String accessKeyId,
+        String accessKeySecret,
+        String repoPullUrl,
+        String repoPushUrl,
+        String publicBravePeopleAllJsonUrl
     ) {
         this.workspaceDir = workspaceDir;
         this.headRef = headRef;
         this.prNumber = prNumber;
         this.prTitle = prTitle;
         this.playerGitHubUsername = playerGitHubUsername;
-        this.ossAccessKeyId = ossAccessKeyId;
-        this.ossAccessKeySecret = ossAccessKeySecret;
+        this.accessKeyId = accessKeyId;
+        this.accessKeySecret = accessKeySecret;
         this.repoPullUrl = repoPullUrl;
         this.repoPushUrl = repoPushUrl;
         this.publicBravePeopleAllJsonUrl = publicBravePeopleAllJsonUrl;
@@ -76,12 +76,12 @@ class Environment {
         return playerGitHubUsername;
     }
 
-    String getOssAccessKeyId() {
-        return ossAccessKeyId;
+    String getAccessKeyId() {
+        return accessKeyId;
     }
 
-    String getOssAccessKeySecret() {
-        return ossAccessKeySecret;
+    String getAccessKeySecret() {
+        return accessKeySecret;
     }
 
     File getInputBravePeopleImage() {
@@ -108,8 +108,12 @@ class Environment {
         return new Git(this);
     }
 
-    OssClient createOssClient() {
-        return new OssClient(this);
+    Uploader createUploader() {
+        if (accessKeyId == null || accessKeyId.isEmpty()) {
+            return Uploader.NoOpUploader.INSTANCE;
+        } else {
+            return new Uploader.S3Uploader(this);
+        }
     }
 
     IncrementalImageGenerator createIncrementalDataGenerator() {
@@ -138,8 +142,8 @@ class Environment {
         private String prNumber;
         private String prTitle;
         private String playerGitHubUsername;
-        private String ossAccessKeyId;
-        private String ossAccessKeySecret;
+        private String accessKeyId;
+        private String accessKeySecret;
         private String repoPullUrl;
         private String repoPushUrl;
         private String publicBravePeopleAllJsonUrl;
@@ -186,13 +190,13 @@ class Environment {
             return this;
         }
 
-        EnvironmentBuilder setOssAccessKeyId(String ossAccessKeyId) {
-            this.ossAccessKeyId = ossAccessKeyId;
+        EnvironmentBuilder setAccessKeyId(String accessKeyId) {
+            this.accessKeyId = accessKeyId;
             return this;
         }
 
-        EnvironmentBuilder setOssAccessKeySecret(String ossAccessKeySecret) {
-            this.ossAccessKeySecret = ossAccessKeySecret;
+        EnvironmentBuilder setAccessKeySecret(String accessKeySecret) {
+            this.accessKeySecret = accessKeySecret;
             return this;
         }
 
@@ -203,18 +207,18 @@ class Environment {
 
         Environment build() {
             return new Environment(
-                    workspaceDir,
-                    headRef,
-                    prNumber,
-                    prTitle,
-                    playerGitHubUsername,
-                    ossAccessKeyId,
-                    ossAccessKeySecret,
-                    repoPullUrl,
-                    repoPushUrl,
-                    publicBravePeopleAllJsonUrl == null ?
-                            Constants.PUBLIC_BRAVE_PEOPLE_JSON_ALL_URL :
-                            publicBravePeopleAllJsonUrl
+                workspaceDir,
+                headRef,
+                prNumber,
+                prTitle,
+                playerGitHubUsername,
+                accessKeyId,
+                accessKeySecret,
+                repoPullUrl,
+                repoPushUrl,
+                publicBravePeopleAllJsonUrl == null ?
+                    Constants.PUBLIC_BRAVE_PEOPLE_JSON_ALL_URL :
+                    publicBravePeopleAllJsonUrl
             );
         }
     }

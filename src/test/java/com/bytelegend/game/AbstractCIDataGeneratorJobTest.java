@@ -29,11 +29,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGeneratorJobTest {
     protected abstract void runJob(String player, String headRef) throws Exception;
 
-    protected abstract void mockOssBravePeopleAllJson(File workspace, String json) throws Exception;
+    protected abstract void mockBravePeopleAllJson(File workspace, String json) throws Exception;
 
-    protected abstract void assertOssBravePeopleAllJson(Consumer<List<AllInfoTile>> consumer) throws Exception;
+    protected abstract void assertBravePeopleAllJson(Consumer<List<AllInfoTile>> consumer) throws Exception;
 
-    protected abstract void assertOssUpload();
+    protected abstract void assertUpload();
 
     @Test
     public void playerCanAddTile() throws Exception {
@@ -47,8 +47,8 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
         runJob("blindpirate", "blindpirate_my-branch");
 
         assertImageWritten(getOutputBravePeopleImage(), 0, 0, "rgba(255,0,0,255)");
-        assertOssUpload();
-        assertOssBravePeopleAllJson(tiles -> {
+        assertUpload();
+        assertBravePeopleAllJson(tiles -> {
                     assertEquals(3, tiles.size());
                     AllInfoTile addedTile = tiles.stream().filter(it -> it.getUsername().equals("blindpirate"))
                             .findFirst()
@@ -72,8 +72,8 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
         runJob("ByteLegendBot", "ByteLegendBot_my-branch");
 
         assertImageWritten(getOutputBravePeopleImage(), 1, 1, "rgba(255,255,255,255)");
-        assertOssUpload();
-        assertOssBravePeopleAllJson(tiles -> {
+        assertUpload();
+        assertBravePeopleAllJson(tiles -> {
                     assertEquals(2, tiles.size());
                     AllInfoTile changedTile = tiles.stream().filter(it -> it.getUsername().equals("ByteLegendBot"))
                             .findFirst()
@@ -102,7 +102,7 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
         runJob("ByteLegendBot", "ByteLegendBot_my-branch");
 
         assertImageWritten(getOutputBravePeopleImage(), 1, 1, "rgba(255,255,255,255)");
-        assertOssUpload();
+        assertUpload();
         assertFinalJsonContains("ByteLegendBot", "#FFFFFF");
         assertFinalJsonNotContains("#000000");
         assertLastCommitMessageContains("ByteLegendBot");
@@ -177,10 +177,10 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
         runJob("blindpirate", "blindpirate_my-branch");
 
         assertImageWritten(getOutputBravePeopleImage(), 2, 1, "rgba(0,255,0,255)");
-        assertOssUpload();
+        assertUpload();
         // pretty printed
         assertTrue(Files.readAllLines(new File(workspace, BRAVE_PEOPLE_JSON).toPath()).size() > 3);
-        assertOssBravePeopleAllJson(list -> {
+        assertBravePeopleAllJson(list -> {
                     assertTiles(list);
                     assertTilesWithTimestamp(list);
                     assertTrue(isClose(Instant.now(), list.get(2).getCreatedAt()));
@@ -245,7 +245,7 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
                     allInfoTile.setChangedAt(Instant.parse("2021-02-14T00:00:00.00Z"));
                     return allInfoTile;
                 }).collect(toList());
-        mockOssBravePeopleAllJson(workspace, OBJECT_MAPPER.writeValueAsString(allInfoTiles));
+        mockBravePeopleAllJson(workspace, OBJECT_MAPPER.writeValueAsString(allInfoTiles));
     }
 
     void assertFinalJsonContains(String... keywords) throws Exception {

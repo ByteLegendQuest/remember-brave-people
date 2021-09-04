@@ -12,13 +12,12 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-import java.util.concurrent.ThreadFactory;
 import java.util.stream.Collectors;
 
 class Downloader {
     private final int THREAD_NUM = 20;
     private final Environment environment;
-    private final ExecutorService threadPool = Executors.newFixedThreadPool(THREAD_NUM, (ThreadFactory) r -> {
+    private final ExecutorService threadPool = Executors.newFixedThreadPool(THREAD_NUM, r -> {
         Thread t = new Thread(r);
         t.setDaemon(true);
         return t;

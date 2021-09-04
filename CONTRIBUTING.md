@@ -9,25 +9,24 @@ There are a few scenarios this repository covers:
 - Player modifies `brave-people.json`, runs the build locally to verify the change.
   - Run `./gradlew run`, the files are generated at `./build`.
 - Player modifies `brave-people.json`, then creates PR.
-  - `rememeber-brave-people` GitHub workflow is triggered. 
+  - `rememeber-brave-people` GitHub workflow is triggered.
     - This is executed in Docker container to make it super fast.
     - If there are any changes other than `rememeber-brave-people.json`, fail.
     - Checks the changes are legitimate, for example, you can't overwrite other people's tile.
     - Generate new data based on existing `brave-people.png`/`brave-people-info.json`.
     - Commit and push new data to `brave-people.png`/`brave-people-info.json`.
-    - Push to Alibaba OSS
   - When the workflow starts, ByteLegend webhook is triggered to display animation in the game page.
     - If the workflow fails, display failure animation.
     - Otherwise, `ByteLegendBot` merges the PR, says congratulations to the player.
-- A daily trigger refreshes `brave-people.png`/`brave-people-info.json` and push them to OSS.
+- A daily trigger refreshes `brave-people.png`/`brave-people-info.json` and upload them to GitHub (we use `data` branch as the storage).
 - Player helps improve the code, makes changes other than `brave-people.json`, then creates PR.
-  - `check` GitHub workflow is triggered. 
+  - `check` GitHub workflow is triggered.
   - `./gradlew check` is executed to make sure nothing breaks.
   - Wait for the administrator approve and merge manually.
 - Update the docker image manually after changes to production code.
   - TODO: this is triggered manually now. We can make `ByteLegendBot` do this.
   - TODO: we should update the data after changes to production code.
-  
+
 ### Workflows
 
 - `remember-brave-people`: triggered upon PR with changes on `brave-people.json`.
