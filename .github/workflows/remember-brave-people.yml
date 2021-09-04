@@ -24,6 +24,7 @@ jobs:
           -DworkspaceDir=/workspace
           -DplayerGitHubUsername=${{ github.event.pull_request.user.login }}
           -DprTitle='${{ github.event.pull_request.title }}'
+          -DprNumber=${{ github.event.pull_request.number }}
           -DaccessKeyId=${{ secrets.AWS_ACCESS_KEY_ID }}
           -DaccessKeySecret=${{ secrets.AWS_ACCESS_KEY_SECRET }}
           -DheadRef=${{ github.event.pull_request.user.login }}_${{ github.event.pull_request.head.ref }}
