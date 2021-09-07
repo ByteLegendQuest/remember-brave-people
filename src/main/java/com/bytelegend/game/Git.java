@@ -35,7 +35,7 @@ class Git {
                 latestData.removeIf(tile -> tile.getUsername().equals(diff.getChangedTile().getUsername()));
 
                 if (latestData.stream().anyMatch(it ->
-                        it.getX() == diff.getChangedTile().getX() && it.getY() == diff.getChangedTile().getY())) {
+                    it.getX() == diff.getChangedTile().getX() && it.getY() == diff.getChangedTile().getY())) {
                     throw new IllegalStateException("Your change conflicts with other one's change, you need to sync upstream repository!");
                 }
 
@@ -53,13 +53,13 @@ class Git {
         }
 
         shell.execSuccessfully("git", "commit", "-m",
-                String.format("%s (#%s)\n\n"
-                                + "Thanks to @%s's contribution!\n\n"
-                                + "%s",
-                        environment.getPrTitle(), environment.getPrNumber(),
-                        environment.getPlayerGitHubUsername(),
-                        getCoAuthoredBy()
-                )
+            String.format("%s (#%s)\n\n"
+                    + "Thanks to @%s's contribution!\n\n"
+                    + "%s",
+                environment.getPrTitle(), environment.getPrNumber(),
+                environment.getPlayerGitHubUsername(),
+                getCoAuthoredBy()
+            )
         );
     }
 
@@ -85,6 +85,6 @@ class Git {
     }
 
     String findForkPointTo(String targetBranch) throws Exception {
-        return shell.exec("git", "merge-base", "--fork-point", targetBranch, "HEAD").assertZeroExit().stdout.trim();
+        return shell.exec("git", "merge-base", targetBranch, "HEAD").assertZeroExit().stdout.trim();
     }
 }

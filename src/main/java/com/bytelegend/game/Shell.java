@@ -40,14 +40,14 @@ class Shell {
         boolean latchResult = latch.await(1, TimeUnit.MINUTES);
         if (!result || !latchResult) {
             throw new IllegalStateException("Timeout waiting " + Arrays.toString(args) +
-                    "\nstdout:\n" + stdout + "\nstderr:\n" + stderr);
+                "\nstdout:\n" + stdout + "\nstderr:\n" + stderr);
         }
         return new ExecResult(
-                Arrays.asList(args),
-                process.exitValue(),
-                workingDir.getAbsolutePath(),
-                stdout.toString(),
-                stderr.toString()
+            Arrays.asList(args),
+            process.exitValue(),
+            workingDir.getAbsolutePath(),
+            stdout.toString(),
+            stderr.toString()
         );
     }
 
@@ -85,7 +85,9 @@ class ExecResult {
 
     ExecResult assertZeroExit() {
         withLog();
-        assert exitValue == 0;
+        if (exitValue != 0) {
+            throw new AssertionError();
+        }
         return this;
     }
 
