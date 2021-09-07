@@ -7,7 +7,7 @@
   
   ## 太长不看的描述
   
-  - 修改`brave-people.json`，在里面加入你的**GitHub用户名**，坐标和喜欢的颜色，然后创建一个pull request。
+  - 修改`brave-people.json`，在里面加入你的**GitHub用户ID (不是你自己的名字)**，坐标和喜欢的颜色，然后创建一个pull request。
   - 回到[字节传说](https://bytelegend.com)，然后查看`(V, 92)`游戏坐标处的公告牌。
 </details>
 
@@ -19,7 +19,7 @@ This challenge is intended to teach you how to create a pull request.
 
 ## TL;DR
 
-- Change `brave-people.json`, add **your GitHub username**, coordinate and favorite color, then create a pull request. 
+- Change `brave-people.json`, add **your GitHub ID (NOT your name)**, coordinate and favorite color, then create a pull request. 
 - Go back to [ByteLegend](https://bytelegend.com) and check out the noticeboard at `(V, 92)` game coordinate.
 
 ## Implementation details (Don't read this unless you want to understand how this repository works)
