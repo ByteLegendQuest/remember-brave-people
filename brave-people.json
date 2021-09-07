@@ -5,6 +5,7 @@
   {"x": 4, "y": 4, "color": "#FF9800", "username": "JB962"},
   {"x": 6, "y": 6, "color": "#666666", "username": "hah1346798520"},
   {"x": 5, "y": 5, "color": "#000000", "username": "oooooutsider"},
+  {"x": 7, "y": 7, "color": "#ffffcc", "username": "wjl-lab"},
   {"x": 8, "y": 8, "color": "#000000", "username": "kisslonglin"},
   {"x": 0, "y": 1, "color": "#FF0000", "username": "wangjie-fourth"},
   {"x": 3, "y": 0, "color": "#666666", "username": "gtn1024"},
@@ -22,6 +23,11 @@
   {"x": 3, "y": 19, "color": "#CFE2F3", "username": "FormatToday"},
   {"x": 3, "y": 3, "color": "#666666", "username": "Zengtianshunyi"},
   {"x": 11, "y": 11, "color": "#454545", "username": "narutobing"},
+<<<<<<< HEAD
   {"x": 19, "y": 10, "color": "#000000", "username": "StormChen"}
 
+=======
+  {"x": 9, "y": 9, "color": "#000000", "username": "StormChen"},
+  {"x": 2, "y": 0, "color": "#ffffff", "username": "feng-siwei"}
+>>>>>>> 62328f575c390a4aa7f781c90bd5ea01d1cbf83d
 ]
