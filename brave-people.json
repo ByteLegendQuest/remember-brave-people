@@ -328,14 +328,19 @@
   "y" : 15,
   "color" : "#000000",
   "username" : "Rainxbow"
-} ,{
+}, {
   "x" : 7,
   "y" : 0,
   "color" : "#000000",
   "username" : "z77881200"
-},{
+}, {
   "x" : 9,
   "y" : 11,
   "color" : "#001000",
   "username" : "xnhlf"
+}, {
+  "x" : 9,
+  "y" : 7,
+  "color" : "#33B8FF",
+  "username" : "alvinvinvinvin"
 }]
