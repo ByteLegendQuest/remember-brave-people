@@ -3,7 +3,9 @@
   "y" : 0,
   "color" : "#FF0000",
   "username" : "blindpirate"
-}, {
+},
+
+ {
   "x" : 0,
   "y" : 1,
   "color" : "#FF0000",
@@ -133,7 +135,14 @@
   "y" : 5,
   "color" : "#1F1E33",
   "username" : "Bu-zheng"
-}, {
+}, 
+ {
+  "x" : 9,
+  "y" : 8,
+  "color" : "#ffffcc",
+  "username" : "50645596"
+},
+ {
   "x" : 9,
   "y" : 9,
   "color" : "#000000",
