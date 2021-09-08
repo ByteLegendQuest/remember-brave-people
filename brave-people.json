@@ -169,6 +169,11 @@
   "color" : "#000000",
   "username" : "8790"
 }, {
+  "x": 9, 
+  "y": 10, 
+  "color": "#78DCFA",
+  "username": "sleeper"
+}, {
   "x" : 9,
   "y" : 19,
   "color" : "#FFFFFF",
