@@ -130,6 +130,11 @@
   "username" : "kisslonglin"
 }, {
   "x" : 9,
+  "y" : 8,
+  "color" : "#ffffcc",
+  "username" : "wenjialu"
+}, {
+  "x" : 9,
   "y" : 5,
   "color" : "#1F1E33",
   "username" : "Bu-zheng"
