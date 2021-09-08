@@ -11,7 +11,7 @@
   - 回到[字节传说](https://bytelegend.com)，然后查看`(V, 92)`游戏坐标处的公告牌。
 
   ## 详细步骤
-  请参考：https://github.com/ByteLegendQuest/remember-brave-people/blob/master/docs/zh/create-your-first-pull-request.md
+  点击[这里](https://github.com/ByteLegendQuest/remember-brave-people/blob/master/docs/zh/create-your-first-pull-request.md)查看详细步骤。
 
 </details>
 
@@ -26,7 +26,9 @@ This challenge is intended to teach you how to create a pull request.
 - Change `brave-people.json`, add **your GitHub ID (NOT your name)**, coordinate and favorite color, then create a pull request.
 - Go back to [ByteLegend](https://bytelegend.com) and check out the noticeboard at `(V, 92)` game coordinate.
 
-## FAQ:
+## Instructions
+
+Check out [here](https://github.com/ByteLegendQuest/remember-brave-people/blob/master/docs/en/create-your-first-pull-request.md) for detailed instructions.
 
 ## Implementation details (Don't read this unless you want to understand how this repository works)
 
