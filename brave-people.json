@@ -104,6 +104,11 @@
   "color" : "#000000",
   "username" : "oooooutsider"
 }, {
+  "x" : 5,
+  "y" : 15,
+  "color" : "#101010",
+  "username" : "XiangMing"
+}, {
   "x" : 6,
   "y" : 0,
   "color" : "#66ffcc",
