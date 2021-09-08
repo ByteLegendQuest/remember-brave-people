@@ -45,6 +45,11 @@
   "username" : "feng-siwei"
 }, {
   "x" : 2,
+  "y" : 1,
+  "color" : "#F4F5F6",
+  "username" : "DC1024"
+}, {
+  "x" : 2,
   "y" : 2,
   "color" : "#FF9900",
   "username" : "kalac2232"
@@ -63,6 +68,11 @@
   "y" : 3,
   "color" : "#666666",
   "username" : "Zengtianshunyi"
+}, {
+  "x" : 3,
+  "y" : 5,
+  "color" : "#EEEEE0",
+  "username" : "OKLetsPEE"
 }, {
   "x" : 3,
   "y" : 19,
@@ -99,6 +109,11 @@
   "color" : "#C3EDC7",
   "username" : "beidongjiedeguang"
 }, {
+  "x" : 6,
+  "y" : 16,
+  "color" : "#1F1E33",
+  "username" : "Ruri1101"
+}, {
   "x" : 7,
   "y" : 7,
   "color" : "#ffffcc",
@@ -115,9 +130,19 @@
   "username" : "kisslonglin"
 }, {
   "x" : 9,
+  "y" : 5,
+  "color" : "#1F1E33",
+  "username" : "Bu-zheng"
+}, {
+  "x" : 9,
   "y" : 9,
   "color" : "#000000",
   "username" : "8790"
+}, {
+  "x" : 10,
+  "y" : 0,
+  "color" : "#FFFFFF",
+  "username" : "chen-qingyu"
 }, {
   "x" : 10,
   "y" : 10,
@@ -149,6 +174,11 @@
   "color" : "#0000FF",
   "username" : "jiaoff-hub"
 }, {
+  "x" : 14,
+  "y" : 14,
+  "color" : "#FFFFFF",
+  "username" : "Renmie"
+}, {
   "x" : 15,
   "y" : 15,
   "color" : "#FFFFFF",
@@ -158,6 +188,11 @@
   "y" : 16,
   "color" : "#66CCFF",
   "username" : "yyq90"
+}, {
+  "x" : 17,
+  "y" : 3,
+  "color" : "#b36d61",
+  "username" : "kaifanlezz"
 }, {
   "x" : 17,
   "y" : 17,
@@ -193,34 +228,4 @@
   "y" : 19,
   "color" : "#FFFFFF",
   "username" : "chengww5217"
-}, {
-  "x" : 14,
-  "y" : 14,
-  "color" : "#FFFFFF",
-  "username" : "Renmie"  
-}, {
-  "x" : 10,
-  "y" : 0,
-  "color" : "#FFFFFF",
-  "username" : "chen-qingyu"  
-  }, {
-  "x" : 3,
-  "y" : 5,
-  "color" : "#EEEEE0",
-  "username" : "OKLetsPEE"
-}, {
-  "x" : 2,
-  "y" : 1,
-  "color" : "#F4F5F6",
-  "username" : "DC1024"
-}, {
-  "x" : 6,
-  "y" : 16,
-  "color" : "#1F1E33",
-  "username" : "Ruri1101"
-}, {
-  "x" : 9,
-  "y" : 5,
-  "color" : "#1F1E33",
-  "username" : "Bu-zheng"
-}  ]
+} ]
