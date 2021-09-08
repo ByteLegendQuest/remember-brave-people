@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CHANGED_FILES=`git diff --name-only origin/master HEAD`
+CHANGED_FILES=`git diff --name-only --merge-base origin/master`
 
 CHANGED_FILE_LIST=($(echo "$CHANGED_FILES" | sed 's/"//g' | sed 's/:/ /g'))
 WHITELIST=($(cat .github/whitelist.txt | sed 's/"//g' | sed 's/:/ /g'))
