@@ -1,4 +1,10 @@
-[ {
+[{
+  "x" : 10,
+  "y" : 11,
+  "color" : "#000000",
+  "username" : "helianthuswhite"
+},
+  {
   "x" : 11,
   "y" : 17,
   "color" : "#02a2ff",
