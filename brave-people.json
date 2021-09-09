@@ -1,5 +1,11 @@
 [ {
   "x" : 0,
+  "y" : 4,
+  "color" : "#02a2ff",
+  "username" : "zengallen8235"
+}
+  {
+  "x" : 0,
   "y" : 0,
   "color" : "#FF0000",
   "username" : "blindpirate"
