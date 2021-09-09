@@ -399,10 +399,15 @@
   "y" : 8,
   "color" : "#FFFFFF",
   "username" : "rvirtualea9"
-  }, {
+}, {
   "x" : 0,
   "y" : 8,
   "color" : "#FFFFFF",
   "username" : "qishiazusa"
+}, {
+  "x" : 18,
+  "y" : 1,
+  "color" : "#3CAEA3",
+  "username" : "hsldymq"
 }
 ]
