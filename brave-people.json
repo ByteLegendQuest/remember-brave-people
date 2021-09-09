@@ -444,11 +444,10 @@
   "y" : 1,
   "color" : "#00CBD4",
   "username" : "vlzz1221"
-},
- {  
-  "x" : 12,
-  "y" : 6,
-  "color" : "#00CCD4",
-  "username" : "Herosi77"
+}, {  
+  "x" : 11,
+  "y" : 0,
+  "color" : "#000FFF",
+  "username" : "magiciansem"
 }
 ]
