@@ -2,7 +2,7 @@
 
 请严格按照以下步骤进行，否则你会浪费自己的时间反复重试。
 
-在本项目的首页，点击`brave-people.json`，然后在打开的页面里，点击编辑按钮（铅笔图标）：
+在项目的首页，点击`brave-people.json`，然后在打开的页面里，点击编辑按钮（铅笔图标）：
 
 ![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/create-pr-open-json.png)
 
