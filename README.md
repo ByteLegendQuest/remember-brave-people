@@ -8,10 +8,8 @@
   ## 太长不看的描述
 
   - 修改`brave-people.json`，在里面加入你的**GitHub用户ID (不是你自己的名字)**，坐标和喜欢的颜色，然后创建一个pull request。
+    点击[这里](https://github.com/ByteLegendQuest/remember-brave-people/blob/master/docs/zh/create-your-first-pull-request.md)查看详细步骤。
   - 回到[字节传说](https://bytelegend.com)，然后查看`(V, 92)`游戏坐标处的公告牌。
-
-  ## 详细步骤
-  点击[这里](https://github.com/ByteLegendQuest/remember-brave-people/blob/master/docs/zh/create-your-first-pull-request.md)查看详细步骤。
 
 </details>
 

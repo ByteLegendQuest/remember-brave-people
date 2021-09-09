@@ -28,4 +28,4 @@
 
 ![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/create-pr-confirm.png)
 
-如果提交的Pull Request被拒绝，99%是因为你没有按照步骤严格进行，请重试。
+如果提交的Pull Request被拒绝，99%是因为你没有按照步骤严格进行，请检查[错误排查指南](https://github.com/ByteLegendQuest/remember-brave-people/blob/master/docs/zh/frequent-failures.md)后重试。

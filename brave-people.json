@@ -1,24 +1,13 @@
-[{
-  "x" : 10,
-  "y" : 11,
-  "color" : "#000000",
-  "username" : "helianthuswhite"
-},{
-  "x" : 16,
-  "y" : 10,
-  "color" : "#000000",
-  "username" : "haozhuang"
-},
-  {
-  "x" : 11,
-  "y" : 17,
-  "color" : "#02a2ff",
-  "username" : "zengallen8235"
-},{
+[ {
   "x" : 0,
   "y" : 0,
   "color" : "#FF0000",
   "username" : "blindpirate"
+}, {
+  "x" : 15,
+  "y" : 5,
+  "color" : "#FF0000",
+  "username" : "RayLannis"
 }, {
   "x" : 0,
   "y" : 1,
@@ -34,6 +23,11 @@
   "y" : 3,
   "color" : "#b36d61",
   "username" : "shanghaox"
+}, {
+  "x" : 0,
+  "y" : 8,
+  "color" : "#FFFFFF",
+  "username" : "qishiazusa"
 }, {
   "x" : 0,
   "y" : 10,
@@ -70,6 +64,21 @@
   "color" : "#000000",
   "username" : "HermanVong"
 }, {
+  "x" : 1,
+  "y" : 15,
+  "color" : "#00FFFF",
+  "username" : "lineazy"
+}, {
+  "x" : 1,
+  "y" : 18,
+  "color" : "#111111",
+  "username" : "miueon"
+}, {
+  "x" : 1,
+  "y" : 19,
+  "color" : "#02a2ff",
+  "username" : "2333hbg"
+}, {
   "x" : 2,
   "y" : 0,
   "color" : "#ffffff",
@@ -85,6 +94,11 @@
   "color" : "#FF9900",
   "username" : "kalac2232"
 }, {
+  "x" : 2,
+  "y" : 5,
+  "color" : "#FFFFFF",
+  "username" : "SaionChi"
+}, {
   "x" : 3,
   "y" : 0,
   "color" : "#666666",
@@ -94,6 +108,11 @@
   "y" : 1,
   "color" : "#666666",
   "username" : "greek-zzf"
+}, {
+  "x" : 3,
+  "y" : 2,
+  "color" : "#000000",
+  "username" : "dfgedc"
 }, {
   "x" : 3,
   "y" : 3,
@@ -106,6 +125,11 @@
   "username" : "OKLetsPEE"
 }, {
   "x" : 3,
+  "y" : 8,
+  "color" : "#000000",
+  "username" : "achenjs"
+}, {
+  "x" : 3,
   "y" : 19,
   "color" : "#CFE2F3",
   "username" : "FormatToday"
@@ -114,6 +138,11 @@
   "y" : 0,
   "color" : "#0000FF",
   "username" : "sweetln"
+}, {
+  "x" : 4,
+  "y" : 1,
+  "color" : "#000000",
+  "username" : "shikaiguo"
 }, {
   "x" : 4,
   "y" : 4,
@@ -129,6 +158,11 @@
   "y" : 5,
   "color" : "#000000",
   "username" : "oooooutsider"
+}, {
+  "x" : 5,
+  "y" : 12,
+  "color" : "#F00000",
+  "username" : "salaku001"
 }, {
   "x" : 5,
   "y" : 15,
@@ -151,9 +185,19 @@
   "username" : "beidongjiedeguang"
 }, {
   "x" : 6,
+  "y" : 14,
+  "color" : "#1A2B3C",
+  "username" : "Moooooontreal"
+}, {
+  "x" : 6,
   "y" : 16,
   "color" : "#1F1E33",
   "username" : "Ruri1101"
+}, {
+  "x" : 7,
+  "y" : 0,
+  "color" : "#000000",
+  "username" : "z77881200"
 }, {
   "x" : 7,
   "y" : 7,
@@ -166,9 +210,24 @@
   "username" : "Keswill"
 }, {
   "x" : 8,
+  "y" : 0,
+  "color" : "#000FFF",
+  "username" : "Oppus"
+}, {
+  "x" : 8,
   "y" : 1,
   "color" : "#114514",
   "username" : "lbr77"
+}, {
+  "x" : 8,
+  "y" : 2,
+  "color" : "#63CCFF",
+  "username" : "vadedeloewen"
+}, {
+  "x" : 8,
+  "y" : 3,
+  "color" : "#000000",
+  "username" : "daoBrother"
 }, {
   "x" : 8,
   "y" : 8,
@@ -180,10 +239,25 @@
   "color" : "#66CCFF",
   "username" : "zhy910827"
 }, {
+  "x" : 8,
+  "y" : 12,
+  "color" : "#000FFF",
+  "username" : "zakcseen"
+}, {
+  "x" : 9,
+  "y" : 0,
+  "color" : "#FFFFFF",
+  "username" : "JimmyiZhang"
+}, {
   "x" : 9,
   "y" : 5,
   "color" : "#1F1E33",
   "username" : "Bu-zheng"
+}, {
+  "x" : 9,
+  "y" : 7,
+  "color" : "#33B8FF",
+  "username" : "alvinvinvinvin"
 }, {
   "x" : 9,
   "y" : 8,
@@ -195,10 +269,30 @@
   "color" : "#000000",
   "username" : "8790"
 }, {
-  "x": 9, 
-  "y": 10, 
-  "color": "#78DCFA",
-  "username": "sleeper"
+  "x" : 9,
+  "y" : 10,
+  "color" : "#78DCFA",
+  "username" : "sleeper"
+}, {
+  "x" : 9,
+  "y" : 11,
+  "color" : "#001000",
+  "username" : "xnhlf"
+}, {
+  "x" : 9,
+  "y" : 15,
+  "color" : "#000000",
+  "username" : "Rainxbow"
+}, {
+  "x" : 9,
+  "y" : 17,
+  "color" : "#FFFFFF",
+  "username" : "retterwang"
+}, {
+  "x" : 9,
+  "y" : 18,
+  "color" : "#FFFFFF",
+  "username" : "wangzepu"
 }, {
   "x" : 9,
   "y" : 19,
@@ -216,9 +310,24 @@
   "username" : "zaishiqingyuan"
 }, {
   "x" : 10,
+  "y" : 9,
+  "color" : "#1A2B3C",
+  "username" : "hrbattery"
+}, {
+  "x" : 10,
   "y" : 10,
   "color" : "#000000",
   "username" : "Yijia-Z"
+}, {
+  "x" : 10,
+  "y" : 11,
+  "color" : "#000000",
+  "username" : "helianthuswhite"
+}, {
+  "x" : 11,
+  "y" : 0,
+  "color" : "#FFFFFF",
+  "username" : "magiciansem"
 }, {
   "x" : 11,
   "y" : 1,
@@ -230,15 +339,45 @@
   "color" : "#454545",
   "username" : "narutobing"
 }, {
+  "x" : 11,
+  "y" : 15,
+  "color" : "#FFFFFF",
+  "username" : "NanGua-007"
+}, {
+  "x" : 11,
+  "y" : 17,
+  "color" : "#02a2ff",
+  "username" : "zengallen8235"
+}, {
+  "x" : 12,
+  "y" : 6,
+  "color" : "#00CCD4",
+  "username" : "Herosi77"
+}, {
   "x" : 12,
   "y" : 12,
   "color" : "#0969DA",
   "username" : "fake-zyk"
 }, {
+  "x" : 12,
+  "y" : 19,
+  "color" : "#02a2ff",
+  "username" : "bbbhp"
+}, {
+  "x" : 13,
+  "y" : 8,
+  "color" : "#FFFFFF",
+  "username" : "rvirtualea9"
+}, {
   "x" : 13,
   "y" : 13,
   "color" : "#5588FF",
   "username" : "LamentWy"
+}, {
+  "x" : 13,
+  "y" : 14,
+  "color" : "#FFFFFF",
+  "username" : "V7ita"
 }, {
   "x" : 14,
   "y" : 5,
@@ -250,6 +389,11 @@
   "color" : "#FFFFFF",
   "username" : "Renmie"
 }, {
+  "x" : 14,
+  "y" : 17,
+  "color" : "#FFFFFF",
+  "username" : "hklkfm"
+}, {
   "x" : 15,
   "y" : 15,
   "color" : "#FFFFFF",
@@ -259,6 +403,11 @@
   "y" : 9,
   "color" : "#fff333",
   "username" : "khsing"
+}, {
+  "x" : 16,
+  "y" : 10,
+  "color" : "#000000",
+  "username" : "haozhuang"
 }, {
   "x" : 16,
   "y" : 16,
@@ -275,15 +424,30 @@
   "color" : "#00FFE6",
   "username" : "Alexxx1120"
 }, {
+  "x" : 17,
+  "y" : 19,
+  "color" : "#FFFFFF",
+  "username" : "jiargcn"
+}, {
   "x" : 18,
   "y" : 0,
   "color" : "#66CCFF",
   "username" : "guoxiaobie"
 }, {
   "x" : 18,
+  "y" : 1,
+  "color" : "#3CAEA3",
+  "username" : "hsldymq"
+}, {
+  "x" : 18,
   "y" : 12,
   "color" : "#FFFFFF",
   "username" : "fibercoke"
+}, {
+  "x" : 18,
+  "y" : 15,
+  "color" : "#FFFFFF",
+  "username" : "755328872"
 }, {
   "x" : 18,
   "y" : 18,
@@ -301,127 +465,22 @@
   "username" : "tythen"
 }, {
   "x" : 19,
-  "y" : 10,
-  "color" : "#000000",
-  "username" : "StormChen94"
-}, {
-  "x" : 19,
-  "y" : 19,
-  "color" : "#FFFFFF",
-  "username" : "chengww5217"
-}, {
-  "x" : 17,
-  "y" : 19,
-  "color" : "#FFFFFF",
-  "username" : "jiargcn"
-}, {
-  "x" : 1,
-  "y" : 15,
-  "color" : "#00FFFF",
-  "username" : "lineazy"
-}, {
-  "x" : 8,
-  "y" : 3,
-  "color" : "#000000",
-  "username" : "daoBrother"
-}, {
-  "x" : 3,
-  "y" : 8,
-  "color" : "#000000",
-  "username" : "achenjs"
-}, {
-  "x" : 3,
-  "y" : 2,
-  "color" : "#000000",
-  "username" : "dfgedc"
-}, {
-  "x" : 1,
-  "y" : 18,
-  "color" : "#111111",
-  "username" : "miueon"
-}, {
-  "x" : 9,
-  "y" : 15,
-  "color" : "#000000",
-  "username" : "Rainxbow"
-}, {
-  "x" : 7,
-  "y" : 0,
-  "color" : "#000000",
-  "username" : "z77881200"
-}, {
-  "x" : 9,
-  "y" : 11,
-  "color" : "#001000",
-  "username" : "xnhlf"
-}, {
-  "x" : 9,
-  "y" : 7,
-  "color" : "#33B8FF",
-  "username" : "alvinvinvinvin"
-}, {
-  "x" : 1,
-  "y" : 19,
-  "color" : "#02a2ff",
-  "username" : "2333hbg"
-}, {
-  "x" : 12,
-  "y" : 19,
-  "color" : "#02a2ff",
-  "username" : "bbbhp"
-}, {
-  "x" : 9,
-  "y" : 0,
-  "color" : "#FFFFFF",
-  "username" : "JimmyiZhang"
-}, {
-  "x" : 11,
-  "y" : 15,
-  "color" : "#FFFFFF",
-  "username" : "NanGua-007"
-}, {
-  "x" : 9,
-  "y" : 18,
-  "color" : "#FFFFFF",
-  "username" : "wangzepu"
-}, {
-  "x" : 9,
-  "y" : 17,
-  "color" : "#FFFFFF",
-  "username" : "retterwang"
-}, {
-  "x" : 2,
-  "y" : 5,
-  "color" : "#FFFFFF",
-  "username" : "SaionChi"
+  "y" : 1,
+  "color" : "#00CBD4",
+  "username" : "vlzz1221"
 }, {
   "x" : 19,
   "y" : 8,
   "color" : "#FFFFFF",
   "username" : "BestOverall"
 }, {
-  "x" : 13,
-  "y" : 8,
-  "color" : "#FFFFFF",
-  "username" : "rvirtualea9"
+  "x" : 19,
+  "y" : 10,
+  "color" : "#000000",
+  "username" : "StormChen94"
 }, {
-  "x" : 0,
-  "y" : 8,
-  "color" : "#FFFFFF",
-  "username" : "qishiazusa"
-}, {
-  "x" : 18,
-  "y" : 1,
-  "color" : "#3CAEA3",
-  "username" : "hsldymq"
-}, {
-  "x" : 14,
-  "y" : 17,
-  "color" : "#FFFFFF",
-  "username" : "hklkfm"
-}, {
-  "x" : 13,
-  "y" : 14,
+  "x" : 19,
+  "y" : 19,
   "color" : "#FFFFFF",
   "username" : "V7ita"
 }, {  
@@ -441,3 +500,4 @@
   "username" : "backslide"
 }
 ]
+
