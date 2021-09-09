@@ -363,5 +363,11 @@
   "y" : 0,
   "color" : "#FFFFFF",
   "username" : "JimmyiZhang"
+},
+ {
+  "x" : 10,
+  "y" : 9,
+  "color" : "#FFFFFF",
+  "username" : "Like"
 }
 ]
