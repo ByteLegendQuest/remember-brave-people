@@ -402,7 +402,13 @@
   }, {
   "x" : 0,
   "y" : 8,
-  "color" : "#FFFFFF",
+  "color" : "#F66FFF",
   "username" : "qishiazusa"
+}
+ {
+  "x" : 6,
+  "y" : 6,
+  "color" : "#666FFF",
+  "username" : "Herosi77"
 }
 ]
