@@ -498,5 +498,10 @@
   "y" : 16,
   "color" : "#FFFFFF",
   "username" : "skywhat"
-} 
+} , {
+  "x" : 17,
+  "y" : 6,
+  "color" : "#00CCFF",
+  "username" : "gudaoxifengshouma"
+}
 ]
