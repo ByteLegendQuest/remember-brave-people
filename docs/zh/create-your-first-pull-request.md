@@ -14,8 +14,9 @@
 
 ![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/create-pr-copy.png)
 
-粘贴，并修改其中的坐标，颜色和GitHub ID。**注意，非常重要！！**
+粘贴到原先的文件尾部的右方括号(`]`)前，并修改其中的坐标，颜色和GitHub ID。**注意，非常重要！！!**
 
+- **粘贴到原先的文件里，不是下面的"Propose changes"的那两个框里！！！是原先的文件框里！！！下图的箭头位置！！！**
 - **找一个空闲的坐标(x,y)，否则你的PR会被拒绝合入（你也不希望自己的格子被别人覆盖掉对吧？）**
 - **挑一个自己喜欢的颜色，如果不知道怎么找，和别人的颜色一致也无妨。**
 - **替换成你自己的GitHub ID，不是你的真实姓名或者其他的什么昵称，否则你的PR会被拒绝合入。**

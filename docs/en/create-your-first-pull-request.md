@@ -14,9 +14,10 @@ Copy a bunch of code from the existing file, **note that it must start with a co
 
 ![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/create-pr-copy.png)
 
-Paste and modify the coordinate, color and GitHub ID in it. **VERY IMPORTANT NOTE:**
+Paste into the **original file box**, before the right bracket (`]`), then modify the coordinate, color and GitHub ID in it. **VERY IMPORTANT NOTE:**
 
-- **Find an available coordinate(x,y), otherwise your PR will be rejected. (You don't like your tile overwritten by other people, right?)**
+- **Paste into the original box, NOT the two "Propose changes" boxes!!! The position pointed by the red arrow below!!!**
+- **Find an available coordinate (x,y), otherwise your PR will be rejected. (You don't like your tile overwritten by other people, right?)**
 - **Pick up your favorite color, or use the same as others if you don't know how.**
 - **Replace with your GitHub ID, not your real name or nickname, otherwise your PR will be rejected.**
 
