@@ -108,6 +108,21 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
         assertLastCommitMessageContains("ByteLegendBot");
     }
 
+    // https://github.com/ByteLegendQuest/remember-brave-people/pull/298/files
+    @Test
+    public void failIfPlayerAddsMoreThanOneTiles() throws Exception {
+        createPullRequest(workspace, fork, "ByteLegendBot",
+            "[\n" +
+                "{\"username\":\"ByteLegendBot\",\"x\":1,\"y\":2,\"color\":\"#000000\"},\n" +
+                "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"},\n" +
+                "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"}\n" +
+                "]\n");
+
+        assertExceptionWithMessage("Duplicate username: torvalds", () ->
+            runJob("ByteLegendBot", "ByteLegendBot_my-branch")
+        );
+    }
+
     @Test
     public void failIfPlayerChangeLocation() throws Exception {
         createPullRequest(workspace, fork, "ByteLegendBot",
