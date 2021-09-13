@@ -738,11 +738,10 @@
   "y" : 10,
   "color" : "#87CEFA",
   "username" : "LAW-NBJ"
-}
-  ,{
-  "x" : 5,
-  "y" : 4,
-  "color" : "#87CEFA",
-  "username" : "breakToT"
+}, {
+  "x" : 10,
+  "y" : 12,
+  "color" : "#F9F0F5",
+  "username" : "Llin"
 }
 ]
