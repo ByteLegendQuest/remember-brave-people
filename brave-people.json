@@ -726,5 +726,10 @@
   "y" : 6,
   "color" : "#F5F5F5",
   "username" : "geekqiao"
+}, {
+  "x" : 8,
+  "y" : 6,
+  "color" : "#FF0000",
+  "username" : "Jackson"
 }
 ]
