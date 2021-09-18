@@ -125,6 +125,11 @@
   "username" : "HermanVong"
 }, {
   "x" : 1,
+  "y" : 13,
+  "color" : "#8EE4FA",
+  "username" : "Gakiii"
+}, {
+  "x" : 1,
   "y" : 15,
   "color" : "#00FFFF",
   "username" : "lineazy"
@@ -205,6 +210,11 @@
   "username" : "OKLetsPEE"
 }, {
   "x" : 3,
+  "y" : 6,
+  "color" : "#FFB6C1",
+  "username" : "CoolLoong"
+}, {
+  "x" : 3,
   "y" : 7,
   "color" : "#FFFFFF",
   "username" : "gylt37"
@@ -218,6 +228,11 @@
   "y" : 10,
   "color" : "#87CEFA",
   "username" : "LAW-NBJ"
+}, {
+  "x" : 3,
+  "y" : 12,
+  "color" : "#000000",
+  "username" : "zjpazyh"
 }, {
   "x" : 3,
   "y" : 13,
@@ -258,6 +273,11 @@
   "y" : 4,
   "color" : "#FF9800",
   "username" : "JB962"
+}, {
+  "x" : 4,
+  "y" : 6,
+  "color" : "#FFB6C1",
+  "username" : "Kiriyor"
 }, {
   "x" : 4,
   "y" : 8,
@@ -745,6 +765,16 @@
   "username" : "ananliangliang"
 }, {
   "x" : 12,
+  "y" : 10,
+  "color" : "#cbff6a",
+  "username" : "MayL216"
+}, {
+  "x" : 12,
+  "y" : 11,
+  "color" : "#F5F5F5",
+  "username" : "ashuanger"
+}, {
+  "x" : 12,
   "y" : 12,
   "color" : "#0969DA",
   "username" : "fake-zyk"
@@ -830,6 +860,11 @@
   "username" : "toten1982"
 }, {
   "x" : 15,
+  "y" : 1,
+  "color" : "#8EE4FA",
+  "username" : "caoyuqian1"
+}, {
+  "x" : 15,
   "y" : 2,
   "color" : "#0000CD",
   "username" : "WHJ1928"
@@ -843,6 +878,11 @@
   "y" : 7,
   "color" : "#FFDA55",
   "username" : "ConnorFV"
+}, {
+  "x" : 15,
+  "y" : 11,
+  "color" : "#8EE4FA",
+  "username" : "ChTea"
 }, {
   "x" : 15,
   "y" : 15,
@@ -883,6 +923,11 @@
   "y" : 12,
   "color" : "#87CEFA",
   "username" : "Lcomerun"
+}, {
+  "x" : 16,
+  "y" : 15,
+  "color" : "#8EE4FA",
+  "username" : "huangYD8080"
 }, {
   "x" : 16,
   "y" : 16,
@@ -1008,46 +1053,4 @@
   "y" : 19,
   "color" : "#FFFFFF",
   "username" : "chengww5217"
-}, {
-  "x" : 12,
-  "y" : 11,
-  "color" : "#F5F5F5",
-  "username" : "ashuanger"
-}, {
-  "x" : 16,
-  "y" : 15,
-  "color" : "#8EE4FA",
-  "username" : "huangYD8080"
-} , {
-  "x" : 15,
-  "y" : 1,
-  "color" : "#8EE4FA",
-  "username" : "caoyuqian1"
-} , {
-  "x" : 15,
-  "y" : 11,
-  "color" : "#8EE4FA",
-  "username" : "ChTea"
-},{
-  "x" : 1,
-  "y" : 13,
-  "color" : "#8EE4FA",
-  "username" : "Gakiii"
-},{
-  "x" : 3,
-  "y" : 6,
-  "color" : "#FFB6C1",
-  "username" : "CoolLoong"
-},{
-  "x" : 4,
-  "y" : 6,
-  "color" : "#FFB6C1",
-  "username" : "Kiriyor"
-},{
-  "x" : 12,
-  "y" : 10,
-  "color" : "#cbff6a",
-  "username" : "MayL216"
-}
- 
-]
+} ]
