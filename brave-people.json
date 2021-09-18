@@ -284,6 +284,11 @@
   "color" : "#0000FF",
   "username" : "AranaQAQ"
 }, {
+  "x" : 4,
+  "y" : 14,
+  "color" : "#FFFFFF",
+  "username" : "Break00"
+}, {
   "x" : 5,
   "y" : 0,
   "color" : "#0000FF",
@@ -293,6 +298,11 @@
   "y" : 1,
   "color" : "#39c5bb",
   "username" : "ginwAa"
+}, {
+  "x" : 5,
+  "y" : 2,
+  "color" : "#FFFFFF",
+  "username" : "ubc2"
 }, {
   "x" : 5,
   "y" : 3,
@@ -403,6 +413,11 @@
   "y" : 0,
   "color" : "#000000",
   "username" : "z77881200"
+}, {
+  "x" : 7,
+  "y" : 1,
+  "color" : "#ACACAC",
+  "username" : "2337533962"
 }, {
   "x" : 7,
   "y" : 4,
@@ -533,6 +548,11 @@
   "y" : 1,
   "color" : "#6090AD",
   "username" : "vcfch843875618"
+}, {
+  "x" : 9,
+  "y" : 3,
+  "color" : "#CD2626",
+  "username" : "JudgementH"
 }, {
   "x" : 9,
   "y" : 4,
@@ -780,6 +800,11 @@
   "username" : "fake-zyk"
 }, {
   "x" : 12,
+  "y" : 16,
+  "color" : "#FFFFFF",
+  "username" : "DYY313"
+}, {
+  "x" : 12,
   "y" : 19,
   "color" : "#02a2ff",
   "username" : "bbbhp"
@@ -893,6 +918,11 @@
   "y" : 17,
   "color" : "#66CCFF",
   "username" : "ABCPAN-rank"
+}, {
+  "x" : 15,
+  "y" : 19,
+  "color" : "#FFFFFF",
+  "username" : "maquan0927"
 }, {
   "x" : 16,
   "y" : 0,
@@ -1030,6 +1060,16 @@
   "username" : "miku122"
 }, {
   "x" : 19,
+  "y" : 6,
+  "color" : "#FFFFFF",
+  "username" : "whiplashf"
+}, {
+  "x" : 19,
+  "y" : 7,
+  "color" : "#FFFFFF",
+  "username" : "TedGr"
+}, {
+  "x" : 19,
   "y" : 8,
   "color" : "#FFFFFF",
   "username" : "BestOverall"
@@ -1053,39 +1093,4 @@
   "y" : 19,
   "color" : "#FFFFFF",
   "username" : "chengww5217"
-}, {
-  "x" : 19,
-  "y" : 6,
-  "color" : "#FFFFFF",
-  "username" : "whiplashf"
-}, {
-  "x" : 12,
-  "y" : 16,
-  "color" : "#FFFFFF",
-  "username" : "DYY313"
-}, {
-  "x" : 5,
-  "y" : 2,
-  "color" : "#FFFFFF",
-  "username" : "ubc2"
-}, {
-  "x" : 19,
-  "y" : 7,
-  "color" : "#FFFFFF",
-  "username" : "TedGr"
-}, {
-  "x" : 15,
-  "y" : 19,
-  "color" : "#FFFFFF",
-  "username" : "maquan0927"
-}, {
-  "x" : 4,
-  "y" : 14,
-  "color" : "#FFFFFF",
-  "username" : "Break00"
-},{
-  "x" : 7,
-  "y" : 1,
-  "color" : "#ACACAC",
-  "username" : "2337533962"
-}  ]]
+} ]
