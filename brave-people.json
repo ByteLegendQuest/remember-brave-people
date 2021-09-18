@@ -635,6 +635,12 @@
   "username" : "zhendan911"
 }, {
   "x" : 10,
+  "y" : 2,
+  "color" : "#9400D3",
+  "username" : "XIkariShinji"
+}
+ , {
+  "x" : 10,
   "y" : 3,
   "color" : "#FF0000",
   "username" : "w845661346"
