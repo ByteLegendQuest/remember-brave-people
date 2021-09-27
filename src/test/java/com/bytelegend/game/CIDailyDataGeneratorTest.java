@@ -8,7 +8,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.io.File;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.Properties;
 
 import static com.bytelegend.game.Constants.HEROES_JSON;
@@ -52,14 +52,17 @@ public class CIDailyDataGeneratorTest {
                 System.setProperties(originalProperties);
             }
         } else {
+            File mockHeroesCurrentJson = new File(dir, "heroes-current.mock.json");
+            writeString(mockHeroesCurrentJson, "{\"page\":10}");
             Environment environment = Environment.EnvironmentBuilder.builder()
                 .setWorkspaceDir(dir)
+                .setPublicHeroesCurrentJsonUrl(mockHeroesCurrentJson.toURI().toString())
                 .build();
             Environment spiedEnvironment = spy(environment);
             doReturn(uploader).when(spiedEnvironment).createUploader();
             new CIDailyDataGeneratorJob(spiedEnvironment).run();
 
-            verify(uploader).uploadAssets(Collections.singletonList(outputImage));
+            verify(uploader).uploadAssets(Arrays.asList(outputImage, new File(outputImage.getParentFile(), outputImage.getName().replace("-current", "-10"))));
         }
 
         assertTrue(outputImage.isFile());

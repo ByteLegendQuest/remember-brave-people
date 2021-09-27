@@ -47,7 +47,12 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
         runJob("blindpirate", "blindpirate_my-branch");
 
         assertImageWritten(getOutputHeroesCurrentImage(), 0, 0, new RGBA(255, 0, 0, 255));
-        assertUpload(OUTPUT_HEROES_CURRENT_PNG, OUTPUT_HEROES_CURRENT_JSON);
+        assertUpload(
+            OUTPUT_HEROES_CURRENT_PNG,
+            OUTPUT_HEROES_CURRENT_JSON,
+            OUTPUT_HEROES_CURRENT_PNG.replace("-current", "-42"),
+            OUTPUT_HEROES_CURRENT_JSON.replace("-current", "-42")
+        );
         assertHeroesCurrentJson(tiles -> {
                 assertEquals(3, tiles.getTiles().size());
                 AllInfoTile addedTile = tiles.getTiles().stream().filter(it -> it.getUserid().equals("blindpirate"))
@@ -72,7 +77,12 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
         runJob("ByteLegendBot", "ByteLegendBot_my-branch");
 
         assertImageWritten(getOutputHeroesCurrentImage(), 1, 1, new RGBA(255, 255, 255, 255));
-        assertUpload(OUTPUT_HEROES_CURRENT_PNG, OUTPUT_HEROES_CURRENT_JSON);
+        assertUpload(
+            OUTPUT_HEROES_CURRENT_PNG,
+            OUTPUT_HEROES_CURRENT_JSON,
+            OUTPUT_HEROES_CURRENT_PNG.replace("-current", "-42"),
+            OUTPUT_HEROES_CURRENT_JSON.replace("-current", "-42")
+        );
         assertHeroesCurrentJson(tiles -> {
                 assertEquals(2, tiles.getTiles().size());
                 AllInfoTile changedTile = tiles.getTiles().stream().filter(it -> it.getUserid().equals("ByteLegendBot"))
@@ -102,7 +112,12 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
         runJob("ByteLegendBot", "ByteLegendBot_my-branch");
 
         assertImageWritten(getOutputHeroesCurrentImage(), 1, 1, new RGBA(255, 255, 255, 255));
-        assertUpload(OUTPUT_HEROES_CURRENT_PNG, OUTPUT_HEROES_CURRENT_JSON);
+        assertUpload(
+            OUTPUT_HEROES_CURRENT_PNG,
+            OUTPUT_HEROES_CURRENT_JSON,
+            OUTPUT_HEROES_CURRENT_PNG.replace("-current", "-42"),
+            OUTPUT_HEROES_CURRENT_JSON.replace("-current", "-42")
+        );
         assertFinalJsonContains("ByteLegendBot", "#FFFFFF");
         assertFinalJsonNotContains("#000000");
         assertLastCommitMessageContains("ByteLegendBot");
@@ -192,7 +207,12 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
         runJob("blindpirate", "blindpirate_my-branch");
 
         assertImageWritten(getOutputHeroesCurrentImage(), 2, 1, new RGBA(0, 255, 0, 255));
-        assertUpload(OUTPUT_HEROES_CURRENT_PNG, OUTPUT_HEROES_CURRENT_JSON);
+        assertUpload(
+            OUTPUT_HEROES_CURRENT_PNG,
+            OUTPUT_HEROES_CURRENT_JSON,
+            OUTPUT_HEROES_CURRENT_PNG.replace("-current", "-42"),
+            OUTPUT_HEROES_CURRENT_JSON.replace("-current", "-42")
+        );
         assertHeroesCurrentJson(tiles -> {
                 if ("conflicts".equals(scenario)) {
                     assertEquals(Arrays.asList("ByteLegendBot", "torvalds", "octocat", "blindpirate"),
@@ -263,6 +283,7 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
                 return allInfoTile;
             }).collect(toList());
         TilesInfo tilesInfo = new TilesInfo();
+        tilesInfo.setPage(42);
         tilesInfo.setTiles(allInfoTiles);
         mockHeroesCurrentJson(workspace, OBJECT_MAPPER.writeValueAsString(tilesInfo));
     }

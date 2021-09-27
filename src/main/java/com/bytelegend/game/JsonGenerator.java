@@ -21,7 +21,6 @@ class JsonGenerator {
 
     TilesInfo generate(TileDataDiff diff) throws Exception {
         downloader.download(environment.getPublicHeroesCurrentJsonUrl(), environment.getInputHeroesCurrentJson());
-
         TilesInfo tilesInfo = parseHeroesCurrentJson(readString(environment.getInputHeroesCurrentJson()));
 
         AllInfoTile tile = tilesInfo.getTiles().stream()

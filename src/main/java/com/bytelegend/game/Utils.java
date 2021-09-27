@@ -84,4 +84,11 @@ class Utils {
         ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
         PngCompressor.compress(is, new FileOutputStream(targetPngFile));
     }
+
+    // heroes-current.json -> heroes-X.json
+    // heroes-current.png -> heroes-X.png
+    // Returns the renamed file
+    static File renameCurrentToPage(File file, int page) {
+        return new File(file.getParentFile(), file.getName().replace("-current", "-" + page));
+    }
 }

@@ -1,7 +1,6 @@
 package com.bytelegend.game;
 
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
@@ -16,6 +15,7 @@ import static com.bytelegend.game.Constants.IMAGE_GRID_HEIGHT;
 import static com.bytelegend.game.Constants.OBJECT_MAPPER;
 import static com.bytelegend.game.Environment.systemProperty;
 import static com.bytelegend.game.Utils.readSystemPropertiesFromArgs;
+import static com.bytelegend.game.Utils.renameCurrentToPage;
 
 /**
  * Triggered by player PR.
@@ -79,41 +79,63 @@ public class CIDataGeneratorJob {
         incrementalImageGenerator.generate(diff);
         TilesInfo tilesInfo = jsonGenerator.generate(diff);
 
-        List<File> assets = refreshIfFull(tilesInfo);
+        List<File> assets = determineAssetsToUpload(tilesInfo);
 
         git.push();
         uploader.uploadAssets(assets);
     }
 
-    // refresh heroes-current.png and heroes-current.json if it's full
-    private List<File> refreshIfFull(TilesInfo tilesInfo) throws Exception {
+    // - If current board is not full, upload:
+    //   - heroes-current.png
+    //   - heroes-{page}.png
+    //   - heroes-current.json
+    //   - heroes-{page}.json
+    // Otherwise, refresh heroes-current.png and heroes-current.json, commit changes to `heroes.json`, and upload
+    //   - heroes-current.png (blank)
+    //   - heroes-{page+1}.png (blank)
+    //   - heroes-current.json (blank)
+    //   - heroes-{page+1}.json (blank)
+    //   - heroes-{page}.png (full)
+    //   - heroes-{page}.json (full)
+    private List<File> determineAssetsToUpload(TilesInfo tilesInfo) throws Exception {
         List<File> assets = new ArrayList<>();
-        assets.add(environment.getOutputHeroesCurrentImage());
-        assets.add(environment.getOutputHeroesCurrentJson());
-        if (tilesInfo.getTiles().size() == Constants.IMAGE_GRID_WIDTH * IMAGE_GRID_HEIGHT) {
+        File heroesCurrentImage = environment.getOutputHeroesCurrentImage();
+        File heroesCurrentJson = environment.getOutputHeroesCurrentJson();
+        File heroesPageImage = renameCurrentToPage(heroesCurrentImage, tilesInfo.getPage());
+        File heroesPageJson = renameCurrentToPage(heroesCurrentJson, tilesInfo.getPage());
+
+        assets.add(heroesCurrentImage);
+        assets.add(heroesCurrentJson);
+        assets.add(heroesPageImage);
+        assets.add(heroesPageJson);
+
+        if (tilesInfo.getTiles().size() != Constants.IMAGE_GRID_WIDTH * IMAGE_GRID_HEIGHT) {
+            Files.copy(heroesCurrentImage.toPath(), heroesPageImage.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            Files.copy(heroesCurrentJson.toPath(), heroesPageJson.toPath(), StandardCopyOption.REPLACE_EXISTING);
+        } else {
             // it's full!
-            assets.add(moveCurrentToPage(environment.getOutputHeroesCurrentImage(), tilesInfo.getCurrentPage()));
-            assets.add(moveCurrentToPage(environment.getOutputHeroesCurrentJson(), tilesInfo.getCurrentPage()));
+            File heroesNextPageImage = renameCurrentToPage(heroesCurrentImage, tilesInfo.getPage() + 1);
+            File heroesNextPageJson = renameCurrentToPage(heroesCurrentJson, tilesInfo.getPage() + 1);
+
+            Files.move(heroesCurrentImage.toPath(), heroesPageImage.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            Files.move(heroesCurrentJson.toPath(), heroesCurrentJson.toPath(), StandardCopyOption.REPLACE_EXISTING);
 
             TilesInfo newTilesInfo = new TilesInfo();
-            newTilesInfo.setCurrentPage(tilesInfo.getCurrentPage() + 1);
+            newTilesInfo.setPage(tilesInfo.getPage() + 1);
 
-            Utils.writeString(environment.getOutputHeroesCurrentJson(), OBJECT_MAPPER.writeValueAsString(newTilesInfo));
+            Utils.writeString(heroesCurrentJson, OBJECT_MAPPER.writeValueAsString(newTilesInfo));
             fullImageGenerator.generate(Collections.emptyList());
+
+            Files.copy(heroesCurrentImage.toPath(), heroesNextPageImage.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            Files.copy(heroesCurrentJson.toPath(), heroesNextPageJson.toPath(), StandardCopyOption.REPLACE_EXISTING);
+
+            assets.add(heroesNextPageImage);
+            assets.add(heroesNextPageJson);
 
             Utils.writeString(environment.getHeroesJson(), "[\n]\n");
             git.addCommit("Refresh heroes.json", HEROES_JSON);
         }
         return assets;
-    }
-
-    // heroes-current.json -> heroes-X.json
-    // heroes-current.png -> heroes-X.png
-    // Returns the renamed file
-    private File moveCurrentToPage(File currentFile, int pageNumber) throws IOException {
-        File targetFile = new File(currentFile.getParentFile(), currentFile.getName().replace("-current", "-" + pageNumber));
-        Files.move(currentFile.toPath(), targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-        return targetFile;
     }
 
     private TileDataDiff sanityCheck() throws Exception {

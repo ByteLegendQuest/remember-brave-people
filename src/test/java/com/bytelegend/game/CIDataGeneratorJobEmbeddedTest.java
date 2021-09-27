@@ -89,7 +89,7 @@ public class CIDataGeneratorJobEmbeddedTest extends AbstractCIDataGeneratorJobTe
         createPullRequest(workspace, fork, "blindpirate", Utils.toFormattedJson(tiles));
 
         TilesInfo oldTilesInfo = new TilesInfo();
-        oldTilesInfo.setCurrentPage(2);
+        oldTilesInfo.setPage(2);
         oldTilesInfo.setTiles(tiles.stream().map(TestUtils::createTile).collect(Collectors.toList()));
         mockHeroesCurrentJson(workspace, OBJECT_MAPPER.writeValueAsString(oldTilesInfo));
 
@@ -98,7 +98,7 @@ public class CIDataGeneratorJobEmbeddedTest extends AbstractCIDataGeneratorJobTe
         TilesInfo newTilesInfo = OBJECT_MAPPER.readValue(
             Utils.readString(workspace, OUTPUT_HEROES_CURRENT_JSON),
             TilesInfo.class);
-        assertEquals(3, newTilesInfo.getCurrentPage());
+        assertEquals(3, newTilesInfo.getPage());
         assertTrue(newTilesInfo.getTiles().isEmpty());
 
         TestUtils.readAllPixels(new File(workspace, OUTPUT_HEROES_CURRENT_PNG)).stream()
@@ -109,7 +109,9 @@ public class CIDataGeneratorJobEmbeddedTest extends AbstractCIDataGeneratorJobTe
             OUTPUT_HEROES_CURRENT_PNG,
             OUTPUT_HEROES_CURRENT_JSON,
             OUTPUT_HEROES_CURRENT_PNG.replace("-current", "-2"),
-            OUTPUT_HEROES_CURRENT_JSON.replace("-current", "-2")
+            OUTPUT_HEROES_CURRENT_JSON.replace("-current", "-2"),
+            OUTPUT_HEROES_CURRENT_PNG.replace("-current", "-3"),
+            OUTPUT_HEROES_CURRENT_JSON.replace("-current", "-3")
         );
     }
 
@@ -157,7 +159,12 @@ public class CIDataGeneratorJobEmbeddedTest extends AbstractCIDataGeneratorJobTe
         assertExceptionWithMessage("Push failed", futureForFork2::get);
 
         assertImageWritten(environmentForFork.getOutputHeroesCurrentImage(), 3, 3, new RGBA(0, 255, 0, 255));
-        assertUpload(OUTPUT_HEROES_CURRENT_PNG, OUTPUT_HEROES_CURRENT_JSON);
+        assertUpload(
+            OUTPUT_HEROES_CURRENT_PNG,
+            OUTPUT_HEROES_CURRENT_JSON,
+            OUTPUT_HEROES_CURRENT_PNG.replace("-current", "-42"),
+            OUTPUT_HEROES_CURRENT_JSON.replace("-current", "-42")
+        );
         assertFinalJsonContains("blindpirate", "#00FF00");
         assertFinalJsonNotContains("octocat");
         assertLastCommitMessageContains("blindpirate");
