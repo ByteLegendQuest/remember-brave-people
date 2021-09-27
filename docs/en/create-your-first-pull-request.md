@@ -2,17 +2,17 @@
 
 Please follow this documentation step by step, otherwise you'll waste your time on troubleshooting.
 
-Click `brave-people.json` then click edit button (pencil icon):
+Click `heroes.json` then click edit button (pencil icon):
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/create-pr-open-json.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/create-pr-open-json.png)
 
 Scroll down to the bottom:
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/create-pr-scroll-down.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/create-pr-scroll-down.png)
 
 Copy a bunch of code from the existing file, **note that it must start with a comma and ends with a curly bracket. VERY IMPORTANT!**
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/create-pr-copy.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/create-pr-copy.png)
 
 Paste into the **original file box**, before the right bracket (`]`), then modify the coordinate, color and GitHub ID in it. **VERY IMPORTANT NOTE:**
 
@@ -23,11 +23,11 @@ Paste into the **original file box**, before the right bracket (`]`), then modif
 
 Click `Propose Changes` button.
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/en/create-pr-add-en.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/en/create-pr-add-en.png)
 
 Click `Create pull request` button in the new page.
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/create-pr-confirm.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/create-pr-confirm.png)
 
 If the pull request is rejected, it's 99% likely that you're not following the steps above.
-Please check out [Troubleshooting Guide](https://github.com/ByteLegendQuest/remember-brave-people/blob/master/docs/en/frequent-failures.md) and retry.
+Please check out [Troubleshooting Guide](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/en/frequent-failures.md) and retry.

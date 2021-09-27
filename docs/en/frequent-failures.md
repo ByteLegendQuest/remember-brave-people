@@ -13,7 +13,7 @@ but it helps you a lot to be familiar with pull request and consolidate your ski
 
 Click `Files changed` tab to check the code changes you made. Remember this tab and you'll use it a million times in the future.
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/pr-changes-tab.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/pr-changes-tab.png)
 
 ### Bad JSON
 
@@ -22,15 +22,15 @@ in the future. Please make sure you add a pair of curly bracket, and there is a 
 
 Correct Example:
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/json-correct-1.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/json-correct-1.png)
 
 [Incorrect Example (missing right curly bracket)](https://github.com/ByteLegendQuest/remember-brave-people/pull/183/files)
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/json-error-1.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/json-error-1.png)
 
 [Incorrect Example (missing comma)](https://github.com/ByteLegendQuest/remember-brave-people/pull/158/files)
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/json-error-2.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/json-error-2.png)
 
 ### Change Other One's Tile
 
@@ -38,31 +38,31 @@ You are only allowed to add or modify your own avatar. You can't change other pe
 
 [Wrong Example (change other one's avatar and color)](https://github.com/ByteLegendQuest/remember-brave-people/pull/180/files)
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/other-people-error-1.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/other-people-error-1.png)
 
 [Wrong Example (add two avatars, one for yourself, one for others)](https://github.com/ByteLegendQuest/remember-brave-people/pull/178/files)
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/other-people-error-2.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/other-people-error-2.png)
 
 ### Use Real Name or Typo in GitHub ID
 
 [Wrong Example (real name)](https://github.com/ByteLegendQuest/remember-brave-people/pull/172/files)
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/username-error-1.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/username-error-1.png)
 
 [Wrong Example (weird name)](https://github.com/ByteLegendQuest/remember-brave-people/pull/166/files)
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/username-error-2.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/username-error-2.png)
 
 [Wrong Example (typo in GitHub ID)](https://github.com/ByteLegendQuest/remember-brave-people/pull/150/files)
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/username-error-3.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/username-error-3.png)
 
 ## Code Conflict
 
 If you're sure you're right, please check if there is a code conflict warning in PR page:
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/code-conflict.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/code-conflict.png)
 
 Code conflict is usually caused by many people submitting code at the same time, and other people are faster.
 This is a really hard problem for newbies, I suggest your delete your forked repository and retry.
@@ -74,16 +74,16 @@ When you create your first pull request, GitHub creates a "forked repository" un
 
 `https://github.com/<Your Own GitHub ID>/remember-brave-people`
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/delete-repo-0.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/delete-repo-0.png)
 
 Click `Settings` and scroll down to the bottom:
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/delete-repo-1.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/delete-repo-1.png)
 
 Click `Delete this repository`：
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/delete-repo-2.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/delete-repo-2.png)
 
 Copy the bold words in the popup and paste into the input box, click the button:
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/delete-repo-3.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/delete-repo-3.png)

@@ -2,17 +2,17 @@
 
 请严格按照以下步骤进行，否则你会浪费自己的时间反复重试。
 
-在项目的首页，点击`brave-people.json`，然后在打开的页面里，点击编辑按钮（铅笔图标）：
+在项目的首页，点击`heroes.json`，然后在打开的页面里，点击编辑按钮（铅笔图标）：
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/create-pr-open-json.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/create-pr-open-json.png)
 
 在打开的页面中，拖动滚动条到最下方：
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/create-pr-scroll-down.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/create-pr-scroll-down.png)
 
 从现有的文件中拷贝一段，**注意以逗号开头，花括号结尾！！非常重要！！**
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/create-pr-copy.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/create-pr-copy.png)
 
 粘贴到原先的文件尾部的右方括号(`]`)前，并修改其中的坐标，颜色和GitHub ID。**注意，非常重要！！!**
 
@@ -23,10 +23,10 @@
 
 然后点击`Propose Changes`按钮。
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/zh/create-pr-add-zh.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/zh/create-pr-add-zh.png)
 
 在弹出的页面上，点击`Create pull request`按钮。
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/create-pr-confirm.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/create-pr-confirm.png)
 
-如果提交的Pull Request被拒绝，99%是因为你没有按照步骤严格进行，请检查[错误排查指南](https://github.com/ByteLegendQuest/remember-brave-people/blob/master/docs/zh/frequent-failures.md)后重试。
+如果提交的Pull Request被拒绝，99%是因为你没有按照步骤严格进行，请检查[错误排查指南](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/zh/frequent-failures.md)后重试。

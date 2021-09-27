@@ -11,7 +11,7 @@
 
 请点击`Files changed`标签页，查看你所做修改的代码。请记住它的位置，未来你会无数次用到这个技巧。
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/pr-changes-tab.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/pr-changes-tab.png)
 
 ### JSON格式错误
 
@@ -19,15 +19,15 @@ JSON是互联网常用的数据交换格式，如果你还不了解，没关系�
 
 正确的例子：
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/json-correct-1.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/json-correct-1.png)
 
 [错误的例子（少了右花括号）](https://github.com/ByteLegendQuest/remember-brave-people/pull/183/files)
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/json-error-1.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/json-error-1.png)
 
 [错误的例子（少了逗号）](https://github.com/ByteLegendQuest/remember-brave-people/pull/158/files)
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/json-error-2.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/json-error-2.png)
 
 ### 修改了别人的格子
 
@@ -35,31 +35,31 @@ JSON是互联网常用的数据交换格式，如果你还不了解，没关系�
 
 [错误的例子（修改了别人的头像和颜色）](https://github.com/ByteLegendQuest/remember-brave-people/pull/180/files)
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/other-people-error-1.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/other-people-error-1.png)
 
 [错误的例子（新增了两个头像，一个自己的，一个别人的）](https://github.com/ByteLegendQuest/remember-brave-people/pull/178/files)
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/other-people-error-2.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/other-people-error-2.png)
 
 ### 使用真实名字，或者把自己的GitHub ID拼写错误
 
 [错误的例子（使用了自己的真实姓名）](https://github.com/ByteLegendQuest/remember-brave-people/pull/172/files)
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/username-error-1.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/username-error-1.png)
 
 [错误的例子（使用了奇怪的名字）](https://github.com/ByteLegendQuest/remember-brave-people/pull/166/files)
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/username-error-2.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/username-error-2.png)
 
 [错误的例子（自己的GitHub ID拼写错误）](https://github.com/ByteLegendQuest/remember-brave-people/pull/150/files)
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/username-error-3.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/username-error-3.png)
 
 ## 代码冲突
 
 如果你确定你没有做错，请检查PR页面是否包含代码冲突警告：
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/code-conflict.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/code-conflict.png)
 
 代码冲突通常是由于多人同时尝试提交，且其他人的代码比你先通过。这对于初学者是一个很难解决的问题，我建议删除你fork的仓库然后重来一次。
 
@@ -69,16 +69,16 @@ JSON是互联网常用的数据交换格式，如果你还不了解，没关系�
 
 `https://github.com/<这里替换成你自己的GitHub ID>/remember-brave-people`
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/delete-repo-0.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/delete-repo-0.png)
 
 点击`Settings`，然后拖动滚动条到最下方：
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/delete-repo-1.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/delete-repo-1.png)
 
 点击`Delete this repository`：
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/delete-repo-2.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/delete-repo-2.png)
 
 在弹出窗口中，复制加粗的文字，粘贴到输入框中，点击确定：
 
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/master/docs/delete-repo-3.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/delete-repo-3.png)
