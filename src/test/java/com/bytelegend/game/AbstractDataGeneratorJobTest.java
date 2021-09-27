@@ -37,7 +37,7 @@ public abstract class AbstractDataGeneratorJobTest {
         upstream.mkdirs();
 
         upstreamShell = new Shell(upstream);
-        upstreamShell.execSuccessfully("git", "init", "--bare");
+        upstreamShell.execSuccessfully("git", "init", "--bare", "--initial-branch=main");
 
         workspace = new File(tmpDir, "clone");
         upstreamShell.execSuccessfully("git", "clone", upstream.getAbsolutePath(), workspace.getAbsolutePath());
