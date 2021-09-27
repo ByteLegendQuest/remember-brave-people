@@ -53,7 +53,8 @@ class Utils {
 
     static List<SimpleTile> parseSimpleTiles(String json) throws JsonProcessingException {
         // @formatter:off
-        return OBJECT_MAPPER.readValue(json, new TypeReference<List<SimpleTile>>() {});
+        return OBJECT_MAPPER.readValue(json, new TypeReference<List<SimpleTile>>() {
+        });
         // @formatter:on
     }
 
@@ -82,7 +83,9 @@ class Utils {
         ImageIO.write(bufferedImage, "PNG", os);
 
         ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
-        PngCompressor.compress(is, new FileOutputStream(targetPngFile));
+        try (FileOutputStream output = new FileOutputStream(targetPngFile)) {
+            PngCompressor.compress(is, output);
+        }
     }
 
     // heroes-current.json -> heroes-X.json
