@@ -29,8 +29,8 @@ public class DeveloperLocalDataGeneratorJob {
     private String readOldJson() {
         try {
             git.fetchUpstream();
-            String baseRef = git.findForkPointTo("upstream/master");
-            return git.show(baseRef, Constants.BRAVE_PEOPLE_JSON);
+            String baseRef = git.findForkPointTo("upstream/main");
+            return git.show(baseRef, Constants.HEROES_JSON);
         } catch (Throwable e) {
             e.printStackTrace();
             return null;
@@ -43,7 +43,7 @@ public class DeveloperLocalDataGeneratorJob {
             System.err.println("Failed to run incrementally, fallback to fully generation;");
             fullyDataGenerator.generate();
         } else {
-            String newJson = Utils.readString(environment.getBravePeopleJson());
+            String newJson = Utils.readString(environment.getHeroesJson());
             TileDataDiff diff = new TileDataDiff(oldJson, newJson, null);
 
             incrementalDataGenerator.generate(diff);

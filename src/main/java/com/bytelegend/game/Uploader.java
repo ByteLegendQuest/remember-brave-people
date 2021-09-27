@@ -8,9 +8,8 @@ import software.amazon.awssdk.services.s3.model.ObjectCannedACL;
 import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 
 import java.io.File;
+import java.util.List;
 
-import static com.bytelegend.game.Constants.BRAVE_PEOPLE_ALL_JSON;
-import static com.bytelegend.game.Constants.BRAVE_PEOPLE_PNG;
 import static com.bytelegend.game.Constants.DEFAULT_S3_BUCKET;
 import static com.bytelegend.game.Constants.DEFAULT_S3_REGION;
 
@@ -18,19 +17,13 @@ import static com.bytelegend.game.Constants.DEFAULT_S3_REGION;
  * Upload the updated JSON and image to data storage.
  */
 interface Uploader {
-    void uploadBravePeopleImage();
-
-    void uploadBravePeopleAllJson();
+    void uploadAssets(List<File> asserts);
 
     enum NoOpUploader implements Uploader {
         INSTANCE;
 
         @Override
-        public void uploadBravePeopleImage() {
-        }
-
-        @Override
-        public void uploadBravePeopleAllJson() {
+        public void uploadAssets(List<File> asserts) {
         }
     }
 
@@ -75,13 +68,8 @@ interface Uploader {
         }
 
         @Override
-        public void uploadBravePeopleImage() {
-            upload(BRAVE_PEOPLE_PNG, environment.getOutputBravePeopleImage());
-        }
-
-        @Override
-        public void uploadBravePeopleAllJson() {
-            upload(BRAVE_PEOPLE_ALL_JSON, environment.getOutputBravePeopleAllJson());
+        public void uploadAssets(List<File> assets) {
+            assets.forEach(asset -> upload(asset.getName(), asset));
         }
     }
 }

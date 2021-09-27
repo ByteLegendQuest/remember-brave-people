@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeEach;
 
 import java.io.File;
-import java.util.List;
 import java.util.function.Consumer;
 
 public class CIDataGeneratorJobDockerTest extends AbstractCIDataGeneratorJobTest {
@@ -34,14 +33,14 @@ public class CIDataGeneratorJobDockerTest extends AbstractCIDataGeneratorJobTest
     }
 
     @Override
-    protected void mockBravePeopleAllJson(File workspace, String json) {
+    protected void mockHeroesCurrentJson(File workspace, String json) {
     }
 
     @Override
-    protected void assertBravePeopleAllJson(Consumer<List<AllInfoTile>> consumer) {
+    protected void assertHeroesCurrentJson(Consumer<TilesInfo> consumer) {
     }
 
     @Override
-    protected void assertUpload() {
+    protected void assertUpload(String... fileRelativePaths) {
     }
 }

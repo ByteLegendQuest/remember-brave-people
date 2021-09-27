@@ -1,15 +1,14 @@
 package com.bytelegend.game;
 
 import java.time.Instant;
-import java.util.List;
 
 import static com.bytelegend.game.Constants.OBJECT_MAPPER;
-import static com.bytelegend.game.Utils.parseAllInfoTiles;
+import static com.bytelegend.game.Utils.parseHeroesCurrentJson;
 import static com.bytelegend.game.Utils.readString;
 import static com.bytelegend.game.Utils.writeString;
 
 /**
- * Generate brave-people-all.json
+ * Generate heroes-current.json
  */
 class JsonGenerator {
     private final Environment environment;
@@ -20,14 +19,14 @@ class JsonGenerator {
         this.downloader = new Downloader(environment);
     }
 
-    void generate(TileDataDiff diff) throws Exception {
-        downloader.download(environment.getPublicBravePeopleAllJsonUrl(), environment.getInputBravePeopleAllJson());
+    TilesInfo generate(TileDataDiff diff) throws Exception {
+        downloader.download(environment.getPublicHeroesCurrentJsonUrl(), environment.getInputHeroesCurrentJson());
 
-        List<AllInfoTile> allInfoTiles = parseAllInfoTiles(readString(environment.getInputBravePeopleAllJson()));
+        TilesInfo tilesInfo = parseHeroesCurrentJson(readString(environment.getInputHeroesCurrentJson()));
 
-        AllInfoTile tile = allInfoTiles.stream()
+        AllInfoTile tile = tilesInfo.getTiles().stream()
                 .filter(it ->
-                        it.getUsername().equals(diff.getChangedTile().getUsername()))
+                        it.getUserid().equals(diff.getChangedTile().getUserid()))
                 .findFirst()
                 .orElse(null);
 
@@ -35,14 +34,14 @@ class JsonGenerator {
             AllInfoTile newTile = AllInfoTile.fromSimpleTile(diff.getChangedTile());
             newTile.setChangedAt(Instant.now());
             newTile.setCreatedAt(Instant.now());
-            allInfoTiles.add(newTile);
+            tilesInfo.getTiles().add(newTile);
         } else {
             tile.setColor(diff.getChangedTile().getColor());
             tile.setChangedAt(Instant.now());
         }
 
-        allInfoTiles.sort(SimpleTile.COMPARATOR);
-        writeString(environment.getOutputBravePeopleAllJson(),
-                OBJECT_MAPPER.writeValueAsString(allInfoTiles));
+        writeString(environment.getOutputHeroesCurrentJson(),
+                OBJECT_MAPPER.writeValueAsString(tilesInfo));
+        return tilesInfo;
     }
 }

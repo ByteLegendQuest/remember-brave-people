@@ -1,15 +1,12 @@
 package com.bytelegend.game;
 
-import java.util.Comparator;
 import java.util.Objects;
 
 public class SimpleTile {
-    static final Comparator<SimpleTile> COMPARATOR = Comparator.comparingInt(SimpleTile::getX)
-            .thenComparing(SimpleTile::getY);
     private int x;
     private int y;
     private String color;
-    private String username;
+    private String userid;
 
     public int getX() {
         return x;
@@ -35,12 +32,12 @@ public class SimpleTile {
         this.color = color;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserid() {
+        return userid;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
     @Override
@@ -52,12 +49,12 @@ public class SimpleTile {
             return false;
         }
         SimpleTile that = (SimpleTile) o;
-        return x == that.x && y == that.y && Objects.equals(color, that.color) && Objects.equals(username, that.username);
+        return x == that.x && y == that.y && Objects.equals(color, that.color) && userid.equalsIgnoreCase(that.userid);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(x, y, color, username);
+        return Objects.hash(x, y, color, userid.toUpperCase());
     }
 
     @Override
@@ -66,7 +63,7 @@ public class SimpleTile {
                 "x=" + x +
                 ", y=" + y +
                 ", color='" + color + '\'' +
-                ", username='" + username + '\'' +
+                ", username='" + userid + '\'' +
                 '}';
     }
 }

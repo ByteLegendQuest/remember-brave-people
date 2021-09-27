@@ -51,10 +51,10 @@ class TileDataDiff {
      * @return the tile changed with same username as {@link #playerGitHubUsername}
      */
     private SimpleTile diff() {
-        newTiles.stream().collect(Collectors.groupingBy(SimpleTile::getUsername))
+        newTiles.stream().collect(Collectors.groupingBy(SimpleTile::getUserid))
             .values().forEach(tilesWithSameName -> {
                 if (tilesWithSameName.size() > 1) {
-                    throw new IllegalStateException("Duplicate username: " + tilesWithSameName.get(0).getUsername());
+                    throw new IllegalStateException("Duplicate username: " + tilesWithSameName.get(0).getUserid());
                 }
             });
 
@@ -91,7 +91,7 @@ class TileDataDiff {
         if (newTiles.stream()
             .anyMatch(it -> it.getX() == addedTile.getX() &&
                 it.getY() == addedTile.getY()
-                && !it.getUsername().equals(addedTile.getUsername()))
+                && !it.getUserid().equals(addedTile.getUserid()))
         ) {
             throw new IllegalStateException(String.format("Conflict: tile (%d,%d) already exists!", addedTile.getX(), addedTile.getY()));
         }
@@ -110,7 +110,7 @@ class TileDataDiff {
     }
 
     private boolean checkTileUsername(SimpleTile tile) {
-        return playerGitHubUsername == null || playerGitHubUsername.equals(tile.getUsername());
+        return playerGitHubUsername == null || playerGitHubUsername.equals(tile.getUserid());
     }
 }
 

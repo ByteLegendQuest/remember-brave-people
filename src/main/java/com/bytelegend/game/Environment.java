@@ -2,11 +2,11 @@ package com.bytelegend.game;
 
 import java.io.File;
 
-import static com.bytelegend.game.Constants.BRAVE_PEOPLE_JSON;
-import static com.bytelegend.game.Constants.INPUT_BRAVE_PEOPLE_ALL_JSON;
-import static com.bytelegend.game.Constants.INPUT_BRAVE_PEOPLE_PNG;
-import static com.bytelegend.game.Constants.OUTPUT_BRAVE_PEOPLE_ALL_JSON;
-import static com.bytelegend.game.Constants.OUTPUT_BRAVE_PEOPLE_PNG;
+import static com.bytelegend.game.Constants.HEROES_JSON;
+import static com.bytelegend.game.Constants.INPUT_HEROES_CURRENT_JSON;
+import static com.bytelegend.game.Constants.INPUT_HEROES_CURRENT_PNG;
+import static com.bytelegend.game.Constants.OUTPUT_HEROES_CURRENT_JSON;
+import static com.bytelegend.game.Constants.OUTPUT_HEROES_CURRENT_PNG;
 
 class Environment {
     private final File workspaceDir;
@@ -22,7 +22,7 @@ class Environment {
     private final String accessKeySecret;
     private final String repoPullUrl;
     private final String repoPushUrl;
-    private final String publicBravePeopleAllJsonUrl;
+    private final String publicHeroesCurrentJsonUrl;
 
     static String systemProperty(String name) {
         String value = System.getProperty(name);
@@ -42,7 +42,7 @@ class Environment {
         String accessKeySecret,
         String repoPullUrl,
         String repoPushUrl,
-        String publicBravePeopleAllJsonUrl
+        String publicHeroesCurrentJsonUrl
     ) {
         this.workspaceDir = workspaceDir;
         this.headRef = headRef;
@@ -53,7 +53,7 @@ class Environment {
         this.accessKeySecret = accessKeySecret;
         this.repoPullUrl = repoPullUrl;
         this.repoPushUrl = repoPushUrl;
-        this.publicBravePeopleAllJsonUrl = publicBravePeopleAllJsonUrl;
+        this.publicHeroesCurrentJsonUrl = publicHeroesCurrentJsonUrl;
     }
 
     File getWorkspaceDir() {
@@ -84,24 +84,24 @@ class Environment {
         return accessKeySecret;
     }
 
-    File getInputBravePeopleImage() {
-        return new File(workspaceDir, INPUT_BRAVE_PEOPLE_PNG);
+    File getInputHeroesCurrentImage() {
+        return new File(workspaceDir, INPUT_HEROES_CURRENT_PNG);
     }
 
-    File getInputBravePeopleAllJson() {
-        return new File(workspaceDir, INPUT_BRAVE_PEOPLE_ALL_JSON);
+    File getInputHeroesCurrentJson() {
+        return new File(workspaceDir, INPUT_HEROES_CURRENT_JSON);
     }
 
-    File getOutputBravePeopleAllJson() {
-        return new File(workspaceDir, OUTPUT_BRAVE_PEOPLE_ALL_JSON);
+    File getOutputHeroesCurrentJson() {
+        return new File(workspaceDir, OUTPUT_HEROES_CURRENT_JSON);
     }
 
-    File getOutputBravePeopleImage() {
-        return new File(workspaceDir, OUTPUT_BRAVE_PEOPLE_PNG);
+    File getOutputHeroesCurrentImage() {
+        return new File(workspaceDir, OUTPUT_HEROES_CURRENT_PNG);
     }
 
-    File getBravePeopleJson() {
-        return new File(workspaceDir, BRAVE_PEOPLE_JSON);
+    File getHeroesJson() {
+        return new File(workspaceDir, HEROES_JSON);
     }
 
     Git createGit() {
@@ -128,8 +128,8 @@ class Environment {
         return repoPullUrl;
     }
 
-    String getPublicBravePeopleAllJsonUrl() {
-        return publicBravePeopleAllJsonUrl;
+    String getPublicHeroesCurrentJsonUrl() {
+        return publicHeroesCurrentJsonUrl;
     }
 
     JsonGenerator createJsonGenerator() {
@@ -146,7 +146,7 @@ class Environment {
         private String accessKeySecret;
         private String repoPullUrl;
         private String repoPushUrl;
-        private String publicBravePeopleAllJsonUrl;
+        private String publicHeroesCurrentJsonUrl;
 
         private EnvironmentBuilder() {
         }
@@ -200,8 +200,8 @@ class Environment {
             return this;
         }
 
-        EnvironmentBuilder setPublicBravePeopleAllJsonUrl(String publicBravePeopleAllJsonUrl) {
-            this.publicBravePeopleAllJsonUrl = publicBravePeopleAllJsonUrl;
+        EnvironmentBuilder setPublicHeroesCurrentJsonUrl(String publicHeroesCurrentJsonUrl) {
+            this.publicHeroesCurrentJsonUrl = publicHeroesCurrentJsonUrl;
             return this;
         }
 
@@ -216,9 +216,9 @@ class Environment {
                 accessKeySecret,
                 repoPullUrl,
                 repoPushUrl,
-                publicBravePeopleAllJsonUrl == null ?
-                    Constants.PUBLIC_BRAVE_PEOPLE_JSON_ALL_URL :
-                    publicBravePeopleAllJsonUrl
+                publicHeroesCurrentJsonUrl == null ?
+                    Constants.PUBLIC_HEROES_CURRENT_JSON_URL :
+                    publicHeroesCurrentJsonUrl
             );
         }
     }

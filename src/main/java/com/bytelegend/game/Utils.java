@@ -23,16 +23,36 @@ class Utils {
         }
     }
 
+    /**
+     * Format the tiles to
+     */
+    static String toFormattedJson(List<SimpleTile> tiles) {
+        StringBuilder sb = new StringBuilder();
+        sb.append('[').append("\n");
+        for (int i = 0; i < tiles.size(); i++) {
+            sb.append("  {");
+            sb.append("\"x\": ").append(tiles.get(i).getX()).append(", ");
+            sb.append("\"y\": ").append(tiles.get(i).getY()).append(", ");
+            sb.append("\"color\": \"").append(tiles.get(i).getColor()).append("\", ");
+            sb.append("\"userid\": \"").append(tiles.get(i).getUserid()).append("\"");
+            sb.append("}");
+            if (i != tiles.size() - 1) {
+                sb.append(",");
+            }
+            sb.append("\n");
+        }
+        sb.append(']').append("\n");
+        return sb.toString();
+    }
+
     static List<SimpleTile> parseSimpleTiles(String json) throws JsonProcessingException {
         // @formatter:off
         return OBJECT_MAPPER.readValue(json, new TypeReference<List<SimpleTile>>() {});
         // @formatter:on
     }
 
-    static List<AllInfoTile> parseAllInfoTiles(String json) throws JsonProcessingException {
-        // @formatter:off
-        return OBJECT_MAPPER.readValue(json, new TypeReference<List<AllInfoTile>>() {});
-        // @formatter:on
+    static TilesInfo parseHeroesCurrentJson(String json) throws JsonProcessingException {
+        return OBJECT_MAPPER.readValue(json, TilesInfo.class);
     }
 
     static String readString(File file) throws IOException {

@@ -31,8 +31,8 @@ class Downloader {
         List<Future<?>> futures = new ArrayList<>();
 
         Map<String, File> usernameToFile = tiles.stream()
-                .collect(Collectors.toMap(SimpleTile::getUsername,
-                        (tile) -> new File(environment.getWorkspaceDir(), "build/avatars/" + tile.getUsername() + ".png")));
+                .collect(Collectors.toMap(SimpleTile::getUserid,
+                        (tile) -> new File(environment.getWorkspaceDir(), "build/avatars/" + tile.getUserid() + ".png")));
 
         usernameToFile.forEach((username, file) -> {
             String url = String.format("https://avatars.githubusercontent.com/%s", username);

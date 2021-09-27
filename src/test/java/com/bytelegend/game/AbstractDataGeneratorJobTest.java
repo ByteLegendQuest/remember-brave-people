@@ -7,7 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import java.io.File;
 import java.nio.file.Files;
 
-import static com.bytelegend.game.Constants.BRAVE_PEOPLE_JSON;
+import static com.bytelegend.game.Constants.HEROES_JSON;
 import static com.bytelegend.game.Utils.writeString;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.not;
@@ -44,8 +44,8 @@ public abstract class AbstractDataGeneratorJobTest {
         workspaceShell = new Shell(workspace);
 
         commitChangesInUpstream("[\n" +
-                "{\"username\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
-                "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"}\n" +
+                "{\"userid\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
+                "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"}\n" +
                 "]\n");
 
         fork = new File(tmpDir, "fork");
@@ -58,7 +58,7 @@ public abstract class AbstractDataGeneratorJobTest {
     }
 
     void assertFinalJsonNotContains(String... keywords) throws Exception {
-        String json = upstreamShell.execSuccessfully("git", "show", "master:" + BRAVE_PEOPLE_JSON).stdout;
+        String json = upstreamShell.execSuccessfully("git", "show", "main:" + HEROES_JSON).stdout;
         for (String keyword : keywords) {
             assertThat(json, not(containsString(keyword)));
         }
@@ -67,12 +67,12 @@ public abstract class AbstractDataGeneratorJobTest {
     void commitChangesInFork(File dir, String player, String newJson) throws Exception {
         Shell forkShell = new Shell(dir);
         forkShell.execSuccessfully("git", "checkout", "-b", "my-branch");
-        writeString(dir, BRAVE_PEOPLE_JSON, newJson);
+        writeString(dir, HEROES_JSON, newJson);
         forkShell.execSuccessfully("git", "commit", "-a", "-m", "Change from " + player);
     }
 
     void commitChangesInUpstream(String json) throws Exception {
-        writeString(workspace, BRAVE_PEOPLE_JSON, json);
+        writeString(workspace, HEROES_JSON, json);
         writeString(workspace, ".gitignore", "build/");
         workspaceShell.execSuccessfully("git", "add", ".");
         workspaceShell.execSuccessfully("git", "commit", "-m", "Commit in upstream");

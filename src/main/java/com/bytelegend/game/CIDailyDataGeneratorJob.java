@@ -1,6 +1,7 @@
 package com.bytelegend.game;
 
 import java.io.File;
+import java.util.Collections;
 
 import static com.bytelegend.game.Environment.systemProperty;
 
@@ -10,6 +11,7 @@ import static com.bytelegend.game.Environment.systemProperty;
 public class CIDailyDataGeneratorJob {
     private final FullImageGenerator fullyDataGenerator;
     private final Uploader uploader;
+    private final Environment environment;
 
     public static void main(String[] args) throws Exception {
         Environment environment = Environment.EnvironmentBuilder.builder()
@@ -22,13 +24,14 @@ public class CIDailyDataGeneratorJob {
     }
 
     CIDailyDataGeneratorJob(Environment environment) {
+        this.environment = environment;
         this.fullyDataGenerator = new FullImageGenerator(environment);
         this.uploader = environment.createUploader();
     }
 
     void run() throws Exception {
         fullyDataGenerator.generate();
-        uploader.uploadBravePeopleImage();
+        uploader.uploadAssets(Collections.singletonList(environment.getOutputHeroesCurrentImage()));
     }
 }
 

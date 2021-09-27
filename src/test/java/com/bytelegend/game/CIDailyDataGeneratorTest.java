@@ -8,9 +8,11 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.io.File;
+import java.util.Collections;
 import java.util.Properties;
 
-import static com.bytelegend.game.Constants.BRAVE_PEOPLE_JSON;
+import static com.bytelegend.game.Constants.HEROES_JSON;
+import static com.bytelegend.game.Constants.OUTPUT_HEROES_CURRENT_PNG;
 import static com.bytelegend.game.TestUtils.assertImageWritten;
 import static com.bytelegend.game.Utils.writeString;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -30,11 +32,13 @@ public class CIDailyDataGeneratorTest {
     @ValueSource(strings = {"with main", "without main"})
     public void canGenerateAll(String scenario) throws Exception {
         String json = "[\n" +
-                "{\"username\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
-                "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#FFFFFF\"},\n" +
-                "{\"username\":\"blindpirate\",\"x\":3,\"y\":3,\"color\":\"#0000ff\"}\n" +
+                "{\"userid\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
+                "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#FFFFFF\"},\n" +
+                "{\"userid\":\"blindpirate\",\"x\":3,\"y\":3,\"color\":\"#0000ff\"}\n" +
                 "]\n";
-        writeString(dir, BRAVE_PEOPLE_JSON, json);
+        writeString(dir, HEROES_JSON, json);
+
+        File outputImage = new File(dir, OUTPUT_HEROES_CURRENT_PNG);
 
         if ("with main".equals(scenario)) {
             Properties originalProperties = System.getProperties();
@@ -55,10 +59,9 @@ public class CIDailyDataGeneratorTest {
             doReturn(uploader).when(spiedEnvironment).createUploader();
             new CIDailyDataGeneratorJob(spiedEnvironment).run();
 
-            verify(uploader).uploadBravePeopleImage();
+            verify(uploader).uploadAssets(Collections.singletonList(outputImage));
         }
 
-        File outputImage = new File(dir, Constants.OUTPUT_BRAVE_PEOPLE_PNG);
         assertTrue(outputImage.isFile());
         assertImageWritten(outputImage, 1, 1, "rgba(0,0,0,255)");
         assertImageWritten(outputImage, 2, 2, "rgba(255,255,255,255)");

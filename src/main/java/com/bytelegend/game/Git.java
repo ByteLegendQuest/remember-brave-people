@@ -1,10 +1,12 @@
 package com.bytelegend.game;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-import static com.bytelegend.game.Constants.BRAVE_PEOPLE_JSON;
-import static com.bytelegend.game.Constants.OBJECT_MAPPER;
+import static com.bytelegend.game.Constants.HEROES_JSON;
 import static com.bytelegend.game.Utils.parseSimpleTiles;
+import static com.bytelegend.game.Utils.toFormattedJson;
 import static com.bytelegend.game.Utils.writeString;
 
 class Git {
@@ -21,18 +23,18 @@ class Git {
     }
 
     /**
-     * Merge --squash to origin/master.
-     * Resolve conflict with best effort.
+     * Merge --squash to origin/main.
+     * Resolve conflict with the best effort.
      * Commit.
      */
-    void mergeToMaster(TileDataDiff diff) throws Exception {
-        shell.exec("git", "checkout", "-b", "origin_master", "origin/master").assertZeroExit();
+    void mergeToMain(TileDataDiff diff) throws Exception {
+        shell.exec("git", "checkout", "-b", "origin_main", "origin/main").assertZeroExit();
         ExecResult mergeResult = shell.exec("git", "merge", environment.getHeadRef(), "--no-commit", "--no-ff").withLog();
         // If conflict or merged result has extra changes, fallback to auto resolution.
         if (mergeResult.exitValue != 0) {
             if (mergeResult.getOutput().contains("Merge conflict")) {
-                List<SimpleTile> latestData = parseSimpleTiles(show("origin/master", BRAVE_PEOPLE_JSON));
-                latestData.removeIf(tile -> tile.getUsername().equals(diff.getChangedTile().getUsername()));
+                List<SimpleTile> latestData = parseSimpleTiles(show("origin/main", HEROES_JSON));
+                latestData.removeIf(tile -> tile.getUserid().equalsIgnoreCase(diff.getChangedTile().getUserid()));
 
                 if (latestData.stream().anyMatch(it ->
                     it.getX() == diff.getChangedTile().getX() && it.getY() == diff.getChangedTile().getY())) {
@@ -40,8 +42,7 @@ class Git {
                 }
 
                 latestData.add(diff.getChangedTile());
-                latestData.sort(SimpleTile.COMPARATOR);
-                writeString(environment.getBravePeopleJson(), OBJECT_MAPPER.writerWithDefaultPrettyPrinter().writeValueAsString(latestData));
+                writeString(environment.getHeroesJson(), toFormattedJson(latestData));
                 shell.exec("git", "add", ".");
             } else {
                 throw new IllegalStateException("Merge failed, see the git error output.");
@@ -63,6 +64,14 @@ class Git {
         );
     }
 
+    void addCommit(String commitMessage, String... files) throws Exception {
+        List<String> args = new ArrayList<>();
+        args.addAll(Arrays.asList("git", "add"));
+        args.addAll(Arrays.asList(files));
+        shell.execSuccessfully(args.toArray(new String[0]));
+        shell.execSuccessfully("git", "commit", "-m", commitMessage);
+    }
+
     private String getCoAuthoredBy() throws Exception {
         ExecResult latestCommit = shell.exec("git", "log", "-1", "--format=%an <%ae>", environment.getHeadRef()).withLog();
         if (latestCommit.exitValue == 0) {
@@ -73,7 +82,7 @@ class Git {
     }
 
     void push() throws Exception {
-        ExecResult result = shell.exec("git", "push", environment.getRepoPushUrl(), "origin_master:master").withLog();
+        ExecResult result = shell.exec("git", "push", environment.getRepoPushUrl(), "origin_main:main").withLog();
         if (result.exitValue != 0) {
             throw new IllegalStateException("Push failed. There might be multiple jobs running simultaneously, try rerunning the job.");
         }

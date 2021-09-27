@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: master
+          ref: main
       - name: Generate brave people data
         run: >
           ./gradlew dailyRun --scan

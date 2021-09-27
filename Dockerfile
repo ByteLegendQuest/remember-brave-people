@@ -1,6 +1,6 @@
 # The app is installed at /app
 # It assumes the project is mounted as volume /workspace
-FROM openjdk:11.0.10-jre
+FROM openjdk:11.0.12-jre
 
 RUN apt-get update && apt-get install -y git
 

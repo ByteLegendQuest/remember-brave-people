@@ -9,6 +9,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.bytelegend.game.Constants.TILE_BORDER_PIXEL;
 import static com.bytelegend.game.Constants.TILE_WITH_BORDER_HEIGHT;
@@ -36,24 +38,60 @@ class TestUtils {
         assertEquals(255, readPixel(outputImage, originX + TILE_WITH_BORDER_WIDTH / 2, originY + TILE_WITH_BORDER_HEIGHT / 2).a);
     }
 
-    static RGBA readPixel(File imageFile, int x, int y) throws IOException {
+    static List<List<RGBA>> readAllPixels(File imageFile) throws IOException {
+        List<List<RGBA>> ret = new ArrayList<>();
         BufferedImage img = ImageIO.read(imageFile);
+        for (int row = 0; row < img.getHeight(); ++row) {
+            List<RGBA> pixelRow = new ArrayList<>();
+            for (int col = 0; col < img.getWidth(); ++col) {
+                pixelRow.add(readPixel(img, col, row));
+            }
+            ret.add(pixelRow);
+        }
+        return ret;
+    }
+
+    private static RGBA readPixel(BufferedImage img, int x, int y) {
         int pixel = img.getRGB(x, y);
         if (img.getType() == BufferedImage.TYPE_BYTE_BINARY) {
             return new RGBA(
-                    ((pixel & 0xff0000) >>> 16),
-                    ((pixel & 0xff00) >>> 8),
-                    (pixel & 0xff),
-                    0xff
+                ((pixel & 0xff0000) >>> 16),
+                ((pixel & 0xff00) >>> 8),
+                (pixel & 0xff),
+                0xff
             );
         } else {
             return new RGBA(
-                    ((pixel & 0xff0000) >>> 16),
-                    ((pixel & 0xff00) >>> 8),
-                    (pixel & 0xff),
-                    ((pixel & 0xff000000) >>> 24)
+                ((pixel & 0xff0000) >>> 16),
+                ((pixel & 0xff00) >>> 8),
+                (pixel & 0xff),
+                ((pixel & 0xff000000) >>> 24)
             );
         }
+    }
+
+    static RGBA readPixel(File imageFile, int x, int y) throws IOException {
+        return readPixel(ImageIO.read(imageFile), x, y);
+    }
+
+    static AllInfoTile createTile(SimpleTile tile) {
+        AllInfoTile ret = new AllInfoTile();
+        ret.setUserid(tile.getUserid());
+        ret.setColor(tile.getColor());
+        ret.setX(tile.getX());
+        ret.setY(tile.getY());
+        ret.setCreatedAt(Instant.now());
+        ret.setChangedAt(Instant.now());
+        return ret;
+    }
+
+    static SimpleTile createTile(String userid, int x, int y, String color) {
+        SimpleTile tile = new SimpleTile();
+        tile.setUserid(userid);
+        tile.setX(x);
+        tile.setY(y);
+        tile.setColor(color);
+        return tile;
     }
 }
 
