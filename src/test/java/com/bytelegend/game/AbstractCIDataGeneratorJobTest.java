@@ -46,7 +46,7 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
 
         runJob("blindpirate", "blindpirate_my-branch");
 
-        assertImageWritten(getOutputHeroesCurrentImage(), 0, 0, "rgba(255,0,0,255)");
+        assertImageWritten(getOutputHeroesCurrentImage(), 0, 0, new RGBA(255, 0, 0, 255));
         assertUpload(OUTPUT_HEROES_CURRENT_PNG, OUTPUT_HEROES_CURRENT_JSON);
         assertHeroesCurrentJson(tiles -> {
                 assertEquals(3, tiles.getTiles().size());
@@ -71,7 +71,7 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
                 "]\n");
         runJob("ByteLegendBot", "ByteLegendBot_my-branch");
 
-        assertImageWritten(getOutputHeroesCurrentImage(), 1, 1, "rgba(255,255,255,255)");
+        assertImageWritten(getOutputHeroesCurrentImage(), 1, 1, new RGBA(255, 255, 255, 255));
         assertUpload(OUTPUT_HEROES_CURRENT_PNG, OUTPUT_HEROES_CURRENT_JSON);
         assertHeroesCurrentJson(tiles -> {
                 assertEquals(2, tiles.getTiles().size());
@@ -101,7 +101,7 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
                 "]\n");
         runJob("ByteLegendBot", "ByteLegendBot_my-branch");
 
-        assertImageWritten(getOutputHeroesCurrentImage(), 1, 1, "rgba(255,255,255,255)");
+        assertImageWritten(getOutputHeroesCurrentImage(), 1, 1, new RGBA(255, 255, 255, 255));
         assertUpload(OUTPUT_HEROES_CURRENT_PNG, OUTPUT_HEROES_CURRENT_JSON);
         assertFinalJsonContains("ByteLegendBot", "#FFFFFF");
         assertFinalJsonNotContains("#000000");
@@ -191,7 +191,7 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
 
         runJob("blindpirate", "blindpirate_my-branch");
 
-        assertImageWritten(getOutputHeroesCurrentImage(), 2, 1, "rgba(0,255,0,255)");
+        assertImageWritten(getOutputHeroesCurrentImage(), 2, 1, new RGBA(0, 255, 0, 255));
         assertUpload(OUTPUT_HEROES_CURRENT_PNG, OUTPUT_HEROES_CURRENT_JSON);
         assertHeroesCurrentJson(tiles -> {
                 if ("conflicts".equals(scenario)) {

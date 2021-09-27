@@ -17,6 +17,8 @@ dependencies {
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.12.1")
     implementation("commons-io:commons-io:2.8.0")
     implementation("software.amazon.awssdk:s3:2.17.33")
+    implementation("org.jpedal:OpenViewerFX:6.6.14")
+
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.7.0")
     testImplementation("org.hamcrest:hamcrest:2.2")

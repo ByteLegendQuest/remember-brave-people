@@ -2,8 +2,14 @@ package com.bytelegend.game;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.idrsolutions.image.png.PngCompressor;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -69,5 +75,13 @@ class Utils {
 
     static void writeString(File file, String content) throws IOException {
         Files.write(file.toPath(), content.getBytes(StandardCharsets.UTF_8));
+    }
+
+    static void writeToPngAndCompress(BufferedImage bufferedImage, File targetPngFile) throws IOException {
+        ByteArrayOutputStream os = new ByteArrayOutputStream();
+        ImageIO.write(bufferedImage, "PNG", os);
+
+        ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
+        PngCompressor.compress(is, new FileOutputStream(targetPngFile));
     }
 }

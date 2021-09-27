@@ -18,6 +18,7 @@ import static com.bytelegend.game.Constants.TILE_WITH_BORDER_HEIGHT;
 import static com.bytelegend.game.Constants.TILE_WITH_BORDER_WIDTH;
 import static com.bytelegend.game.Utils.parseSimpleTiles;
 import static com.bytelegend.game.Utils.readString;
+import static com.bytelegend.game.Utils.writeToPngAndCompress;
 
 abstract class ImageGenerator {
     protected final Environment environment;
@@ -78,7 +79,7 @@ class IncrementalImageGenerator extends ImageGenerator {
         Graphics graphics = bufferedImage.getGraphics();
         writeTile(graphics, diff.getChangedTile(), downloader.downloadAvatars(Arrays.asList(diff.getChangedTile())));
         graphics.dispose();
-        ImageIO.write(bufferedImage, "PNG", environment.getOutputHeroesCurrentImage());
+        writeToPngAndCompress(bufferedImage, environment.getOutputHeroesCurrentImage());
     }
 }
 
@@ -104,6 +105,6 @@ class FullImageGenerator extends ImageGenerator {
 
         inputTiles.forEach(tile -> writeTile(graphics, tile, usernameToAvatars));
         graphics.dispose();
-        ImageIO.write(bufferedImage, "PNG", environment.getOutputHeroesCurrentImage());
+        writeToPngAndCompress(bufferedImage, environment.getOutputHeroesCurrentImage());
     }
 }

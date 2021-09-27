@@ -156,7 +156,7 @@ public class CIDataGeneratorJobEmbeddedTest extends AbstractCIDataGeneratorJobTe
         futureForFork.get();
         assertExceptionWithMessage("Push failed", futureForFork2::get);
 
-        assertImageWritten(environmentForFork.getOutputHeroesCurrentImage(), 3, 3, "rgba(0,255,0,255)");
+        assertImageWritten(environmentForFork.getOutputHeroesCurrentImage(), 3, 3, new RGBA(0, 255, 0, 255));
         assertUpload(OUTPUT_HEROES_CURRENT_PNG, OUTPUT_HEROES_CURRENT_JSON);
         assertFinalJsonContains("blindpirate", "#00FF00");
         assertFinalJsonNotContains("octocat");

@@ -17,6 +17,7 @@ import static com.bytelegend.game.Constants.TILE_WITH_BORDER_HEIGHT;
 import static com.bytelegend.game.Constants.TILE_WITH_BORDER_WIDTH;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TestUtils {
     static void assertExceptionWithMessage(String message, Executable runnable) {
@@ -28,14 +29,14 @@ class TestUtils {
         return Math.abs(instant1.getEpochSecond() - instant2.getEpochSecond()) < 60;
     }
 
-    static void assertImageWritten(File outputImage, int x, int y, String rgba) throws IOException {
+    static void assertImageWritten(File outputImage, int x, int y, RGBA rgba) throws IOException {
         int originX = x * TILE_WITH_BORDER_WIDTH;
         int originY = y * TILE_WITH_BORDER_HEIGHT;
         // corners are #000, others are opaque
-        assertEquals(rgba, readPixel(outputImage, originX, originY).toString());
-        assertEquals(rgba, readPixel(outputImage, originX + TILE_WITH_BORDER_WIDTH - 1, originY + TILE_WITH_BORDER_HEIGHT - 1).toString());
-        assertEquals(255, readPixel(outputImage, originX + TILE_BORDER_PIXEL, originY + TILE_BORDER_PIXEL).a);
-        assertEquals(255, readPixel(outputImage, originX + TILE_WITH_BORDER_WIDTH / 2, originY + TILE_WITH_BORDER_HEIGHT / 2).a);
+        assertEquals(rgba, readPixel(outputImage, originX, originY));
+        assertEquals(rgba, readPixel(outputImage, originX + TILE_WITH_BORDER_WIDTH - 1, originY + TILE_WITH_BORDER_HEIGHT - 1));
+        assertTrue(RGBA.pixelEquals(255, readPixel(outputImage, originX + TILE_BORDER_PIXEL, originY + TILE_BORDER_PIXEL).a));
+        assertTrue(RGBA.pixelEquals(255, readPixel(outputImage, originX + TILE_WITH_BORDER_WIDTH / 2, originY + TILE_WITH_BORDER_HEIGHT / 2).a));
     }
 
     static List<List<RGBA>> readAllPixels(File imageFile) throws IOException {
@@ -109,7 +110,23 @@ class RGBA {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RGBA)) {
+            return false;
+        }
+        RGBA rgba = (RGBA) o;
+        return pixelEquals(r, rgba.r) && pixelEquals(g, rgba.g) && pixelEquals(b, rgba.b) && pixelEquals(a, rgba.a);
+    }
+
+    @Override
     public String toString() {
         return String.format("rgba(%d,%d,%d,%d)", r, g, b, a);
+    }
+
+    static boolean pixelEquals(int a, int b) {
+        return Math.abs(a - b) < 4;
     }
 }
