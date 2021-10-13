@@ -31,7 +31,7 @@ jobs:
           -DprTitle='${{ github.event.pull_request.title }}'
           -DprHeadSha=${{ github.event.pull_request.head.sha }}
           -DapiUrl=https://bytelegend.com
-          -DcodeCheckerSecret=${{ secrets.CODE_CHECKER_SECRET }}
+          -DinternalApiSecret=${{ secrets.INTERNAL_API_SECRET }}
           -jar code-checker.jar
       - name: Verify and generate brave people data
         run: >
