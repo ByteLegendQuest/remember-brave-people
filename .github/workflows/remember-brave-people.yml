@@ -20,13 +20,23 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '11'
+      - name: Determine player username
+        id: determine-player-username
+        uses: actions/github-script@v5
+        with:
+          script: |
+            if (!context.payload.pull_request.head.repo.fork && context.payload.pull_request.head.ref.startsWith('gh/')) {
+                core.setOutput('player-github-username', context.payload.pull_request.head.ref.substring(3).split('/')[0])
+            } else {
+                core.setOutput('player-github-username', context.payload.pull_request.user.login)
+            }
       - name: Check Problems in Code
         run: >
           curl --location --fail --silent --show-error -o code-checker.jar https://github.com/ByteLegend/tools/releases/download/v1.0.0/code-checker.jar &&
           java
           -DgitHubToken=${{ secrets.GITHUB_TOKEN }}
           -DprRepoFullName=${{ github.event.pull_request.base.repo.full_name }}
-          -DprAuthor=${{ github.event.pull_request.user.login }}
+          -DprAuthor=${{ steps.determine-player-username.outputs.player-github-username }}
           -DprNumber=${{ github.event.pull_request.number }}
           -DprTitle='${{ github.event.pull_request.title }}'
           -DprHeadSha=${{ github.event.pull_request.head.sha }}
@@ -37,7 +47,7 @@ jobs:
         run: >
           docker run -v $GITHUB_WORKSPACE:/workspace blindpirate/remember-brave-people
           -DworkspaceDir=/workspace
-          -DplayerGitHubUsername=${{ github.event.pull_request.user.login }}
+          -DplayerGitHubUsername=${{ steps.determine-player-username.outputs.player-github-username }}
           -DprTitle='${{ github.event.pull_request.title }}'
           -DprNumber=${{ github.event.pull_request.number }}
           -DaccessKeyId=${{ secrets.AWS_ACCESS_KEY_ID }}
