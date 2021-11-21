@@ -126,14 +126,14 @@ public class CIDataGeneratorJobEmbeddedTest extends AbstractCIDataGeneratorJobTe
         createPullRequest(workspace2, fork2, "octocat", "[\n" +
             "{\"userid\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
             "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"},\n" +
-            "{\"userid\":\"octocat\",\"x\":0,\"y\":0,\"color\":\"#FFFFFF\"}\n" +
+            "{\"userid\":\"octocat\",\"x\":0,\"y\":0,\"color\":\"#00FF00\"}\n" +
             "]\n");
 
         createPullRequest(workspace, fork, "blindpirate",
             "[\n" +
                 "{\"userid\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
                 "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"},\n" +
-                "{\"userid\":\"blindpirate\",\"x\":3,\"y\":3,\"color\":\"#00FF00\"}\n" +
+                "{\"userid\":\"blindpirate\",\"x\":3,\"y\":3,\"color\":\"#FFFFFF\"}\n" +
                 "]\n");
 
         // fork pushes first and succeeds, fork2 pushes later and fails
@@ -158,14 +158,14 @@ public class CIDataGeneratorJobEmbeddedTest extends AbstractCIDataGeneratorJobTe
         futureForFork.get();
         assertExceptionWithMessage("Push failed", futureForFork2::get);
 
-        assertImageWritten(environmentForFork.getOutputHeroesCurrentImage(), 3, 3, new RGBA(0, 255, 0, 255));
+        assertImageWritten(environmentForFork.getOutputHeroesCurrentImage(), 3, 3, new RGBA(255, 255, 255, 255));
         assertUpload(
             OUTPUT_HEROES_CURRENT_PNG,
             OUTPUT_HEROES_CURRENT_JSON,
             OUTPUT_HEROES_CURRENT_PNG.replace("-current", "-42"),
             OUTPUT_HEROES_CURRENT_JSON.replace("-current", "-42")
         );
-        assertFinalJsonContains("blindpirate", "#00FF00");
+        assertFinalJsonContains("blindpirate", "#FFFFFF");
         assertFinalJsonNotContains("octocat");
         assertLastCommitMessageContains("blindpirate");
     }

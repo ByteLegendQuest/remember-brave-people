@@ -188,7 +188,7 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
             commitChangesInUpstream("[\n" +
                 "{\"userid\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
                 "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"},\n" +
-                "{\"userid\":\"octocat\",\"x\":0,\"y\":0,\"color\":\"#FFFFFF\"}\n" +
+                "{\"userid\":\"octocat\",\"x\":0,\"y\":0,\"color\":\"#00FFFF\"}\n" +
                 "]\n");
         } else {
             // ByteLegendBot's color is changed.
@@ -201,12 +201,12 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
             "[\n" +
                 "{\"userid\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
                 "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"},\n" +
-                "{\"userid\":\"blindpirate\",\"x\":2,\"y\":1,\"color\":\"#00FF00\"}\n" +
+                "{\"userid\":\"blindpirate\",\"x\":2,\"y\":1,\"color\":\"#FFFFFF\"}\n" +
                 "]\n");
 
         runJob("blindpirate", "blindpirate_my-branch");
 
-        assertImageWritten(getOutputHeroesCurrentImage(), 2, 1, new RGBA(0, 255, 0, 255));
+        assertImageWritten(getOutputHeroesCurrentImage(), 2, 1, new RGBA(255, 255, 255, 255));
         assertUpload(
             OUTPUT_HEROES_CURRENT_PNG,
             OUTPUT_HEROES_CURRENT_JSON,
@@ -224,7 +224,7 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
                     assertEquals(Arrays.asList(1, 2, 0, 1),
                         tiles.getTiles().stream().map(SimpleTile::getY).collect(Collectors.toList())
                     );
-                    assertEquals(Arrays.asList("#000000", "#222222", "#FFFFFF", "#00FF00"),
+                    assertEquals(Arrays.asList("#000000", "#222222", "#00FFFF", "#FFFFFF"),
                         tiles.getTiles().stream().map(SimpleTile::getColor).collect(Collectors.toList())
                     );
                     assertTrue(isClose(Instant.now(), tiles.getTiles().get(3).getCreatedAt()));
@@ -240,7 +240,7 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
                     assertEquals(Arrays.asList(1, 2, 1),
                         tiles.getTiles().stream().map(SimpleTile::getY).collect(Collectors.toList())
                     );
-                    assertEquals(Arrays.asList("#111111", "#222222", "#00FF00"),
+                    assertEquals(Arrays.asList("#111111", "#222222", "#FFFFFF"),
                         tiles.getTiles().stream().map(SimpleTile::getColor).collect(Collectors.toList())
                     );
                     assertTrue(isClose(Instant.now(), tiles.getTiles().get(2).getCreatedAt()));
