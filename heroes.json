@@ -345,5 +345,6 @@
   {"x":14, "y":6, "color":"#000000", "userid": "FriedreichBismarck"},
   {"x":1, "y":11, "color":"#000000", "userid": "dongzhoutianzi"},
   {"x":17, "y":15, "color":"#FF0000", "userid": "PatTianFang"},
-  {"x": 15, "y": 6, "color": "#009DAE", "userid": "Windsority"}
+  {"x": 15, "y": 6, "color": "#009DAE", "userid": "Windsority"},
+  {"x": 64, "y": 64, "color": "#666666", "userid": "MortalreminderPT"}
 ]
