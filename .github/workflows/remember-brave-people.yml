@@ -34,6 +34,7 @@ jobs:
         run: >
           curl --location --fail --silent --show-error -o code-checker.jar https://github.com/ByteLegend/tools/releases/download/v1.0.0/code-checker.jar &&
           java
+          -DprLocalBranch=${{ github.event.pull_request.user.login }}_${{ github.event.pull_request.head.ref }}
           -DgitHubToken=${{ secrets.GITHUB_TOKEN }}
           -DprRepoFullName=${{ github.event.pull_request.base.repo.full_name }}
           -DprAuthor=${{ steps.determine-player-username.outputs.player-github-username }}
