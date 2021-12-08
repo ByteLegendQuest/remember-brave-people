@@ -1,8 +1,13 @@
-# Ignore Gradle project-specific cache directory
-.gradle
-
-# Ignore Gradle build output directory
+.idea/
+.gradle/
 build/
 out/
-.idea/
-brave-people.old.json
+target/
+*.iml
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+            
