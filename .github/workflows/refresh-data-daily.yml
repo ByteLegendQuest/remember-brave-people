@@ -1,10 +1,10 @@
-name: refresh-data-daily
+name: daily
 on:
   schedule:
     - cron: '42 0 * * *'
 
 jobs:
-  remember-brave-people:
+  refresh:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -15,3 +15,13 @@ jobs:
           ./gradlew dailyRun --scan
           -DaccessKeyId=${{ secrets.AWS_ACCESS_KEY_ID }}
           -DaccessKeySecret=${{ secrets.AWS_ACCESS_KEY_SECRET }}
+  clean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clean
+        run: >
+          curl --location --fail --silent --show-error -o repo-cleaner.jar https://github.com/ByteLegend/tools/releases/download/v1.0.0/repo-cleaner.jar &&
+          java
+          -DgitHubToken=${{ secrets.GITHUB_TOKEN }}
+          -DrepoFullName="$GITHUB_REPOSITORY"
+          -jar repo-cleaner.jar
