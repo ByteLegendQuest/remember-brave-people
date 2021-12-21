@@ -44,8 +44,8 @@ public abstract class AbstractDataGeneratorJobTest {
         workspaceShell = new Shell(workspace);
 
         commitChangesInUpstream("[\n" +
-                "{\"userid\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
-                "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"}\n" +
+                "{\"username\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
+                "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"}\n" +
                 "]\n");
 
         fork = new File(tmpDir, "fork");

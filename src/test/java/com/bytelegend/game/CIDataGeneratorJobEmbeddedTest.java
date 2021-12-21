@@ -124,16 +124,16 @@ public class CIDataGeneratorJobEmbeddedTest extends AbstractCIDataGeneratorJobTe
 
         mockHeroesCurrentJson(workspace2, readString(workspace, MOCK_HEROES_CURRENT_JSON_PATH));
         createPullRequest(workspace2, fork2, "octocat", "[\n" +
-            "{\"userid\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
-            "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"},\n" +
-            "{\"userid\":\"octocat\",\"x\":0,\"y\":0,\"color\":\"#00FF00\"}\n" +
+            "{\"username\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
+            "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"},\n" +
+            "{\"username\":\"octocat\",\"x\":0,\"y\":0,\"color\":\"#00FF00\"}\n" +
             "]\n");
 
         createPullRequest(workspace, fork, "blindpirate",
             "[\n" +
-                "{\"userid\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
-                "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"},\n" +
-                "{\"userid\":\"blindpirate\",\"x\":3,\"y\":3,\"color\":\"#FFFFFF\"}\n" +
+                "{\"username\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
+                "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"},\n" +
+                "{\"username\":\"blindpirate\",\"x\":3,\"y\":3,\"color\":\"#FFFFFF\"}\n" +
                 "]\n");
 
         // fork pushes first and succeeds, fork2 pushes later and fails

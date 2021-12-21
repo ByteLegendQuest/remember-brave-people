@@ -15,7 +15,7 @@ public class AllInfoTile extends SimpleTile {
         ret.setX(simpleTile.getX());
         ret.setY(simpleTile.getY());
         ret.setColor(simpleTile.getColor());
-        ret.setUserid(simpleTile.getUserid());
+        ret.setUsername(simpleTile.getUsername());
         return ret;
     }
 
@@ -43,7 +43,7 @@ public class AllInfoTile extends SimpleTile {
                 ", x=" + getX() +
                 ", y=" + getY() +
                 ", color='" + getColor() + '\'' +
-                ", username='" + getUserid() + '\'' +
+                ", username='" + getUsername() + '\'' +
                 '}';
     }
 }

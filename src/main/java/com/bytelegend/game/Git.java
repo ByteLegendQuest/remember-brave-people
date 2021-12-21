@@ -34,7 +34,7 @@ class Git {
         if (mergeResult.exitValue != 0) {
             if (mergeResult.getOutput().contains("Merge conflict")) {
                 List<SimpleTile> latestData = parseSimpleTiles(show("origin/main", HEROES_JSON));
-                latestData.removeIf(tile -> tile.getUserid().equalsIgnoreCase(diff.getChangedTile().getUserid()));
+                latestData.removeIf(tile -> tile.getUsername().equalsIgnoreCase(diff.getChangedTile().getUsername()));
 
                 if (latestData.stream().anyMatch(it ->
                     it.getX() == diff.getChangedTile().getX() && it.getY() == diff.getChangedTile().getY())) {

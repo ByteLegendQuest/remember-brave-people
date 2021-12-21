@@ -19,9 +19,9 @@ public class DeveloperLocalDataGeneratorJobTest extends AbstractDataGeneratorJob
     @ValueSource(strings = {"commit", "no commit"})
     public void generateIncrementallyIfForkPointFount(String scenario) throws Exception {
         String newJson = "[\n" +
-            "{\"userid\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
-            "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"},\n" +
-            "{\"userid\":\"blindpirate\",\"x\":3,\"y\":3,\"color\":\"#0000ff\"}\n" +
+            "{\"username\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
+            "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"},\n" +
+            "{\"username\":\"blindpirate\",\"x\":3,\"y\":3,\"color\":\"#0000ff\"}\n" +
             "]\n";
         if ("commit".equals(scenario)) {
             commitChangesInFork(fork, "blindpirate", newJson);
@@ -45,9 +45,9 @@ public class DeveloperLocalDataGeneratorJobTest extends AbstractDataGeneratorJob
     @ValueSource(strings = {"commit", "no commit"})
     public void failIfConflictWithOthers(String scenario) throws Exception {
         String newJson = "[\n" +
-            "{\"userid\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
-            "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"},\n" +
-            "{\"userid\":\"blindpirate\",\"x\":2,\"y\":2,\"color\":\"#0000ff\"}\n" +
+            "{\"username\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
+            "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"},\n" +
+            "{\"username\":\"blindpirate\",\"x\":2,\"y\":2,\"color\":\"#0000ff\"}\n" +
             "]\n";
         if ("commit".equals(scenario)) {
             commitChangesInFork(fork, "blindpirate", newJson);
@@ -66,9 +66,9 @@ public class DeveloperLocalDataGeneratorJobTest extends AbstractDataGeneratorJob
     @Test
     public void generateFullyAsFallback(@TempDir File dir) throws Exception {
         String newJson = "[\n" +
-            "{\"userid\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
-            "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#FFFFFF\"},\n" +
-            "{\"userid\":\"blindpirate\",\"x\":3,\"y\":3,\"color\":\"#0000ff\"}\n" +
+            "{\"username\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
+            "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#FFFFFF\"},\n" +
+            "{\"username\":\"blindpirate\",\"x\":3,\"y\":3,\"color\":\"#0000ff\"}\n" +
             "]\n";
         writeString(dir, HEROES_JSON, newJson);
         Environment environment = Environment.EnvironmentBuilder.builder()

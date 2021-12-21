@@ -40,7 +40,7 @@ class Utils {
             sb.append("\"x\": ").append(tiles.get(i).getX()).append(", ");
             sb.append("\"y\": ").append(tiles.get(i).getY()).append(", ");
             sb.append("\"color\": \"").append(tiles.get(i).getColor()).append("\", ");
-            sb.append("\"userid\": \"").append(tiles.get(i).getUserid()).append("\"");
+            sb.append("\"username\": \"").append(tiles.get(i).getUsername()).append("\"");
             sb.append("}");
             if (i != tiles.size() - 1) {
                 sb.append(",");

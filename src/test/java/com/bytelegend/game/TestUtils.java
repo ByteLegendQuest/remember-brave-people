@@ -77,7 +77,7 @@ class TestUtils {
 
     static AllInfoTile createTile(SimpleTile tile) {
         AllInfoTile ret = new AllInfoTile();
-        ret.setUserid(tile.getUserid());
+        ret.setUsername(tile.getUsername());
         ret.setColor(tile.getColor());
         ret.setX(tile.getX());
         ret.setY(tile.getY());
@@ -86,9 +86,9 @@ class TestUtils {
         return ret;
     }
 
-    static SimpleTile createTile(String userid, int x, int y, String color) {
+    static SimpleTile createTile(String username, int x, int y, String color) {
         SimpleTile tile = new SimpleTile();
-        tile.setUserid(userid);
+        tile.setUsername(username);
         tile.setX(x);
         tile.setY(y);
         tile.setColor(color);

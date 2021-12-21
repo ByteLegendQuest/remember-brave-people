@@ -153,7 +153,7 @@ public class CIDataGeneratorJob {
      * The lines in the JSON file must be one of:
      * - Empty line.
      * - Square brackets. '[' or ']'.
-     * - Entire object: "x": "y": "color": "userid":
+     * - Entire object: "x": "y": "color": "username":
      */
     private void checkJsonFormatted(String newJson) {
         List<String> lines = Arrays.asList(newJson.split("\\n"));
@@ -176,6 +176,6 @@ public class CIDataGeneratorJob {
         return trimmed.contains("\"x\"") &&
             trimmed.contains("\"y\"") &&
             trimmed.contains("\"color\"") &&
-            trimmed.contains("\"userid\"");
+            trimmed.contains("\"username\"");
     }
 }

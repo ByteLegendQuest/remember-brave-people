@@ -51,7 +51,7 @@ abstract class ImageGenerator {
                 TILE_WITH_BORDER_HEIGHT
             );
 
-            BufferedImage avatarImage = ImageIO.read(usernameToAvatarImage.get(tile.getUserid()));
+            BufferedImage avatarImage = ImageIO.read(usernameToAvatarImage.get(tile.getUsername()));
 
             graphics.drawImage(avatarImage,
                 tile.getX() * TILE_WITH_BORDER_WIDTH + TILE_BORDER_PIXEL,

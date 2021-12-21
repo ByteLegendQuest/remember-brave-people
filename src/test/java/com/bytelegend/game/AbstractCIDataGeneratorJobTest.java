@@ -39,9 +39,9 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
     public void playerCanAddTile() throws Exception {
         createPullRequest(workspace, fork, "blindpirate",
             "[" +
-                "{\"userid\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"}," +
-                "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"}," +
-                "{\"userid\":\"blindpirate\",\"x\":0,\"y\":0,\"color\":\"#ff0000\"}" +
+                "{\"username\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"}," +
+                "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"}," +
+                "{\"username\":\"blindpirate\",\"x\":0,\"y\":0,\"color\":\"#ff0000\"}" +
                 "]");
 
         runJob("blindpirate", "blindpirate_my-branch");
@@ -55,7 +55,7 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
         );
         assertHeroesCurrentJson(tiles -> {
                 assertEquals(3, tiles.getTiles().size());
-                AllInfoTile addedTile = tiles.getTiles().stream().filter(it -> it.getUserid().equals("blindpirate"))
+                AllInfoTile addedTile = tiles.getTiles().stream().filter(it -> it.getUsername().equals("blindpirate"))
                     .findFirst()
                     .get();
                 assertNotNull(addedTile.getChangedAt());
@@ -71,8 +71,8 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
     public void playerCanModifyTileColor() throws Exception {
         createPullRequest(workspace, fork, "ByteLegendBot",
             "[\n" +
-                "{\"userid\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#FFFFFF\"},\n" +
-                "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"}\n" +
+                "{\"username\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#FFFFFF\"},\n" +
+                "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"}\n" +
                 "]\n");
         runJob("ByteLegendBot", "ByteLegendBot_my-branch");
 
@@ -85,7 +85,7 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
         );
         assertHeroesCurrentJson(tiles -> {
                 assertEquals(2, tiles.getTiles().size());
-                AllInfoTile changedTile = tiles.getTiles().stream().filter(it -> it.getUserid().equals("ByteLegendBot"))
+                AllInfoTile changedTile = tiles.getTiles().stream().filter(it -> it.getUsername().equals("ByteLegendBot"))
                     .findFirst()
                     .get();
                 assertEquals(1, changedTile.getX());
@@ -106,8 +106,8 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
     public void playerCanDoEmptyChange() throws Exception {
         createPullRequest(workspace, fork, "ByteLegendBot",
             "[\n" +
-                "{\"userid\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#FFFFFF\"},\n " + // an extra space
-                "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"}\n" +
+                "{\"username\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#FFFFFF\"},\n " + // an extra space
+                "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"}\n" +
                 "]\n");
         runJob("ByteLegendBot", "ByteLegendBot_my-branch");
 
@@ -128,9 +128,9 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
     public void failIfPlayerAddsMoreThanOneTiles() throws Exception {
         createPullRequest(workspace, fork, "ByteLegendBot",
             "[\n" +
-                "{\"userid\":\"ByteLegendBot\",\"x\":1,\"y\":2,\"color\":\"#000000\"},\n" +
-                "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"},\n" +
-                "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"}\n" +
+                "{\"username\":\"ByteLegendBot\",\"x\":1,\"y\":2,\"color\":\"#000000\"},\n" +
+                "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"},\n" +
+                "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"}\n" +
                 "]\n");
 
         assertExceptionWithMessage("Duplicate username: torvalds", () ->
@@ -142,8 +142,8 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
     public void failIfPlayerChangeLocation() throws Exception {
         createPullRequest(workspace, fork, "ByteLegendBot",
             "[\n" +
-                "{\"userid\":\"ByteLegendBot\",\"x\":1,\"y\":2,\"color\":\"#000000\"},\n" +
-                "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"}\n" +
+                "{\"username\":\"ByteLegendBot\",\"x\":1,\"y\":2,\"color\":\"#000000\"},\n" +
+                "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"}\n" +
                 "]\n");
 
         assertExceptionWithMessage("You are not allowed to change tile's location", () ->
@@ -155,8 +155,8 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
     public void failIfPlayerModifyOtherOnesTile() throws Exception {
         createPullRequest(workspace, fork, "ByteLegendBot",
             "[\n" +
-                "{\"userid\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
-                "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#1a2b3c\"}\n" +
+                "{\"username\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
+                "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#1a2b3c\"}\n" +
                 "]\n");
 
         assertExceptionWithMessage("You are not allowed to change other one's tile", () ->
@@ -167,14 +167,14 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
     @Test
     public void failIfPlayerChangeIsStaleAndLocationConflictsWithOtherPeople() throws Exception {
         commitChangesInUpstream("[\n" +
-            "{\"userid\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
-            "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"},\n" +
-            "{\"userid\":\"octocat\",\"x\":3,\"y\":3,\"color\":\"#FFFFFF\"}]\n");
+            "{\"username\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
+            "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"},\n" +
+            "{\"username\":\"octocat\",\"x\":3,\"y\":3,\"color\":\"#FFFFFF\"}]\n");
         createPullRequest(workspace, fork, "blindpirate",
             "[\n" +
-                "{\"userid\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
-                "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"},\n" +
-                "{\"userid\":\"blindpirate\",\"x\":3,\"y\":3,\"color\":\"#FFFFFF\"}]\n");
+                "{\"username\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
+                "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"},\n" +
+                "{\"username\":\"blindpirate\",\"x\":3,\"y\":3,\"color\":\"#FFFFFF\"}]\n");
 
         assertExceptionWithMessage("Your change conflicts with other one's change, you need to sync upstream repository", () ->
             runJob("blindpirate", "blindpirate_my-branch")
@@ -186,22 +186,22 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
     public void playerCanAddTileFromStaleBranchWhen(String scenario) throws Exception {
         if ("conflicts".equals(scenario)) {
             commitChangesInUpstream("[\n" +
-                "{\"userid\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
-                "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"},\n" +
-                "{\"userid\":\"octocat\",\"x\":0,\"y\":0,\"color\":\"#00FFFF\"}\n" +
+                "{\"username\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
+                "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"},\n" +
+                "{\"username\":\"octocat\",\"x\":0,\"y\":0,\"color\":\"#00FFFF\"}\n" +
                 "]\n");
         } else {
             // ByteLegendBot's color is changed.
             commitChangesInUpstream("[\n" +
-                "{\"userid\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#111111\"},\n" +
-                "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"}\n" +
+                "{\"username\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#111111\"},\n" +
+                "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"}\n" +
                 "]\n");
         }
         createPullRequest(workspace, fork, "blindpirate",
             "[\n" +
-                "{\"userid\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
-                "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"},\n" +
-                "{\"userid\":\"blindpirate\",\"x\":2,\"y\":1,\"color\":\"#FFFFFF\"}\n" +
+                "{\"username\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
+                "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"},\n" +
+                "{\"username\":\"blindpirate\",\"x\":2,\"y\":1,\"color\":\"#FFFFFF\"}\n" +
                 "]\n");
 
         runJob("blindpirate", "blindpirate_my-branch");
@@ -216,7 +216,7 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
         assertHeroesCurrentJson(tiles -> {
                 if ("conflicts".equals(scenario)) {
                     assertEquals(Arrays.asList("ByteLegendBot", "torvalds", "octocat", "blindpirate"),
-                        tiles.getTiles().stream().map(SimpleTile::getUserid).collect(Collectors.toList())
+                        tiles.getTiles().stream().map(SimpleTile::getUsername).collect(Collectors.toList())
                     );
                     assertEquals(Arrays.asList(1, 2, 0, 2),
                         tiles.getTiles().stream().map(SimpleTile::getX).collect(Collectors.toList())
@@ -232,7 +232,7 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
                     assertTrue(isClose(Instant.now(), tiles.getTiles().get(3).getChangedAt()));
                 } else {
                     assertEquals(Arrays.asList("ByteLegendBot", "torvalds", "blindpirate"),
-                        tiles.getTiles().stream().map(SimpleTile::getUserid).collect(Collectors.toList())
+                        tiles.getTiles().stream().map(SimpleTile::getUsername).collect(Collectors.toList())
                     );
                     assertEquals(Arrays.asList(1, 2, 2),
                         tiles.getTiles().stream().map(SimpleTile::getX).collect(Collectors.toList())
@@ -263,7 +263,7 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
     public void failIfPlayerRemoveTile() throws Exception {
         createPullRequest(workspace, fork, "ByteLegendBot",
             "[" +
-                "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"}" +
+                "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"}" +
                 "]");
 
         assertExceptionWithMessage("You are not allowed to remove tile", () ->

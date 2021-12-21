@@ -6,7 +6,7 @@ public class SimpleTile {
     private int x;
     private int y;
     private String color;
-    private String userid;
+    private String username;
 
     public int getX() {
         return x;
@@ -32,12 +32,12 @@ public class SimpleTile {
         this.color = color;
     }
 
-    public String getUserid() {
-        return userid;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserid(String userid) {
-        this.userid = userid;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     @Override
@@ -49,12 +49,12 @@ public class SimpleTile {
             return false;
         }
         SimpleTile that = (SimpleTile) o;
-        return x == that.x && y == that.y && Objects.equals(color, that.color) && userid.equalsIgnoreCase(that.userid);
+        return x == that.x && y == that.y && Objects.equals(color, that.color) && username.equalsIgnoreCase(that.username);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(x, y, color, userid.toUpperCase());
+        return Objects.hash(x, y, color, username.toUpperCase());
     }
 
     @Override
@@ -63,7 +63,7 @@ public class SimpleTile {
                 "x=" + x +
                 ", y=" + y +
                 ", color='" + color + '\'' +
-                ", username='" + userid + '\'' +
+                ", username='" + username + '\'' +
                 '}';
     }
 }

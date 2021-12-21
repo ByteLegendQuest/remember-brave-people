@@ -25,7 +25,7 @@ class JsonGenerator {
 
         AllInfoTile tile = tilesInfo.getTiles().stream()
                 .filter(it ->
-                        it.getUserid().equals(diff.getChangedTile().getUserid()))
+                        it.getUsername().equals(diff.getChangedTile().getUsername()))
                 .findFirst()
                 .orElse(null);
 

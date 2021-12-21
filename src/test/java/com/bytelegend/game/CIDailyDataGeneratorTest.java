@@ -32,9 +32,9 @@ public class CIDailyDataGeneratorTest {
     @ValueSource(strings = {"with main", "without main"})
     public void canGenerateAll(String scenario) throws Exception {
         String json = "[\n" +
-            "{\"userid\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
-            "{\"userid\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#FFFFFF\"},\n" +
-            "{\"userid\":\"blindpirate\",\"x\":3,\"y\":3,\"color\":\"#0000ff\"}\n" +
+            "{\"username\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"},\n" +
+            "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#FFFFFF\"},\n" +
+            "{\"username\":\"blindpirate\",\"x\":3,\"y\":3,\"color\":\"#0000ff\"}\n" +
             "]\n";
         writeString(dir, HEROES_JSON, json);
 
