@@ -15,7 +15,7 @@
 ![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/github-username.png)
 - 挑一个自己喜欢的颜色，如果不知道怎么找，和别人的颜色一致也无妨。
 - 找一个空闲的坐标(x,y)，否则你的PR会被拒绝合入（你也不希望自己的格子被别人覆盖掉对吧？）。把鼠标移动到`英雄榜`上，下面会显示当前的坐标，找一个**空闲位置**即可。
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/find-avaible-coordinate.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/find-vacant-coordinate.png)
 
 特别注意！！！！！图中位置①有一个**英文逗号**，位置②**没有任何逗号**，这是[JSON格式](https://www.json.org/json-zh.html)的要求。
 如果你不理解，没关系，我们会在未来的学习中逐步掌握这些知识。

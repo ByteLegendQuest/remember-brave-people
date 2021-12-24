@@ -17,7 +17,7 @@ Add one line in that file and fill it out with your information:
 - Pick up your favorite color, or use the same as others if you don't know how.
 - Find an available coordinate (x,y), otherwise your PR will be rejected. (You don't like your tile overwritten by other people, right?)
   Move your mouse to `Hero Noticeboard`, it shows the coordinate, just pick up **a vacant coordinate**.
-![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/find-avaible-coordinate.png)
+![1](https://raw.githubusercontent.com/ByteLegendQuest/remember-brave-people/main/docs/find-vacant-coordinate.png)
 
 Note!!! There is a comma at location ①, but **no comma** at location ②. This is required by [JSON format](https://www.json.org/json-en.html).
 If you don't understand, don't worry, we'll master this knowledge in the future study gradually.
