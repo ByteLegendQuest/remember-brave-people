@@ -373,5 +373,6 @@
   {"x": 13, "y": 16, "color": "#ff0000", "username": "wh1tea"},
   {"x": 16, "y": 8, "color": "#DA70D6", "username": "haoqi123"},
   {"x": 12, "y": 14, "color": "#214E34", "username":"zzzboz"},
-  {"x": 19, "y": 12, "color":"#101010", "username": "Koei1234"}
+  {"x": 19, "y": 12, "color":"#101010", "username": "Koei1234"},
+  {"x":  4, "y": 17, "color":"#33C4FF", "username": "mondler"}
 ]
