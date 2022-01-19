@@ -77,7 +77,7 @@
   {"x": 6, "y": 3, "color": "#39C5BB", "username": "ParasolGao"},
   {"x": 6, "y": 5, "color": "#FFE2FE", "username": "tracywong117"},
   {"x": 6, "y": 6, "color": "#666666", "username": "hah1346798520"},
-  {"x": 6, "y": 7, "color": "#FF00F0", "username": "hbc13579"},
+  {"x": 6, "y": 7, "color": "#FF00F0", "username": "hbc13579"}, 
   {"x": 6, "y": 8, "color": "#FFC0CB", "username": "xuyupeng1995"},
   {"x": 6, "y": 9, "color": "#C3EDC7", "username": "beidongjiedeguang"},
   {"x": 6, "y": 10, "color": "#87CEFA", "username": "CatMoe"},
@@ -382,5 +382,6 @@
   {"x": 15, "y": 12,"color":"#000000", "username": "zhicheng-ning"},
   {"x": 6, "y": 17 ,"color":"#000000", "username": "gs20000521"},
   {"x": 11,"y": 14 ,"color":"#66CCFF", "username": "Piakofirst"},
-  {"x": 4,"y": 15 ,"color":"#000000", "username": "LeeYiuTing"}
+  {"x": 4,"y": 15 ,"color":"#000000", "username": "LeeYiuTing"},
+  {"x": 18, "y": 11 ,"color":"#33C4FF", "username": "LiuKay"}
 ]
