@@ -1,14 +1,17 @@
 package com.bytelegend.game;
 
+import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 class Constants {
     static final String DEFAULT_REPO_URL = "https://github.com/ByteLegendQuest/remember-brave-people.git";
     static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+    static final ObjectMapper PRETTY_PRINTER = new ObjectMapper().setDefaultPrettyPrinter(new DefaultPrettyPrinter());
 
     static {
         OBJECT_MAPPER.registerModule(new JavaTimeModule());
+        PRETTY_PRINTER.registerModule(new JavaTimeModule());
     }
 
     static final String HEROES_JSON = "heroes.json";

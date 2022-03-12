@@ -56,7 +56,7 @@ public class CIDataGeneratorJobEmbeddedTest extends AbstractCIDataGeneratorJobTe
     @Override
     protected void assertUpload(String... fileRelativePaths) {
         verify(uploader).uploadAssets(
-            Stream.of(fileRelativePaths).map(it -> new File(workspace, it)).collect(Collectors.toList())
+            Stream.of(fileRelativePaths).map(it -> new File(workspace, it)).peek(file -> assertTrue(file.isFile())).collect(Collectors.toList())
         );
     }
 

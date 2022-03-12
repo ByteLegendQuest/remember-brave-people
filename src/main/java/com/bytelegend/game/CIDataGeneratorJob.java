@@ -12,7 +12,7 @@ import static com.bytelegend.game.Constants.CI_BASE_REF;
 import static com.bytelegend.game.Constants.DEFAULT_REPO_URL;
 import static com.bytelegend.game.Constants.HEROES_JSON;
 import static com.bytelegend.game.Constants.IMAGE_GRID_HEIGHT;
-import static com.bytelegend.game.Constants.OBJECT_MAPPER;
+import static com.bytelegend.game.Constants.PRETTY_PRINTER;
 import static com.bytelegend.game.Environment.systemProperty;
 import static com.bytelegend.game.Utils.readSystemPropertiesFromArgs;
 import static com.bytelegend.game.Utils.renameCurrentToPage;
@@ -109,21 +109,19 @@ public class CIDataGeneratorJob {
         assets.add(heroesPageImage);
         assets.add(heroesPageJson);
 
-        if (tilesInfo.getTiles().size() != Constants.IMAGE_GRID_WIDTH * IMAGE_GRID_HEIGHT) {
-            Files.copy(heroesCurrentImage.toPath(), heroesPageImage.toPath(), StandardCopyOption.REPLACE_EXISTING);
-            Files.copy(heroesCurrentJson.toPath(), heroesPageJson.toPath(), StandardCopyOption.REPLACE_EXISTING);
-        } else {
+        Files.copy(heroesCurrentImage.toPath(), heroesPageImage.toPath(), StandardCopyOption.REPLACE_EXISTING);
+        Files.copy(heroesCurrentJson.toPath(), heroesPageJson.toPath(), StandardCopyOption.REPLACE_EXISTING);
+
+        if (tilesInfo.getTiles().size() == Constants.IMAGE_GRID_WIDTH * IMAGE_GRID_HEIGHT) {
             // it's full!
             File heroesNextPageImage = renameCurrentToPage(heroesCurrentImage, tilesInfo.getPage() + 1);
             File heroesNextPageJson = renameCurrentToPage(heroesCurrentJson, tilesInfo.getPage() + 1);
 
-            Files.move(heroesCurrentImage.toPath(), heroesPageImage.toPath(), StandardCopyOption.REPLACE_EXISTING);
-            Files.move(heroesCurrentJson.toPath(), heroesCurrentJson.toPath(), StandardCopyOption.REPLACE_EXISTING);
 
             TilesInfo newTilesInfo = new TilesInfo();
             newTilesInfo.setPage(tilesInfo.getPage() + 1);
 
-            Utils.writeString(heroesCurrentJson, OBJECT_MAPPER.writeValueAsString(newTilesInfo));
+            Utils.writeString(heroesCurrentJson, PRETTY_PRINTER.writeValueAsString(newTilesInfo));
             fullImageGenerator.generate(Collections.emptyList());
 
             Files.copy(heroesCurrentImage.toPath(), heroesNextPageImage.toPath(), StandardCopyOption.REPLACE_EXISTING);

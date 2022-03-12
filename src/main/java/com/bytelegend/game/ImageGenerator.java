@@ -74,7 +74,10 @@ class IncrementalImageGenerator extends ImageGenerator {
 
     void generate(TileDataDiff diff) throws Exception {
         downloader.download(PUBLIC_HEROES_CURRENT_IMAGE_URL, environment.getInputHeroesCurrentImage());
+        writeTileDiff(diff);
+    }
 
+    void writeTileDiff(TileDataDiff diff) throws Exception {
         BufferedImage bufferedImage = ImageIO.read(environment.getInputHeroesCurrentImage());
         Graphics graphics = bufferedImage.getGraphics();
         writeTile(graphics, diff.getChangedTile(), downloader.downloadAvatars(Arrays.asList(diff.getChangedTile())));
@@ -93,6 +96,12 @@ class FullImageGenerator extends ImageGenerator {
     }
 
     void generate(List<SimpleTile> inputTiles) throws Exception {
+        // if the input tiles are empty, compress png file will lack color channel,
+        // resulting in a black-white png image, this is not what we want
+        generate(inputTiles, !inputTiles.isEmpty());
+    }
+
+    private void generate(List<SimpleTile> inputTiles, boolean compress) throws Exception {
         BufferedImage bufferedImage = new BufferedImage(
             IMAGE_GRID_WIDTH * TILE_WITH_BORDER_WIDTH,
             IMAGE_GRID_HEIGHT * TILE_WITH_BORDER_HEIGHT,
@@ -105,6 +114,10 @@ class FullImageGenerator extends ImageGenerator {
 
         inputTiles.forEach(tile -> writeTile(graphics, tile, usernameToAvatars));
         graphics.dispose();
-        writeToPngAndCompress(bufferedImage, environment.getOutputHeroesCurrentImage());
+        if (compress) {
+            writeToPngAndCompress(bufferedImage, environment.getOutputHeroesCurrentImage());
+        } else {
+            ImageIO.write(bufferedImage, "PNG", environment.getOutputHeroesCurrentImage());
+        }
     }
 }
