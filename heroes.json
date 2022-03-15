@@ -3,5 +3,6 @@
     {"x": 1, "y": 1, "color": "#ff0000", "username": "blindpirate"},
     {"x": 3, "y": 2, "color": "#ff0000", "username": "liupeng678"},    
     {"x": 5, "y": 5, "color": "#ff0000", "username": "RanhaoKang"},    
-    {"x": 9, "y": 9, "color": "#0000ff", "username": "HenryLin2000"}
+    {"x": 9, "y": 9, "color": "#0000ff", "username": "HenryLin2000"},
+    {"x": 9, "y": 0, "color": "#66ccff", "username": "hesitatemore"}
 ]
