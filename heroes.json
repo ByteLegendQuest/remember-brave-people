@@ -8,6 +8,7 @@
     {"x": 5, "y": 5, "color": "#ff0000", "username": "RanhaoKang"},    
     {"x": 9, "y": 9, "color": "#0000ff", "username": "HenryLin2000"},
     {"x": 9, "y": 0, "color": "#66ccff", "username": "hesitatemore"},
+    {"x":10,"y":0, "color": "#008000", "username": "zhon9"},
     {"x": 2, "y": 0, "color": "#ff80ab", "username": "xxldm"},
     {"x": 19, "y": 19, "color": "#33a3dc", "username": "Lh549"},
     {"x": 0, "y": 19, "color": "#33a3dc", "username": "xiaopengooo0"},
@@ -20,6 +21,5 @@
     {"x": 19, "y": 0, "color": "#000000", "username": "jayfeather9"},
     {"x": 19, "y": 1, "color": "#000000", "username": "jmc-April"},
     {"x": 5, "y": 19, "color": "#000000", "username": "jasmineamber"},
-    {"x": 3, "y": 0, "color": "#000000", "username": "iwillbe"},
-    {"x": 18, "y": 18, "color": "#000000", "username": "zzfer"}
+    {"x": 3, "y": 0, "color": "#000000", "username": "iwillbe"}
 ]
