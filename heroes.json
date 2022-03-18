@@ -62,5 +62,6 @@
   {"x": 14, "y": 16, "color": "#4a148c", "username": "littledot"},
   {"x": 6, "y": 9, "color": "#287531", "username": "Javipok"},
   {"x": 8, "y": 12, "color": "#000000", "username": "jonatanrdsantos"},
-  {"x" : 13, "y": 19, "color": "#ffff00", "username": "NoahBPeterson"}
+  {"x" : 13, "y": 19, "color": "#ffff00", "username": "NoahBPeterson"},
+  {"x" : 8, "y": 10, "color": "#ffffff", "username": "hotpocket"}
 ]
