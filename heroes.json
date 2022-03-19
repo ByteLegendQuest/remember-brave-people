@@ -74,5 +74,6 @@
   {"x":1,"y":18,"color":"#0095B6","username":"liuhengting"},
   {"x": 11, "y": 0, "color": "#dd33ff", "username": "DongXzee"},
   {"x": 7, "y": 4, "color": "#AEC3B0", "username": "mbirko"},
-  {"x": 17, "y": 19, "color": "#AEC3B0", "username": "zgy-yy"}
+  {"x": 17, "y": 19, "color": "#AEC3B0", "username": "zgy-yy"},
+  {"x": 0, "y": 4, "color": "#AEC3B0", "username": "zgy-yy"}
 ]
