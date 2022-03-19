@@ -110,7 +110,7 @@ class TileDataDiff {
     }
 
     private boolean checkTileUsername(SimpleTile tile) {
-        return playerGitHubUsername == null || playerGitHubUsername.equals(tile.getUsername());
+        return playerGitHubUsername == null || playerGitHubUsername.equalsIgnoreCase(tile.getUsername());
     }
 }
 

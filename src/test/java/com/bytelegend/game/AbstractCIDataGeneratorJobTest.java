@@ -35,13 +35,14 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
 
     protected abstract void assertUpload(String... fileRelativePaths);
 
-    @Test
-    public void playerCanAddTile() throws Exception {
+    @ParameterizedTest
+    @ValueSource(strings = {"blindpirate", "Blindpirate"})
+    public void playerCanAddTile(String nameInJson) throws Exception {
         createPullRequest(workspace, fork, "blindpirate",
             "[" +
                 "{\"username\":\"ByteLegendBot\",\"x\":1,\"y\":1,\"color\":\"#000000\"}," +
                 "{\"username\":\"torvalds\",\"x\":2,\"y\":2,\"color\":\"#222222\"}," +
-                "{\"username\":\"blindpirate\",\"x\":0,\"y\":0,\"color\":\"#ff0000\"}" +
+                "{\"username\":\"" + nameInJson + "\",\"x\":0,\"y\":0,\"color\":\"#ff0000\"}" +
                 "]");
 
         runJob("blindpirate", "blindpirate_my-branch");
@@ -55,7 +56,7 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
         );
         assertHeroesCurrentJson(tiles -> {
                 assertEquals(3, tiles.getTiles().size());
-                AllInfoTile addedTile = tiles.getTiles().stream().filter(it -> it.getUsername().equals("blindpirate"))
+                AllInfoTile addedTile = tiles.getTiles().stream().filter(it -> it.getUsername().equals(nameInJson))
                     .findFirst()
                     .get();
                 assertNotNull(addedTile.getChangedAt());
@@ -63,7 +64,7 @@ public abstract class AbstractCIDataGeneratorJobTest extends AbstractDataGenerat
                 assertTrue(isClose(Instant.now(), addedTile.getChangedAt()));
             }
         );
-        assertFinalJsonContains("blindpirate");
+        assertFinalJsonContains(nameInJson);
         assertLastCommitMessageContains("blindpirate");
     }
 
