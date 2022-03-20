@@ -30,7 +30,7 @@ This is inspired by https://open-pixel-art.com/
 - 注意，你需要选择一个没有被人占用过的格子(x,y)：将鼠标移动到英雄榜上，你可以在下方看到每个格子的坐标。
 - 如果你不知道如何做，请[点击这里查看详细的图文教程](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/zh/create-pr-via-web-editor.md)。
 
-如果你需要任何帮助，欢迎加入官方玩家QQ群（在[首页](https://bytelegend.com)右下角的`联系 & 关于`菜单里可以找到入群方式）或者[Discord社区](https://discord.gg/35RreUUGWt)，或email至[contact@bytelegend.com](mailto:contact@bytelegend.com)。
+如果你需要任何帮助，欢迎加入官方玩家QQ群（在[首页](https://bytelegend.com)右下角的`联系 & 关于`菜单里可以找到入群方式）或者[Discord社区](https://discord.gg/PvmqK3hF)，或email至[contact@bytelegend.com](mailto:contact@bytelegend.com)。
 
 作为初学者，您可能对`GitHub`, `pull request`, `JSON`这些概念十分陌生。没关系，每个人都曾是初学者。
 请点击左侧的`教程`查看详细的文字或视频教程。坚持下去，你会成为真正的英雄。
