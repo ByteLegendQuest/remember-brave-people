@@ -96,5 +96,6 @@
   {"x": 0, "y": 5, "color": "#00bfff", "username": "lanjuzi"},
   {"x": 1, "y": 19, "color": "#fff444", "username": "jordevorstenbosch"},
   {"x": 8, "y": 15, "color": "#777777", "username": "SmartRick"},
-  {"x": 0, "y": 18, "color": "#336633", "username": "yishnee"}
+  {"x": 0, "y": 18, "color": "#336633", "username": "yishnee"},
+  {"x": 1, "y": 2, "color": "#ff0000", "username": "RodrigoJacznik"}
 ]
