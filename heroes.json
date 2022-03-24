@@ -114,5 +114,6 @@
   {"x": 0, "y": 8, "color": "#fee490", "username": "Peanuuutz"},
   {"x":17,"y":18,"color":"#006400","username":"michealmachine"},
   {"x":15, "y":10,"color":"#006400","username":"gaozhidf"},
-  {"x":15, "y":0,"color":"#00bfff","username":"abelzhou"}
+  {"x":15, "y":0,"color":"#00bfff","username":"abelzhou"},
+  {"x": 7, "y" :13, "color": "008080", "username": "megamidnight"}
 ]
