@@ -134,5 +134,6 @@
   {"x": 18, "y": 13, "color": "#eeaeee", "username": "codingCavalier"},
   {"x": 17, "y": 0, "color": "#fff444", "username": "RoganHang"},
   {"x": 19, "y": 7, "color": "#ff0000", "username": "hyc4567"},
-  {"x": 19, "y": 16, "color": "#ff0000", "username": "bushan"}
+  {"x": 19, "y": 16, "color": "#ff0000", "username": "bushan"},
+  {"x":9,"y":11,"color":"#000000","username":"lukipoi"}
 ]
