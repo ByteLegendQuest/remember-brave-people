@@ -18,7 +18,9 @@ text or video tutorial. Keep going and you will be a real hero.
 # Credits
 
 This is inspired by https://open-pixel-art.com/
+
 </details>
+
 <details>
 <summary>简体中文</summary>
 
@@ -38,48 +40,247 @@ This is inspired by https://open-pixel-art.com/
 # 致谢
 
 本项目受 https://open-pixel-art.com/ 启发。
+
 </details>
+
 <details>
 <summary>繁體中文</summary>
 
-<h1>勇敢的人挑戰：你的名字是已知的，你的行為是不朽的</h1><p>在您開始您在<a href="https://bytelegend.com" target="_blank">ByteLegend</a>的英雄之旅之前，請留下您的名字。</p><ul><li>更改<a href="https://github.com/ByteLegendQuest/remember-brave-people/blob/main/heroes.json" target="_blank"><code class="notranslate">heroes.json</code></a> ，添加<strong>您的 GitHub 用戶名（如<code class="notranslate">github.com/abc</code>中的<code class="notranslate">abc</code> ）</strong> ，坐標和喜歡的顏色。</li><li>請注意，您需要找到一個未被其他人佔用的可用坐標（x，y） - 將鼠標移至英雄佈告欄，它會顯示坐標，只需選擇一個空坐標即可。</li><li>如果你不知道怎麼做，請<a href="https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/en/create-pr-via-web-editor.md" target="_blank">點擊這裡查看詳細教程</a></li></ul><p>如果您需要任何幫助，請隨時加入<a href="https://discord.gg/35RreUUGWt" target="_blank">Discord 社區</a>或通過<a href="mailto:contact@bytelegend.com" target="_blank">contact@bytelegend.com</a>聯繫我們。</p><p>作為初學者，您可能對<code class="notranslate">GitHub</code> 、 <code class="notranslate">pull request</code>或<code class="notranslate">JSON</code>感到陌生。別擔心，每個人都是初學者。請點擊<code class="notranslate">Tutorial</code>查看詳細的文字或視頻教程。繼續前進，您將成為真正的英雄。</p><h1>學分</h1><p>這是受到 https://open-pixel-art.com/ 的啟發</p></details>
+勇敢的人挑戰：你的名字是已知的，你的行為是不朽的
+========================
+
+在您開始您在[ByteLegend](https://bytelegend.com)的英雄之旅之前，請留下您的名字。
+
+-   更改[`heroes.json`](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/heroes.json) ，添加**您的 GitHub 用戶名（如`github.com/abc`中的`abc` ）** ，坐標和喜歡的顏色。
+-   請注意，您需要找到一個未被其他人佔用的可用坐標（x，y） - 將鼠標移至英雄佈告欄，它會顯示坐標，只需選擇一個空坐標即可。
+-   如果你不知道怎麼做，請[點擊這裡查看詳細教程](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/en/create-pr-via-web-editor.md)
+
+如果您需要任何幫助，請隨時加入[Discord 社區](https://discord.gg/35RreUUGWt)或通過[contact@bytelegend.com](mailto:contact@bytelegend.com)聯繫我們。
+
+作為初學者，您可能對`GitHub` 、 `pull request`或`JSON`感到陌生。別擔心，每個人都是初學者。請點擊`Tutorial`查看詳細的文字或視頻教程。繼續前進，您將成為真正的英雄。
+
+學分
+==
+
+這是受到 https://open-pixel-art.com/ 的啟發
+</details>
+
 <details>
 <summary>Español</summary>
 
-<h1>Desafío de personas valientes: tu nombre es conocido, tu acción es inmortal</h1><p> Antes de comenzar su viaje de héroe en <a href="https://bytelegend.com" target="_blank">ByteLegend</a> , deje su nombre.</p><ul><li> Cambie <a href="https://github.com/ByteLegendQuest/remember-brave-people/blob/main/heroes.json" target="_blank"><code class="notranslate">heroes.json</code></a> , agregue <strong>su nombre de usuario de GitHub (como <code class="notranslate">abc</code> en <code class="notranslate">github.com/abc</code> )</strong> , coordine y color favorito.</li><li> Tenga en cuenta que necesita encontrar una coordenada disponible (x, y) que no esté ocupada por nadie más: mueva el mouse hacia Hero Noticeboard, muestra la coordenada, simplemente elija una coordenada vacante.</li><li> Si no sabe cómo hacerlo, <a href="https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/en/create-pr-via-web-editor.md" target="_blank">haga clic aquí para ver el tutorial detallado.</a></li></ul><p> Si necesita ayuda, no dude en unirse a la <a href="https://discord.gg/35RreUUGWt" target="_blank">comunidad de Discord</a> o contáctenos a través de <a href="mailto:contact@bytelegend.com" target="_blank">contact@bytelegend.com</a> .</p><p> Como principiante, es posible que no esté familiarizado con <code class="notranslate">GitHub</code> , <code class="notranslate">pull request</code> de extracción o <code class="notranslate">JSON</code> . No te preocupes, todos eran principiantes. Haga clic en <code class="notranslate">Tutorial</code> para ver un texto detallado o un video tutorial. Sigue adelante y serás un verdadero héroe.</p><h1> Créditos</h1><p> Esto está inspirado en https://open-pixel-art.com/</p></details>
+Desafío de personas valientes: tu nombre es conocido, tu acción es inmortal
+===========================================================================
+
+Antes de comenzar su viaje de héroe en [ByteLegend](https://bytelegend.com) , deje su nombre.
+
+-   Cambie [`heroes.json`](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/heroes.json) , agregue **su nombre de usuario de GitHub (como `abc` en `github.com/abc` )** , coordine y color favorito.
+-   Tenga en cuenta que necesita encontrar una coordenada disponible (x, y) que no esté ocupada por nadie más: mueva el mouse hacia Hero Noticeboard, muestra la coordenada, simplemente elija una coordenada vacante.
+-   Si no sabe cómo hacerlo, [haga clic aquí para ver el tutorial detallado.](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/en/create-pr-via-web-editor.md)
+
+Si necesita ayuda, no dude en unirse a la [comunidad de Discord](https://discord.gg/35RreUUGWt) o contáctenos a través de [contact@bytelegend.com](mailto:contact@bytelegend.com) .
+
+Como principiante, es posible que no esté familiarizado con `GitHub` , `pull request` de extracción o `JSON` . No te preocupes, todos eran principiantes. Haga clic en `Tutorial` para ver un texto detallado o un video tutorial. Sigue adelante y serás un verdadero héroe.
+
+Créditos
+========
+
+Esto está inspirado en https://open-pixel-art.com/
+</details>
+
 <details>
 <summary>العربية</summary>
 
-<h1 style=";text-align:right;direction:rtl">تحدي الأشخاص الشجعان: اسمك معروف ، فعلك خالد</h1><p style=";text-align:right;direction:rtl"> قبل أن تبدأ رحلتك البطل في <a href="https://bytelegend.com" target="_blank">ByteLegend</a> ، يرجى ترك اسمك.</p><ul style=";text-align:right;direction:rtl"><li style=";text-align:right;direction:rtl"> قم بتغيير <a href="https://github.com/ByteLegendQuest/remember-brave-people/blob/main/heroes.json" target="_blank"><code class="notranslate">heroes.json</code></a> ، وأضف <strong>اسم مستخدم GitHub الخاص بك (مثل <code class="notranslate">abc</code> في <code class="notranslate">github.com/abc</code> )</strong> ، وقم بالتنسيق واللون المفضل.</li><li style=";text-align:right;direction:rtl"> لاحظ أنك بحاجة إلى العثور على إحداثيات متاحة (س ، ص) لا يشغلها أي شخص آخر - حرك الماوس إلى لوحة ملاحظات Hero ، فهي تُظهر الإحداثيات ، ما عليك سوى اختيار إحداثيات شاغرة.</li><li style=";text-align:right;direction:rtl"> إذا كنت لا تعرف كيفية القيام بذلك ، فالرجاء <a href="https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/en/create-pr-via-web-editor.md" target="_blank">النقر هنا لمشاهدة البرنامج التعليمي المفصل</a></li></ul><p style=";text-align:right;direction:rtl"> إذا كنت بحاجة إلى أي مساعدة ، فلا تتردد في الانضمام إلى <a href="https://discord.gg/35RreUUGWt" target="_blank">مجتمع Discord</a> أو الاتصال بنا عبر <a href="mailto:contact@bytelegend.com" target="_blank">contact@bytelegend.com</a> .</p><p style=";text-align:right;direction:rtl"> كمبتدئ ، قد تشعر بأنك غير معتاد على <code class="notranslate">GitHub</code> أو <code class="notranslate">pull request</code> أو <code class="notranslate">JSON</code> . لا تقلق ، كان الجميع مبتدئين. الرجاء النقر فوق <code class="notranslate">Tutorial</code> لمشاهدة نص مفصل أو فيديو تعليمي. استمر وستكون بطلا حقيقيا.</p><h1 style=";text-align:right;direction:rtl"> الاعتمادات</h1><p style=";text-align:right;direction:rtl"> هذا مستوحى من https://open-pixel-art.com/</p></details>
+تحدي الأشخاص الشجعان: اسمك معروف ، فعلك خالد
+============================================
+
+قبل أن تبدأ رحلتك البطل في [ByteLegend](https://bytelegend.com) ، يرجى ترك اسمك.
+
+-   قم بتغيير [`heroes.json`](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/heroes.json) ، وأضف **اسم مستخدم GitHub الخاص بك (مثل `abc` في `github.com/abc` )** ، وقم بالتنسيق واللون المفضل.
+-   لاحظ أنك بحاجة إلى العثور على إحداثيات متاحة (س ، ص) لا يشغلها أي شخص آخر - حرك الماوس إلى لوحة ملاحظات Hero ، فهي تُظهر الإحداثيات ، ما عليك سوى اختيار إحداثيات شاغرة.
+-   إذا كنت لا تعرف كيفية القيام بذلك ، فالرجاء [النقر هنا لمشاهدة البرنامج التعليمي المفصل](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/en/create-pr-via-web-editor.md)
+
+إذا كنت بحاجة إلى أي مساعدة ، فلا تتردد في الانضمام إلى [مجتمع Discord](https://discord.gg/35RreUUGWt) أو الاتصال بنا عبر [contact@bytelegend.com](mailto:contact@bytelegend.com) .
+
+كمبتدئ ، قد تشعر بأنك غير معتاد على `GitHub` أو `pull request` أو `JSON` . لا تقلق ، كان الجميع مبتدئين. الرجاء النقر فوق `Tutorial` لمشاهدة نص مفصل أو فيديو تعليمي. استمر وستكون بطلا حقيقيا.
+
+الاعتمادات
+==========
+
+هذا مستوحى من https://open-pixel-art.com/
+</details>
+
 <details>
 <summary>Português</summary>
 
-<h1>Brave People Challenge: Seu nome é conhecido, sua ação é imortal</h1><p> Antes de iniciar sua jornada de herói no <a href="https://bytelegend.com" target="_blank">ByteLegend</a> , por favor, deixe seu nome.</p><ul><li> Altere <a href="https://github.com/ByteLegendQuest/remember-brave-people/blob/main/heroes.json" target="_blank"><code class="notranslate">heroes.json</code></a> , adicione <strong>seu nome de usuário do GitHub (como <code class="notranslate">abc</code> em <code class="notranslate">github.com/abc</code> )</strong> , coordenada e cor favorita.</li><li> Observe que você precisa encontrar uma coordenada disponível (x,y) que não esteja ocupada por mais ninguém - mova o mouse para o Hero Noticeboard, ele mostra a coordenada, apenas pegue uma coordenada vaga.</li><li> Se você não sabe como fazer, por favor <a href="https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/en/create-pr-via-web-editor.md" target="_blank">clique aqui para ver o tutorial detalhado</a></li></ul><p> Se precisar de ajuda, sinta-se à vontade para se juntar à <a href="https://discord.gg/35RreUUGWt" target="_blank">Comunidade Discord</a> ou entre em contato conosco via <a href="mailto:contact@bytelegend.com" target="_blank">contact@bytelegend.com</a> .</p><p> Como iniciante, você pode não estar familiarizado com <code class="notranslate">GitHub</code> , <code class="notranslate">pull request</code> ou <code class="notranslate">JSON</code> . Não se preocupe, todo mundo era um iniciante. Clique em <code class="notranslate">Tutorial</code> para ver o texto detalhado ou o tutorial em vídeo. Continue e você será um verdadeiro herói.</p><h1> Créditos</h1><p> Isso é inspirado em https://open-pixel-art.com/</p></details>
+Brave People Challenge: Seu nome é conhecido, sua ação é imortal
+================================================================
+
+Antes de iniciar sua jornada de herói no [ByteLegend](https://bytelegend.com) , por favor, deixe seu nome.
+
+-   Altere [`heroes.json`](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/heroes.json) , adicione **seu nome de usuário do GitHub (como `abc` em `github.com/abc` )** , coordenada e cor favorita.
+-   Observe que você precisa encontrar uma coordenada disponível (x,y) que não esteja ocupada por mais ninguém - mova o mouse para o Hero Noticeboard, ele mostra a coordenada, apenas pegue uma coordenada vaga.
+-   Se você não sabe como fazer, por favor [clique aqui para ver o tutorial detalhado](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/en/create-pr-via-web-editor.md)
+
+Se precisar de ajuda, sinta-se à vontade para se juntar à [Comunidade Discord](https://discord.gg/35RreUUGWt) ou entre em contato conosco via [contact@bytelegend.com](mailto:contact@bytelegend.com) .
+
+Como iniciante, você pode não estar familiarizado com `GitHub` , `pull request` ou `JSON` . Não se preocupe, todo mundo era um iniciante. Clique em `Tutorial` para ver o texto detalhado ou o tutorial em vídeo. Continue e você será um verdadeiro herói.
+
+Créditos
+========
+
+Isso é inspirado em https://open-pixel-art.com/
+</details>
+
 <details>
 <summary>Bahasa Indonesia</summary>
 
-<h1>Tantangan Orang Berani: Nama Anda Dikenal, Perbuatan Anda Abadi</h1><p> Sebelum Anda memulai perjalanan pahlawan Anda di <a href="https://bytelegend.com" target="_blank">ByteLegend</a> , silakan tinggalkan nama Anda.</p><ul><li> Ubah <a href="https://github.com/ByteLegendQuest/remember-brave-people/blob/main/heroes.json" target="_blank"><code class="notranslate">heroes.json</code></a> , tambahkan <strong>nama pengguna GitHub Anda (seperti <code class="notranslate">abc</code> di <code class="notranslate">github.com/abc</code> )</strong> , koordinat dan warna favorit.</li><li> Perhatikan bahwa Anda perlu menemukan koordinat yang tersedia (x,y) yang tidak ditempati oleh orang lain - gerakkan mouse Anda ke Papan Pengumuman Pahlawan, itu menunjukkan koordinat, cukup ambil koordinat yang kosong.</li><li> Jika Anda tidak tahu bagaimana melakukannya, silakan <a href="https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/en/create-pr-via-web-editor.md" target="_blank">klik di sini untuk melihat tutorial terperinci</a></li></ul><p> Jika Anda memerlukan bantuan, jangan ragu untuk bergabung dengan <a href="https://discord.gg/35RreUUGWt" target="_blank">Komunitas Discord</a> atau hubungi kami melalui <a href="mailto:contact@bytelegend.com" target="_blank">contact@bytelegend.com</a> .</p><p> Sebagai pemula, Anda mungkin merasa asing dengan <code class="notranslate">GitHub</code> , <code class="notranslate">pull request</code> , atau <code class="notranslate">JSON</code> . Jangan khawatir, semua orang adalah pemula. Silahkan klik <code class="notranslate">Tutorial</code> untuk melihat teks atau video tutorial secara detail. Teruskan dan Anda akan menjadi pahlawan sejati.</p><h1> kredit</h1><p> Ini terinspirasi oleh https://open-pixel-art.com/</p></details>
+Tantangan Orang Berani: Nama Anda Dikenal, Perbuatan Anda Abadi
+===============================================================
+
+Sebelum Anda memulai perjalanan pahlawan Anda di [ByteLegend](https://bytelegend.com) , silakan tinggalkan nama Anda.
+
+-   Ubah [`heroes.json`](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/heroes.json) , tambahkan **nama pengguna GitHub Anda (seperti `abc` di `github.com/abc` )** , koordinat dan warna favorit.
+-   Perhatikan bahwa Anda perlu menemukan koordinat yang tersedia (x,y) yang tidak ditempati oleh orang lain - gerakkan mouse Anda ke Papan Pengumuman Pahlawan, itu menunjukkan koordinat, cukup ambil koordinat yang kosong.
+-   Jika Anda tidak tahu bagaimana melakukannya, silakan [klik di sini untuk melihat tutorial terperinci](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/en/create-pr-via-web-editor.md)
+
+Jika Anda memerlukan bantuan, jangan ragu untuk bergabung dengan [Komunitas Discord](https://discord.gg/35RreUUGWt) atau hubungi kami melalui [contact@bytelegend.com](mailto:contact@bytelegend.com) .
+
+Sebagai pemula, Anda mungkin merasa asing dengan `GitHub` , `pull request` , atau `JSON` . Jangan khawatir, semua orang adalah pemula. Silahkan klik `Tutorial` untuk melihat teks atau video tutorial secara detail. Teruskan dan Anda akan menjadi pahlawan sejati.
+
+kredit
+======
+
+Ini terinspirasi oleh https://open-pixel-art.com/
+</details>
+
 <details>
 <summary>Français</summary>
 
-<h1>Brave People Challenge : Votre nom est connu, votre acte est immortel</h1><p> Avant de commencer votre voyage de héros chez <a href="https://bytelegend.com" target="_blank">ByteLegend</a> , veuillez laisser votre nom.</p><ul><li> Modifiez <a href="https://github.com/ByteLegendQuest/remember-brave-people/blob/main/heroes.json" target="_blank"><code class="notranslate">heroes.json</code></a> , ajoutez <strong>votre nom d&#39;utilisateur GitHub (comme <code class="notranslate">abc</code> dans <code class="notranslate">github.com/abc</code> )</strong> , coordonnez et couleur préférée.</li><li> Notez que vous devez trouver une coordonnée disponible (x, y) qui n&#39;est occupée par personne d&#39;autre - déplacez votre souris sur Hero Noticeboard, il affiche la coordonnée, prenez simplement une coordonnée vacante.</li><li> Si vous ne savez pas comment faire, veuillez <a href="https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/en/create-pr-via-web-editor.md" target="_blank">cliquer ici pour voir le tutoriel détaillé</a></li></ul><p> Si vous avez besoin d&#39;aide, n&#39;hésitez pas à rejoindre la <a href="https://discord.gg/35RreUUGWt" target="_blank">communauté Discord</a> ou à nous contacter via <a href="mailto:contact@bytelegend.com" target="_blank">contact@bytelegend.com</a> .</p><p> En tant que débutant, vous ne vous sentirez peut-être pas familier avec <code class="notranslate">GitHub</code> , <code class="notranslate">pull request</code> ou <code class="notranslate">JSON</code> . Rassurez-vous, tout le monde était débutant. Veuillez cliquer sur <code class="notranslate">Tutorial</code> pour voir le texte détaillé ou le didacticiel vidéo. Continuez et vous serez un vrai héros.</p><h1> Crédits</h1><p> Ceci est inspiré de https://open-pixel-art.com/</p></details>
+Brave People Challenge : Votre nom est connu, votre acte est immortel
+=====================================================================
+
+Avant de commencer votre voyage de héros chez [ByteLegend](https://bytelegend.com) , veuillez laisser votre nom.
+
+-   Changez [`heroes.json`](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/heroes.json) , ajoutez **votre nom d'utilisateur GitHub (comme `abc` dans `github.com/abc` )** , coordonnez et couleur préférée.
+-   Notez que vous devez trouver une coordonnée disponible (x, y) qui n'est occupée par personne d'autre - déplacez votre souris sur Hero Noticeboard, il affiche la coordonnée, prenez simplement une coordonnée vacante.
+-   Si vous ne savez pas comment faire, veuillez [cliquer ici pour voir le tutoriel détaillé](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/en/create-pr-via-web-editor.md)
+
+Si vous avez besoin d'aide, n'hésitez pas à rejoindre la [communauté Discord](https://discord.gg/35RreUUGWt) ou à nous contacter via [contact@bytelegend.com](mailto:contact@bytelegend.com) .
+
+En tant que débutant, vous ne vous sentirez peut-être pas familier avec `GitHub` , `pull request` ou `JSON` . Ne vous inquiétez pas, tout le monde était débutant. Veuillez cliquer sur `Tutorial` pour voir le texte détaillé ou le didacticiel vidéo. Continuez et vous serez un vrai héros.
+
+Crédits
+=======
+
+Ceci est inspiré de https://open-pixel-art.com/
+</details>
+
 <details>
 <summary>日本語</summary>
 
-<h1>勇敢な人々の挑戦：あなたの名前は知られています、あなたの行為は不滅です</h1><p><a href="https://bytelegend.com" target="_blank">ByteLegend</a>でヒーローの旅を始める前に、名前を残してください。</p><ul><li> <a href="https://github.com/ByteLegendQuest/remember-brave-people/blob/main/heroes.json" target="_blank"><code class="notranslate">heroes.json</code></a>を変更し<strong><code class="notranslate">github.com/abc</code> GitHubのユーザー名（github.com/abcの<code class="notranslate">abc</code>など）</strong> 、座標、お気に入りの色を追加します。</li><li>他の人が使用していない使用可能な座標（x、y）を見つける必要があることに注意してください。マウスをヒーロー掲示板に移動すると、座標が表示され、空の座標を取得するだけです。</li><li>方法がわからない場合は、 <a href="https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/en/create-pr-via-web-editor.md" target="_blank">ここをクリックして詳細なチュートリアルをご覧ください</a></li></ul><p>ヘルプが必要な場合は、 <a href="https://discord.gg/35RreUUGWt" target="_blank">Discordコミュニティ</a>に参加するか、contact <a href="mailto:contact@bytelegend.com" target="_blank">@ bytelegend.com</a>からお問い合わせください。</p><p>初心者の方は、 <code class="notranslate">GitHub</code> 、 <code class="notranslate">pull request</code> 、または<code class="notranslate">JSON</code>に慣れていないように感じるかもしれません。心配しないでください、誰もが初心者でした。詳細なテキストまたはビデオチュートリアルを表示するには、[ <code class="notranslate">Tutorial</code> ]をクリックしてください。続ければ、あなたは本当のヒーローになります。</p><h1>クレジット</h1><p>これはhttps://open-pixel-art.com/に触発されています</p></details>
+勇敢な人々の挑戦：あなたの名前は知られています、あなたの行為は不滅です
+===================================
+
+[ByteLegend](https://bytelegend.com)でヒーローの旅を始める前に、名前を残してください。
+
+-   [`heroes.json`](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/heroes.json)を変更し**`github.com/abc` GitHubユーザー名（github.com/abcの`abc`など）** 、座標、お気に入りの色を追加します。
+-   他の人が使用していない使用可能な座標（x、y）を見つける必要があることに注意してください。マウスをヒーロー掲示板に移動すると、座標が表示され、空の座標を取得するだけです。
+-   方法がわからない場合は、 [ここをクリックして詳細なチュートリアルを参照してください](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/en/create-pr-via-web-editor.md)
+
+ヘルプが必要な場合は、 [Discordコミュニティ](https://discord.gg/35RreUUGWt)に参加するか、contact [@bytelegend.com](mailto:contact@bytelegend.com)からお問い合わせください。
+
+初心者の方は、 `GitHub` 、 `pull request` 、または`JSON`に慣れていないように感じるかもしれません。心配しないでください、誰もが初心者でした。詳細なテキストまたはビデオチュートリアルを表示するには、\[ `Tutorial` \]をクリックしてください。続ければ、あなたは本当のヒーローになります。
+
+クレジット
+=====
+
+これはhttps://open-pixel-art.com/に触発されています
+</details>
+
 <details>
 <summary>Русский</summary>
 
-<h1>Вызов смелых людей: Ваше имя известно, ваш поступок бессмертен</h1><p> Прежде чем начать свое героическое путешествие в <a href="https://bytelegend.com" target="_blank">ByteLegend</a> , пожалуйста, оставьте свое имя.</p><ul><li> Измените <a href="https://github.com/ByteLegendQuest/remember-brave-people/blob/main/heroes.json" target="_blank"><code class="notranslate">heroes.json</code></a> , добавьте <strong>свое имя пользователя GitHub (например, <code class="notranslate">abc</code> в <code class="notranslate">github.com/abc</code> )</strong> , координаты и любимый цвет.</li><li> Обратите внимание, что вам нужно найти доступную координату (x, y), которая никем не занята - наведите указатель мыши на доску объявлений героев, она показывает координату, просто выберите свободную координату.</li><li> Если вы не знаете, как это сделать, <a href="https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/en/create-pr-via-web-editor.md" target="_blank">нажмите здесь, чтобы просмотреть подробное руководство.</a></li></ul><p> Если вам нужна помощь, присоединяйтесь к <a href="https://discord.gg/35RreUUGWt" target="_blank">сообществу Discord</a> или свяжитесь с нами по <a href="mailto:contact@bytelegend.com" target="_blank">адресу contact@bytelegend.com</a> .</p><p> Как новичок, вы можете чувствовать себя незнакомым с <code class="notranslate">GitHub</code> , <code class="notranslate">pull request</code> или <code class="notranslate">JSON</code> . Не волнуйтесь, все были новичками. Нажмите <code class="notranslate">Tutorial</code> , чтобы просмотреть подробный текстовый или видеоурок. Продолжайте в том же духе, и вы станете настоящим героем.</p><h1> Кредиты</h1><p> Это вдохновлено https://open-pixel-art.com/</p></details>
+Вызов смелых людей: Ваше имя известно, ваш поступок бессмертен
+==============================================================
+
+Прежде чем начать свое героическое путешествие в [ByteLegend](https://bytelegend.com) , пожалуйста, оставьте свое имя.
+
+-   Измените [`heroes.json`](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/heroes.json) , добавьте **свое имя пользователя GitHub (например, `abc` в `github.com/abc` )** , координаты и любимый цвет.
+-   Обратите внимание, что вам нужно найти доступную координату (x, y), которая никем не занята - наведите указатель мыши на доску объявлений героев, она показывает координату, просто выберите свободную координату.
+-   Если вы не знаете, как это сделать, [нажмите здесь, чтобы просмотреть подробное руководство.](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/en/create-pr-via-web-editor.md)
+
+Если вам нужна помощь, присоединяйтесь к [сообществу Discord](https://discord.gg/35RreUUGWt) или свяжитесь с нами по [адресу contact@bytelegend.com](mailto:contact@bytelegend.com) .
+
+Как новичок, вы можете чувствовать себя незнакомым с `GitHub` , `pull request` или `JSON` . Не волнуйтесь, все были новичками. Нажмите `Tutorial` , чтобы просмотреть подробный текстовый или видеоурок. Продолжайте в том же духе, и вы станете настоящим героем.
+
+Кредиты
+=======
+
+Это вдохновлено https://open-pixel-art.com/
+</details>
+
 <details>
 <summary>Deutsch</summary>
 
-<h1>Brave People Challenge: Dein Name ist bekannt, deine Tat ist unsterblich</h1><p> Bevor Sie Ihre Heldenreise bei <a href="https://bytelegend.com" target="_blank">ByteLegend beginnen</a> , hinterlassen Sie bitte Ihren Namen.</p><ul><li> Ändern <a href="https://github.com/ByteLegendQuest/remember-brave-people/blob/main/heroes.json" target="_blank"><code class="notranslate">heroes.json</code></a> , fügen <strong>Sie Ihren GitHub-Benutzernamen (wie <code class="notranslate">abc</code> in <code class="notranslate">github.com/abc</code> )</strong> , Koordinate und Lieblingsfarbe hinzu.</li><li> Beachten Sie, dass Sie eine verfügbare Koordinate (x,y) finden müssen, die von niemand anderem besetzt ist – bewegen Sie Ihre Maus auf das Hero Noticeboard, es zeigt die Koordinate, nehmen Sie einfach eine freie Koordinate auf.</li><li> Wenn Sie nicht wissen, wie das geht, <a href="https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/en/create-pr-via-web-editor.md" target="_blank">klicken Sie bitte hier, um ein detailliertes Tutorial zu sehen</a></li></ul><p> Wenn Sie Hilfe benötigen, können Sie sich gerne der <a href="https://discord.gg/35RreUUGWt" target="_blank">Discord Community</a> anschließen oder uns über <a href="mailto:contact@bytelegend.com" target="_blank">contact@bytelegend.com kontaktieren</a> .</p><p> Als Anfänger fühlen Sie sich möglicherweise mit <code class="notranslate">GitHub</code> , <code class="notranslate">pull request</code> oder <code class="notranslate">JSON</code> nicht vertraut. Keine Sorge, alle waren Anfänger. Bitte klicken Sie auf <code class="notranslate">Tutorial</code> , um einen ausführlichen Text oder ein Video-Tutorial anzuzeigen. Machen Sie weiter und Sie werden ein echter Held sein.</p><h1> Kredite</h1><p> Dies ist inspiriert von https://open-pixel-art.com/</p></details>
+Brave People Challenge: Dein Name ist bekannt, deine Tat ist unsterblich
+========================================================================
+
+Bevor Sie Ihre Heldenreise bei [ByteLegend beginnen](https://bytelegend.com) , hinterlassen Sie bitte Ihren Namen.
+
+-   Ändern [`heroes.json`](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/heroes.json) , fügen **Sie Ihren GitHub-Benutzernamen (wie `abc` in `github.com/abc` )** , Koordinate und Lieblingsfarbe hinzu.
+-   Beachten Sie, dass Sie eine verfügbare Koordinate (x,y) finden müssen, die von niemand anderem besetzt ist – bewegen Sie Ihre Maus auf das Hero Noticeboard, es zeigt die Koordinate, nehmen Sie einfach eine freie Koordinate auf.
+-   Wenn Sie nicht wissen, wie das geht, [klicken Sie bitte hier, um ein detailliertes Tutorial zu sehen](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/en/create-pr-via-web-editor.md)
+
+Wenn Sie Hilfe benötigen, können Sie sich gerne der [Discord Community](https://discord.gg/35RreUUGWt) anschließen oder uns über [contact@bytelegend.com kontaktieren](mailto:contact@bytelegend.com) .
+
+Als Anfänger fühlen Sie sich möglicherweise mit `GitHub` , `pull request` oder `JSON` nicht vertraut. Keine Sorge, alle waren Anfänger. Bitte klicken Sie auf `Tutorial` , um einen ausführlichen Text oder ein Video-Tutorial anzuzeigen. Machen Sie weiter und Sie werden ein echter Held sein.
+
+Kredite
+=======
+
+Dies ist inspiriert von https://open-pixel-art.com/
+</details>
+
 <details>
 <summary>한국어</summary>
 
-<h1>용감한 사람들 챌린지: 당신의 이름은 알려져 있고, 당신의 행위는 영원합니다</h1><p> <a href="https://bytelegend.com" target="_blank">ByteLegend</a> 에서 영웅의 여정을 시작하기 전에 이름을 남겨주세요.</p><ul><li> <a href="https://github.com/ByteLegendQuest/remember-brave-people/blob/main/heroes.json" target="_blank"><code class="notranslate">heroes.json</code></a> 을 변경하고 <strong>GitHub 사용자 이름(예: <code class="notranslate">github.com/abc</code> 의 <code class="notranslate">abc</code> )</strong> , 좌표 및 좋아하는 색상을 추가합니다.</li><li> 다른 사람이 차지하지 않은 사용 가능한 좌표(x,y)를 찾아야 합니다. 마우스를 영웅 게시판으로 이동하면 좌표가 표시되고 빈 좌표를 선택하기만 하면 됩니다.</li><li> 방법을 모르면 <a href="https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/en/create-pr-via-web-editor.md" target="_blank">여기를 클릭하여 자세한 자습서를 참조하십시오.</a></li></ul><p> 도움이 필요하면 언제든지 <a href="https://discord.gg/35RreUUGWt" target="_blank">Discord 커뮤니티</a> 에 가입하거나 <a href="mailto:contact@bytelegend.com" target="_blank">contact@bytelegend.com</a> 을 통해 문의하세요.</p><p> 초보자로서 <code class="notranslate">GitHub</code> , <code class="notranslate">pull request</code> 또는 <code class="notranslate">JSON</code> 에 익숙하지 않을 수 있습니다. 걱정 마세요, 모두가 초보자였습니다. 자세한 텍스트 또는 비디오 자습서를 보려면 <code class="notranslate">Tutorial</code> 를 클릭하십시오. 계속하면 진정한 영웅이 될 것입니다.</p><h1> 크레딧</h1><p> 이것은 https://open-pixel-art.com/에서 영감을 받았습니다.</p></details>
+용감한 사람들 챌린지: 당신의 이름은 알려져 있고, 당신의 행위는 영원합니다
+==========================================
+
+[ByteLegend](https://bytelegend.com) 에서 영웅의 여정을 시작하기 전에 이름을 남겨주세요.
+
+-   [`heroes.json`](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/heroes.json) 을 변경하고 **GitHub 사용자 이름(예: `github.com/abc` 의 `abc` )** , 좌표 및 좋아하는 색상을 추가합니다.
+-   다른 사람이 차지하지 않은 사용 가능한 좌표(x,y)를 찾아야 합니다. 마우스를 영웅 게시판으로 이동하면 좌표가 표시되고 빈 좌표를 선택하기만 하면 됩니다.
+-   방법을 모르면 [여기를 클릭하여 자세한 자습서를 참조하십시오.](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/en/create-pr-via-web-editor.md)
+
+도움이 필요하면 언제든지 [Discord 커뮤니티](https://discord.gg/35RreUUGWt) 에 가입하거나 [contact@bytelegend.com](mailto:contact@bytelegend.com) 을 통해 문의하세요.
+
+초보자로서 `GitHub` , `pull request` 또는 `JSON` 에 익숙하지 않을 수 있습니다. 걱정 마세요, 모두가 초보자였습니다. 자세한 텍스트 또는 비디오 자습서를 보려면 `Tutorial` 를 클릭하십시오. 계속하면 진정한 영웅이 될 것입니다.
+
+크레딧
+===
+
+이것은 https://open-pixel-art.com/에서 영감을 받았습니다.
+</details>
+
 <details>
 <summary>Italiano</summary>
 
-<h1>Sfida delle persone coraggiose: il tuo nome è noto, la tua azione è immortale</h1><p> Prima di iniziare il tuo viaggio da eroe su <a href="https://bytelegend.com" target="_blank">ByteLegend</a> , lascia il tuo nome.</p><ul><li> Cambia <a href="https://github.com/ByteLegendQuest/remember-brave-people/blob/main/heroes.json" target="_blank"><code class="notranslate">heroes.json</code></a> , aggiungi <strong>il tuo nome utente GitHub (come <code class="notranslate">abc</code> in <code class="notranslate">github.com/abc</code> )</strong> , coordina e colore preferito.</li><li> Nota che devi trovare una coordinata disponibile (x,y) che non sia occupata da nessun altro: sposta il mouse su Hero Noticeboard, mostra la coordinata, prendi solo una coordinata libera.</li><li> Se non sai come fare, <a href="https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/en/create-pr-via-web-editor.md" target="_blank">clicca qui per vedere il tutorial dettagliato</a></li></ul><p> Se hai bisogno di aiuto, non esitare a unirti alla <a href="https://discord.gg/35RreUUGWt" target="_blank">community di Discord</a> o contattaci tramite <a href="mailto:contact@bytelegend.com" target="_blank">contact@bytelegend.com</a> .</p><p> Come principiante, potresti non avere familiarità con <code class="notranslate">GitHub</code> , <code class="notranslate">pull request</code> o <code class="notranslate">JSON</code> . Non preoccuparti, tutti erano principianti. Fare clic su <code class="notranslate">Tutorial</code> per visualizzare un testo dettagliato o un tutorial video. Continua così e sarai un vero eroe.</p><h1> Crediti</h1><p> Questo è ispirato da https://open-pixel-art.com/</p></details>
+Sfida delle persone coraggiose: il tuo nome è noto, la tua azione è immortale
+=============================================================================
+
+Prima di iniziare il tuo viaggio da eroe su [ByteLegend](https://bytelegend.com) , lascia il tuo nome.
+
+-   Cambia [`heroes.json`](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/heroes.json) , aggiungi **il tuo nome utente GitHub (come `abc` in `github.com/abc` )** , coordina e colore preferito.
+-   Nota che devi trovare una coordinata disponibile (x,y) che non sia occupata da nessun altro: sposta il mouse su Hero Noticeboard, mostra la coordinata, prendi solo una coordinata libera.
+-   Se non sai come fare, [clicca qui per vedere il tutorial dettagliato](https://github.com/ByteLegendQuest/remember-brave-people/blob/main/docs/en/create-pr-via-web-editor.md)
+
+Se hai bisogno di aiuto, non esitare a unirti alla [community di Discord](https://discord.gg/35RreUUGWt) o contattaci tramite [contact@bytelegend.com](mailto:contact@bytelegend.com) .
+
+Come principiante, potresti non avere familiarità con `GitHub` , `pull request` o `JSON` . Non preoccuparti, tutti erano principianti. Fare clic su `Tutorial` per visualizzare un tutorial dettagliato di testo o video. Continua così e sarai un vero eroe.
+
+Crediti
+=======
+
+Questo è ispirato da https://open-pixel-art.com/
+</details>
