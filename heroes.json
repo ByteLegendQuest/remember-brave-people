@@ -178,5 +178,6 @@
   {"x": 8, "y": 18, "color": "#5f0b00", "username": "SN-Beaux"},
   {"x": 5, "y": 2, "color": "#5f0b00", "username": "52learning"},
   {"x": 19,"y":2,"color":"#00beff","username":"Chen-913"},
-  {"x": 8,"y":2,"color":"#ff9800","username":"koobyte"}
+  {"x": 8,"y":2,"color":"#ff9800","username":"koobyte"},
+  {"x": 9,"y":3,"color":"#ff9800","username":"cloze"}
 ]
