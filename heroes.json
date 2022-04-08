@@ -221,5 +221,6 @@
   {"x": 12, "y": 1, "color": "#000000", "username": "dwelar"},
   {"x": 19, "y": 15, "color": "#373737", "username": "Tarvarma"},
   {"x": 7, "y": 15, "color": "#ff4d00", "username": "AbbotAlvin"},
-  {"x": 8, "y": 3, "color": "#ff4d00", "username": "ncwtf"}
+  {"x": 8, "y": 3, "color": "#ff4d00", "username": "ncwtf"},
+  {"x": 11, "y": 18, "color": "#ff4d03", "username": "jackieXiong"}
 ]
