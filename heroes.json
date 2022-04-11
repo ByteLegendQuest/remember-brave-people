@@ -231,5 +231,6 @@
   {"x":6,"y":2,"color":"#44FF44","username":"ObsidianX"},
   {"x":15,"y":7,"color":"#fddea5","username":"ookiineko"},
   {"x":11,"y":13,"color":"#00ff00","username":"Zombili"},
-  {"x":17, "y":10, "color": "#66ccff", "username": "zts0101"}
+  {"x":17, "y":10, "color": "#66ccff", "username": "zts0101"},
+  {"x":14,"y":17,"color":"#5f0b00","username":"commonSwift5"}
 ]
