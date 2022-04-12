@@ -234,5 +234,6 @@
   {"x":17, "y":10, "color": "#66ccff", "username": "zts0101"},
   {"x":14,"y":17,"color":"#5f0b00","username":"commonSwift5"},
   {"x":3,"y":12,"color":"#d9ffb3","username":"konb-hui"},
-  {"x":8, "y": 14, "color":"#39c5bb", "username":"Lander-Hatsune"}
+  {"x":8, "y": 14, "color":"#39c5bb", "username":"Lander-Hatsune"},
+  {"x":10, "y": 15, "color":"#39c5bb", "username":"yanwensiyi"}
 ]
