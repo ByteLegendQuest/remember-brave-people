@@ -326,5 +326,6 @@
   {"x":  3, "y":  18, "color": "#B5C700", "username": "cookies24601"},
   {"x":  7, "y":  12, "color": "#800080", "username": "sulfonic-acid"},
   {"x": 18, "y": 12, "color": "#00FFFF", "username": "pixelPepp"},
-  {"x": 11, "y": 4, "color": "#AECBD1", "username": "CFCode-git"}
+  {"x": 11, "y": 4, "color": "#AECBD1", "username": "CFCode-git"},
+  {"x": 2,"y": 16,"color":"#1a1a1a","username":"zuoshanguanhupi"}
 ]
