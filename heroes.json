@@ -388,11 +388,12 @@
   {"x": 17, "y": 7, "color": "#2b2b2b", "username": "lookroot"},
   {"x": 15, "y": 14, "color": "#E5010E", "username": "gaoyu0165"},
   {"x": 16, "y": 10, "color": "#FFFF00", "username": "rksok"},
-  {"x":16,"y":15,"color":"#0000FF","username":"Xiaoheiit6"},
-  {"x":5,"y":13,"color":"#ABCABC","username":"fanyi-li"},
-  {"x":17,"y":5,"color":"#52eb94","username":"YsGqHY"},
-  {"x":18, "y":9, "color":"#feeeed", "username":"Anlyui"},
+  {"x": 16, "y": 15, "color": "#0000FF", "username": "Xiaoheiit6"},
+  {"x": 5, "y": 13, "color": "#ABCABC", "username": "fanyi-li"},
+  {"x": 17, "y": 5, "color": "#52eb94", "username": "YsGqHY"},
+  {"x": 18, "y": 9, "color": "#feeeed", "username": "Anlyui"},
   {"x": 2, "y": 12, "color": "#e37f30", "username": "BestMiltank"},
   {"x": 18, "y": 7, "color": "#333333", "username": "1250285855"},
-  {"x": 2, "y": 14, "color": "#99ffcc", "username": "Criterionist"}
+  {"x": 2, "y": 14, "color": "#99ffcc", "username": "Criterionist"},
+  {"x": 5, "y": 11, "color": "#333333", "username": "BuEr-V"}
 ]
