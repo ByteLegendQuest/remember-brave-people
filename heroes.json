@@ -19,5 +19,6 @@
   {"x": 8, "y": 8, "color": "#996669", "username": "zacaocong"},
   {"x": 10, "y": 10, "color": "#3388ff", "username": "wangkewei172"},
   {"x": 9, "y": 10, "color": "#114514", "username": "nwomn"}
- { "x": 16, "y": 10, "color": "#3388ff", "username": "DescentDD"},
+  ["x": 16, "y": 10, "color": "#3388ff", "username": "DescentDD"]
+
  
