@@ -25,5 +25,6 @@
   {"x": 2 , "y": 3, "color": "#000000", "username": "joaoCst21"},
   {"x": 9 , "y": 0, "color": "#003580", "username": "TonyAsiber"},
   {"x": 9, "y": 8, "color": "#000000", "username": "HowardY2"},
-  {"x": 10, "y": 15,"color":"#000000", "username":"Euerrur"}
-]
+  {"x": 10, "y": 15,"color":"#000000", "username":"Euerrur"},
+  {"x": 9, "y": 19,"color":"#000000","username":"furrytony"}
+ ]
