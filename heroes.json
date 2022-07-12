@@ -52,5 +52,5 @@
   {"x": 11, "y": 11, "color": "#87CEFA","username": "joshefi"},
   {"x": 3, "y": 0, "color":"#000000", "username": "gorczpe"},
   {"x": 3, "y": 15, "color":"#800000", "username": "tomas-kulhanek"},
-  {"x": 4, "y": 0, "color":"##996996", "username": "mynameiskidd"}
+  {"x": 4, "y": 0, "color":"#996996", "username": "mynameiskidd"}
 ]
