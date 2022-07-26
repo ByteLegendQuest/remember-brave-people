@@ -97,6 +97,7 @@
   {"x":10, "y":4, "color":"#660000", "username":"SicParvis-Magna"},
   {"x":15, "y":15,"color":"#000000", "username":"shakepink"},
   {"x":19, "y":1, "color":"#103109", "username":"TaoRanTing"},
-  {"x":7, "y":9, "color":"#114514","username":"l2javacar"}
+  {"x":7, "y":9, "color":"#114514","username":"l2javacar"},
+  {"x": 2, "y": 17, "color": "#f4f4f4", "username": "jingleo"}
 ]
 
