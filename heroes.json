@@ -125,7 +125,8 @@
   {"x": 7, "y": 5, "color" : "#B5785D", "username" : "lFlamingol"},
   {"x": 6, "y": 12, "color" : "#FF00FF","username" : "Bluepr"},
   {"x": 6, "y": 19, "color" : "#7F7F7F", "username" : "mgcnc"},
-  {"x": 9, "y": 4, "color" :"#F24601", "username" : "DreamMingHe"}
+  {"x": 9, "y": 4, "color" :"#F24601", "username" : "DreamMingHe"}, 
+  {"x": 11, "y": 15, "color": "#0000FF", "username": "codecoffee"}
 ]
 
 
