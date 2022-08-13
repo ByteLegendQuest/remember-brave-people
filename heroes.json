@@ -1,4 +1,4 @@
-[
+  [
   {"x": 13, "y": 19, "color": "#FF1235", "username": "588q9"},
   {"x": 13, "y": 3, "color": "#FF1236", "username": "CoolSuraj"},
   {"x": 16, "y": 10, "color": "#FF1235", "username": "changyu3590"},
@@ -170,4 +170,5 @@
   {"x": 6, "y": 1, "color": "#0000FF", "username": "nickit1917"},
   {"x": 7, "y": 18, "color": "#0000FF", "username": "asadjawaid"},
   {"x": 10, "y": 3, "color": "#420345", "username": "notEmanoel"}
-  {"x": 17, "y": 0, "color": "#66ccff", "username": "Volta-wang"},]
+  {"x": 17, "y": 0, "color": "#66ccff", "username": "Volta-wang"},
+  ]
