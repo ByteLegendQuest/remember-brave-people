@@ -243,5 +243,6 @@
   {"x":19, "y":5, "color":"#995596","username":"songenen"},
   {"x":11, "y":17, "color":"#666666", "username":"sh-tree"},
   {"x": 13, "y": 15, "color": "#f6f6f6", "username": "wlonestar"},
-  {"x": 3, "y": 2, "color": "#000000", "username": "Qiqi7-7"}
-  ]
+  {"x": 3, "y": 2, "color": "#000000", "username": "Qiqi7-7"},
+  {"x": 19, "y": 9, "color": "#000000", "username": "Lionel-Lai"}
+]
