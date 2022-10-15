@@ -310,5 +310,6 @@
   {"x": 18, "y": 9, "color": "#003388", "username": "xuchang19"},
   {"x": 3, "y": 18, "color": "#003388", "username": "Assassin-LDF"},
   {"x": 7, "y": 3, "color": "#fe5c00", "username": "williamgl"},
-  {"x": 14, "y":16, "color": "#00ffff", "username": "Stroverflow"}
+  {"x": 14, "y":16, "color": "#00ffff", "username": "Stroverflow"},
+  {"x": 15, "y":7, "color": "#abcdef", "username": "WASD-sp"}
 ]
