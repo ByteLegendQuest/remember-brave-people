@@ -314,5 +314,6 @@
   {"x": 14, "y":16, "color": "#00ffff", "username": "Stroverflow"},
   {"x": 15, "y":7, "color": "#abcdef", "username": "WASD-sp"},
   {"x": 14, "y":8, "color": "#114514", "username": "HydroCyanicum"},
-  {"x": 6,"y":17,"color": "#000000","username":"DecoZZ"}，
-  {"x": 16, "y": 3, "color": "#00ffff","username": "shotamoe"}
+  {"x": 6,"y":17,"color": "#000000","username":"DecoZZ"},
+  {"x": 16, "y": 3, "color": "#c0c0c0","username": "shotamoe"}
+]
