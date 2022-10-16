@@ -315,5 +315,6 @@
   {"x": 15, "y":7, "color": "#abcdef", "username": "WASD-sp"},
   {"x": 14, "y":8, "color": "#114514", "username": "HydroCyanicum"},
   {"x": 6,"y":17,"color": "#000000","username":"DecoZZ"},
+  {"x":7,"y":15,"color":"#FAFAFA","username":"WolfHero"},
   {"x":7,"y":15,"color":"#FAFAFA","username":"WolfHero"}
 ]
