@@ -351,5 +351,6 @@
   {"x": 7, "y": 17, "color": "#800000", "username": "magicalmuggle"},
   {"x": 16, "y": 4, "color": "#800000", "username": "wujiayiwood"},
   {"x": 4,"y": 11,"color":"#0ebff0","username":"susaann"},
-  {"x": 2,"y": 6,"color":"#800001","username":"shuthelah"}
+  {"x": 2,"y": 6,"color":"#800001","username":"shuthelah"},
+  {"x":14,"y":5,"color":"#000000","username":"shutdowndown"}
 ]
