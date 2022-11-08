@@ -1,5 +1,6 @@
 [
   {"x": 12, "y": 13, "color": "#3EF4C3", "username": "Uiskx"},
+  {"x": 7, "y": 15, "color": "#3EF4C3", "username": "Jimmy"},
   {"x": 14, "y": 7, "color": "#FFD700", "username": "doll123y"},
   {"x": 11, "y": 16, "color": "#8F8FDD", "username": "RaphaelaOnline"},
   {"x": 1, "y": 8, "color": "#8F8FDD", "username": "jongcnvo"},
@@ -380,3 +381,4 @@
   {"x": 16, "y": 12, "color": "#191970", "username": "LCHINA"},
   {"x": 9, "y": 14, "color": "#ffffff", "username": "1026021471"}
 ]
+
