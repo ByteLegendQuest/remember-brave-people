@@ -1,4 +1,4 @@
-[
+ [
   {"x": 10, "y": 10, "color": "#000000", "username": "Divott"},
   {"x": 19, "y": 19, "color": "#2969ff", "username": "jiangandwu"},
   {"x": 6, "y": 9, "color": "#000000", "username": "ljsalt"},
@@ -35,5 +35,6 @@
   {"x": 17, "y": 10, "color": "#2969ff", "username": "RMisuke"},
   {"x": 17, "y": 11, "color": "#000000", "username": "3218297529"},
   {"x": 9, "y": 11, "color": "#000000", "username": "Life12138"},
-  {"x": 8, "y": 8, "color": "#2969ff", "username": "carlcheung"}
+  {"x": 8, "y": 8, "color": "#2969ff", "username": "carlcheung"},
+  {"x": 8, "y": 10,"color": "#000000" , "username": "gxcc1919810"}
 ]
