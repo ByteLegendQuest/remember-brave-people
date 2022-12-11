@@ -1,7 +1,8 @@
  [
+  {"x": 6, "y": 9, "color": "#2969ff", "username": "gavin12c"},
   {"x": 10, "y": 10, "color": "#000000", "username": "Divott"},
   {"x": 19, "y": 19, "color": "#2969ff", "username": "jiangandwu"},
-  {"x": 6, "y": 9, "color": "#000000", "username": "ljsalt"},
+  {"x": 9, "y": 10, "color": "#000000", "username": "ljsalt"},
   {"x": 18, "y": 19, "color": "#000000", "username": "EverNewer"},
   {"x": 11, "y": 9, "color": "#66CCFF", "username": "Tauristar"},
   {"x": 9, "y": 9, "color": "#FFFF00", "username": "ACEEE-1222"},
