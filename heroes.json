@@ -1,4 +1,4 @@
- [
+[
   {"x": 10, "y": 10, "color": "#000000", "username": "Divott"},
   {"x": 19, "y": 19, "color": "#2969ff", "username": "jiangandwu"},
   {"x": 6, "y": 9, "color": "#000000", "username": "ljsalt"},
@@ -36,24 +36,22 @@
   {"x": 17, "y": 11, "color": "#000000", "username": "3218297529"},
   {"x": 9, "y": 11, "color": "#000000", "username": "Life12138"},
   {"x": 8, "y": 8, "color": "#2969ff", "username": "carlcheung"},
-  {"x": 8, "y": 10,"color": "#000000" , "username": "gxcc1919810"},
-  {"x": 19, "y": 5,"color":"#66ccff", "username":"YuhungKao"},
+  {"x": 8, "y": 10, "color": "#000000", "username": "gxcc1919810"},
+  {"x": 19, "y": 5, "color": "#66ccff", "username": "YuhungKao"},
   {"x": 1, "y": 7, "color": "#000000", "username": "unauth401"},
   {"x": 9, "y": 8, "color": "#FF0000", "username": "AntiRebel"},
-  {"x": 1, "y": 18,"color": "#2969ff", "username": "JANGDABAI"},
-  {"x":17,"y":18,"color":"#ffc0cb","username":"KarynaSakura"},
-  {"x":12, "y": 15, "color":"#66ccff","username":"123hzh-do"},
-  {"x":1, "y": 0, "color":"#00cc00","username":"bennty"},
-  {"x":3,"y":3,"color":"#64b5f6","username":"Duswen"},
-  {"x":9,"y":1,"color":"#000000","username":"QSlotus"},
-  {"x":9,"y":3,"color":"#539ce4","username":"Linx-APCI"},
-  {"x":9,"y":10,"color":"#03040f","username":"xiayuyuyu"},
-  {"x":9,"y":7,"color":"#000000","username":"19138060480"},
-  {"x":7,"y":7,"color":"#000000","username":"wwwww1wwwww"},
-  {"x":9,"y":5,"color":"#6a5acd","username":"Xenon7230"},
-  {"x":12,"y":18,"color":"#03040f","username":"123u414"},
-  {"x":2,"y":0,"color":"#03040f","username":"hanfanwen"}
- ]
-
-                                                                   
-
+  {"x": 1, "y": 18, "color": "#2969ff", "username": "JANGDABAI"},
+  {"x": 17, "y": 18, "color": "#ffc0cb", "username": "KarynaSakura"},
+  {"x": 12, "y": 15, "color": "#66ccff", "username": "123hzh-do"},
+  {"x": 1, "y": 0, "color": "#00cc00", "username": "bennty"},
+  {"x": 3, "y": 3, "color": "#64b5f6", "username": "Duswen"},
+  {"x": 9, "y": 1, "color": "#000000", "username": "QSlotus"},
+  {"x": 9, "y": 3, "color": "#539ce4", "username": "Linx-APCI"},
+  {"x": 9, "y": 10, "color": "#03040f", "username": "xiayuyuyu"},
+  {"x": 9, "y": 7, "color": "#000000", "username": "19138060480"},
+  {"x": 7, "y": 7, "color": "#000000", "username": "wwwww1wwwww"},
+  {"x": 9, "y": 5, "color": "#6a5acd", "username": "Xenon7230"},
+  {"x": 12, "y": 18, "color": "#03040f", "username": "123u414"},
+  {"x": 2, "y": 0, "color": "#03040f", "username": "hanfanwen"},
+  {"x": 3, "y": 10, "color": "#FFFFFF", "username": "SHlQl"}
+]
