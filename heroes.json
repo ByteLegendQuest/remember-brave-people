@@ -67,5 +67,6 @@
   {"x":4,"y":9, "color":"#66ccff","username":"PengyuJiang"},
   {"x": 9, "y": 12, "color": "#66ccff", "username": "TheSDT"},
   {"x": 9, "y": 2, "color": "#66ccff", "username": "Mistbows"},
-  {"x": 19, "y": 8, "color": "#000000", "username": "RyouSY"}
+  {"x": 19, "y": 8, "color": "#000000", "username": "RyouSY"},
+  {"x": 9, "y": 16, "color": "#000000", "username": "spt001"}
 ]
