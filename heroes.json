@@ -95,5 +95,6 @@
   {"x": 14, "y": 8, "color": "#ffa07b", "username": "CITVAIM"},
   {"x": 10, "y": 14, "color": "#000000", "username": "ExistAB"},
   {"x": 2,"y": 15, "color":"#00ffff","username":"cdeeef"},
-  {"x": 0, "y": 2, "color": "#000000", "username": "aaronfledermaus"}
+  {"x": 0, "y": 2, "color": "#000000", "username": "aaronfledermaus"},
+  {"x": 14, "y": 10, "color": "#333333", "username": "chestnora"}
 ]
