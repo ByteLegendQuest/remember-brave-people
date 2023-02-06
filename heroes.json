@@ -108,5 +108,6 @@
   {"x": 3,"y": 9,"color":"#0000CD","username":"taohongsheng"},
   {"x": 11,"y": 17,"color":"#000000","username":"PurpleStar787"},
   {"x": 3,"y": 16,"color":"#d4bc9d","username":"dftrm"},
-  {"x": 7, "y": 0, "color": "#EEA2A4", "username": "geyaoyao162"}
+  {"x": 7, "y": 0, "color": "#EEA2A4", "username": "geyaoyao162"},
+  {"x": 10, "y": 17, "color": "#FF00FF", "username": "PurpleStar7"}
 ]
