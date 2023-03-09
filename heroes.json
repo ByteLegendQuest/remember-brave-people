@@ -135,5 +135,6 @@
   {"x": 17, "y": 17, "color": "#999999", "username": "Er-sea"},
   {"x": 10, "y": 2, "color": "#BD93F9", "username": "subtixx"},
   {"x": 2, "y": 1, "color": "#BD93F9", "username": "judemaij"},
-  {"x": 8, "y": 12, "color":"#777777","username":"Peter-pig"}
+  {"x": 8, "y": 12, "color":"#777777","username":"Peter-pig"},
+  {"x": 7, "y": 12, "color":"#0000FF","username":"Recallce"}
 ]
