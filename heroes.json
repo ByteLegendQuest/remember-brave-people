@@ -177,5 +177,6 @@
   {"x": 6, "y": 4, "color":"#4169e2", "username": "ammbra"},
   {"x": 0, "y": 3, "color":"#4169e2", "username": "ady88"},
   {"x": 4, "y": 3, "color":"#FF0000", "username": "hvhai"},
-  {"x": 6, "y": 3, "color":"#FF0000", "username": "ioFeng"}
+  {"x": 6, "y": 3, "color":"#FF0000", "username": "ioFeng"},
+  {"x": 17, "y": 0, "color":"#FF0000", "username": "danthe1st"}
 ]
