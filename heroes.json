@@ -200,5 +200,6 @@
   {"x": 2, "y": 2, "color": "#FF0000", "username": "someoneigna"},
   {"x": 19, "y": 9, "color": "#0556b2", "username": "ChikyuKido"},
   {"x": 6, "y": 2, "color": "#00a9fA", "username": "NahuelBullonJensen"},
-  {"x": 0, "y": 17, "color":"#dd2222", "username": "Rakeess"}
+  {"x": 0, "y": 17, "color":"#dd2222", "username": "Rakeess"},
+  {"x": 1, "y": 3, "color":"#FFC0CB", "username": "xcrou89"}
 ]
