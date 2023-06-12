@@ -16,6 +16,14 @@ jobs:
           git remote add ${{ github.event.pull_request.user.login }} ${{ github.event.pull_request.head.repo.html_url }}
           git fetch ${{ github.event.pull_request.user.login }}
           git checkout -b ${{ github.event.pull_request.user.login }}_${{ github.event.pull_request.head.ref }} ${{ github.event.pull_request.user.login }}/${{ github.event.pull_request.head.ref }}
+      - name: Validate PR branch name
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const branchName = context.payload.pull_request.head.ref;
+            if (!/^[\w/-]*$/.test(branchName)) {
+              throw new Error(`Invalid branch name: ${branchName}`);
+            }
       - uses: actions/setup-java@v2
         with:
           distribution: 'adopt'
