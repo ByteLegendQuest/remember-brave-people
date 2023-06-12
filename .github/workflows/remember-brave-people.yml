@@ -30,6 +30,14 @@ jobs:
             } else {
                 core.setOutput('player-github-username', context.payload.pull_request.user.login)
             }
+      - name: Base64 encode PR title
+        id: encode-pr-title
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const title = context.payload.pull_request.title;
+            const encodedTitle = Buffer.from(title).toString('base64');
+            core.setOutput('encoded-title', encodedTitle);            
       - name: Check Problems in Code
         run: >
           curl --location --fail --silent --show-error -o .git/code-checker.jar https://github.com/ByteLegend/tools/releases/download/v1.0.0/code-checker.jar &&
@@ -39,7 +47,7 @@ jobs:
           -DprRepoFullName=${{ github.event.pull_request.base.repo.full_name }}
           -DprAuthor=${{ steps.determine-player-username.outputs.player-github-username }}
           -DprNumber=${{ github.event.pull_request.number }}
-          -DprTitle='${{ github.event.pull_request.title }}'
+          -DprTitleEncoded=${{ steps.encode-pr-title.outputs.encoded-title }}
           -DprHeadSha=${{ github.event.pull_request.head.sha }}
           -DapiUrl=https://bytelegend.com
           -DinternalApiSecret=${{ secrets.INTERNAL_API_SECRET }}
@@ -49,7 +57,7 @@ jobs:
           docker run -v $GITHUB_WORKSPACE:/workspace blindpirate/remember-brave-people
           -DworkspaceDir=/workspace
           -DplayerGitHubUsername=${{ steps.determine-player-username.outputs.player-github-username }}
-          -DprTitle='${{ github.event.pull_request.title }}'
+          -DprTitleEncoded=${{ steps.encode-pr-title.outputs.encoded-title }}
           -DprNumber=${{ github.event.pull_request.number }}
           -DaccessKeyId=${{ secrets.AWS_ACCESS_KEY_ID }}
           -DaccessKeySecret=${{ secrets.AWS_ACCESS_KEY_SECRET }}
