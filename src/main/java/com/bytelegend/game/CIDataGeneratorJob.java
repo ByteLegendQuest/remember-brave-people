@@ -42,7 +42,7 @@ public class CIDataGeneratorJob {
         if (System.getProperty("prTitleEncoded") != null) {
             prTitle = new String(Base64.getDecoder().decode(System.getProperty("prTitleEncoded")));
         } else {
-            prTitle = systemProperty("prNumber");
+            prTitle = systemProperty("prTitle");
         }
         Environment environment = Environment.EnvironmentBuilder.builder()
             .setWorkspaceDir(new File(systemProperty("workspaceDir")))
