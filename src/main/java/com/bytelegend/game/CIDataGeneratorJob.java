@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Base64;
 
 import static com.bytelegend.game.Constants.CI_BASE_REF;
 import static com.bytelegend.game.Constants.DEFAULT_REPO_URL;
@@ -36,10 +37,17 @@ public class CIDataGeneratorJob {
 
     public static void main(String[] args) throws Exception {
         readSystemPropertiesFromArgs(args);
+
+        String prTitle;
+        if (System.getProperty("prTitleEncoded") != null) {
+            prTitle = new String(Base64.getDecoder().decode(System.getProperty("prTitleEncoded")));
+        } else {
+            prTitle = systemProperty("prNumber");
+        }
         Environment environment = Environment.EnvironmentBuilder.builder()
             .setWorkspaceDir(new File(systemProperty("workspaceDir")))
             .setHeadRef(systemProperty("headRef"))
-            .setPrTitle(systemProperty("prTitle"))
+            .setPrTitle(prTitle)
             .setPrNumber(systemProperty("prNumber"))
             .setPlayerGitHubUsername(systemProperty("playerGitHubUsername"))
             .setRepoPullUrl(DEFAULT_REPO_URL)
