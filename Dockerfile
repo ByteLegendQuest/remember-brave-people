@@ -4,7 +4,7 @@ FROM openjdk:11.0.12-jre
 
 RUN apt-get update && apt-get install -y git
 
-RUN git config --global user.name "ByteLegendBot" && git config --global user.email "bot@bytelegend.com"
+RUN git config --global user.name "ByteLegendBot" && git config --global user.email "bot@bytelegend.com" && git config --global --add safe.directory /workspace
 
 RUN mkdir /app
 
